@@ -53,13 +53,24 @@ class AddNewFormVC: UIViewController , UIImagePickerControllerDelegate , UINavig
     }
 
     @IBAction func submitButtonClick(_ sender: Any) {
-        
-        let cloth = clothList.first!
-        cloth.uploadAllImage(){
-            let formItemsRef = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/FormItems")
-            let newFormObject = formItemsRef.childByAutoId()
-            newFormObject.setValue(cloth.imageListOnString)
+        if clothList.count == 0 {return}
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+//        let cloth = clothList.first!
+        var uploadCount = 0
+        for cloth in clothList {
+            
+            cloth.uploadAllImage(){
+                uploadCount += 1
+                let formItemsRef = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/FormItems")
+                let newFormObject = formItemsRef.childByAutoId()
+                newFormObject.setValue(cloth.imageListOnString)
+                if uploadCount == self.clothList.count {
+                    hud.hide(animated: true)
+                    _ = self.navigationController?.popViewController(animated: true)
+                }
+            }
         }
+        
         
 //        let newFormObject = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/FormItems").childByAutoId()
 //        let emptyJson : JSON = [:]
@@ -84,7 +95,7 @@ class AddNewFormVC: UIViewController , UIImagePickerControllerDelegate , UINavig
 
     @IBAction func getClothFromNewCloth(segue : UIStoryboardSegue){
         if let addNewClothVC = segue.source as? AddNewClothVC {
-            if clothList.count != 0 {
+            if addNewClothVC.cloth.imageList.count != 0 {
                 clothList.append(addNewClothVC.cloth)
                 pointLabel.text = "\(clothList.count)"
                 self.tableView.reloadData()

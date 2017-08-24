@@ -11,6 +11,7 @@
 		E70C1BFC1F49A119005EAEA2 /* AddNewClothVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFB1F49A119005EAEA2 /* AddNewClothVC.swift */; };
 		E70C1BFE1F49A16F005EAEA2 /* ClothCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFD1F49A16F005EAEA2 /* ClothCollectionCell.swift */; };
 		E70C1C001F49A2DC005EAEA2 /* Cloth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFF1F49A2DC005EAEA2 /* Cloth.swift */; };
+		E73B283B1F4D1D01007135A6 /* FormItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B283A1F4D1D01007135A6 /* FormItemVC.swift */; };
 		E7E154891F481DF7001D5929 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E154881F481DF7001D5929 /* AppDelegate.swift */; };
 		E7E1548E1F481DF7001D5929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E1548C1F481DF7001D5929 /* Main.storyboard */; };
 		E7E154901F481DF7001D5929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7E1548F1F481DF7001D5929 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		E70C1BFB1F49A119005EAEA2 /* AddNewClothVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewClothVC.swift; sourceTree = "<group>"; };
 		E70C1BFD1F49A16F005EAEA2 /* ClothCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothCollectionCell.swift; sourceTree = "<group>"; };
 		E70C1BFF1F49A2DC005EAEA2 /* Cloth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloth.swift; sourceTree = "<group>"; };
+		E73B283A1F4D1D01007135A6 /* FormItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormItemVC.swift; sourceTree = "<group>"; };
 		E7E154851F481DF7001D5929 /* Fabricycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fabricycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E154881F481DF7001D5929 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7E1548D1F481DF7001D5929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				E7E1549E1F4871B4001D5929 /* LoginViewController.swift */,
 				E7E1548C1F481DF7001D5929 /* Main.storyboard */,
 				E7E1549A1F486E53001D5929 /* MainPageVC.swift */,
+				E73B283A1F4D1D01007135A6 /* FormItemVC.swift */,
 				E70C1BF91F499E89005EAEA2 /* New Form flow */,
 				E70C1BFA1F499E92005EAEA2 /* support file */,
 			);
@@ -170,6 +173,7 @@
 				E7E154831F481DF7001D5929 /* Resources */,
 				660F3C810F3A4D233A2396DF /* [CP] Embed Pods Frameworks */,
 				CD987D485DCD7E02DC15B6BD /* [CP] Copy Pods Resources */,
+				E7DEED4E1F4EA6EC00D15022 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -196,6 +200,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -281,6 +288,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fabricycle/Pods-Fabricycle-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E7DEED4E1F4EA6EC00D15022 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -291,6 +311,7 @@
 				E70C1C001F49A2DC005EAEA2 /* Cloth.swift in Sources */,
 				E7E154AC1F4883F3001D5929 /* AddNewFormCell.swift in Sources */,
 				E7E1549B1F486E53001D5929 /* MainPageVC.swift in Sources */,
+				E73B283B1F4D1D01007135A6 /* FormItemVC.swift in Sources */,
 				E7E1549D1F487022001D5929 /* AddNewFormVC.swift in Sources */,
 				E70C1BFC1F49A119005EAEA2 /* AddNewClothVC.swift in Sources */,
 				E7E154AA1F487ED7001D5929 /* ClothObject.swift in Sources */,
