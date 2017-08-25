@@ -10,12 +10,12 @@ import UIKit
 import SwiftyJSON
 class MainPageVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    var uid = ""
+    var uid : String!
 
     var jsonForms = [JSON]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        getUser()
+        uid = getUserId()!
         setUpTableView()
     }
     func setUpTableView(){
@@ -40,11 +40,7 @@ class MainPageVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    func getUser(){
-        if let user = FIRAuth.auth()?.currentUser{
-            uid = user.uid
-        }
-    }
+
     @IBAction func addNewForm(_ sender: Any) {
         
         
@@ -67,9 +63,13 @@ extension MainPageVC : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "mainPageCell", for: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainPageCell")
-        let clothJson = jsonForms[indexPath.row]
-        let text = clothJson.arrayValue.first!.stringValue
-        cell?.textLabel?.text = text
+        let formItem = jsonForms[indexPath.row].dictionaryValue
+        for (key , value) in formItem {
+            cell?.textLabel?.text = key
+            cell?.detailTextLabel?.text = value.stringValue
+        }
+//        let text = clothJson.arrayValue.first!.stringValue
+//        cell?.textLabel?.text = text
 //        let cloth = clothList[indexPath.row]
 //        cell.clothImage.image = cloth.imageList.first
         
@@ -77,8 +77,12 @@ extension MainPageVC : UITableViewDelegate , UITableViewDataSource {
         return cell!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        
         let formItem = jsonForms[indexPath.row]
         performSegue(withIdentifier: "showFormItem", sender: formItem)
+        
 //        // 1
 //        guard let cell = tableView.cellForRow(at: indexPath) else { return }
 //        // 2

@@ -10,7 +10,7 @@ import UIKit
 
 class AddNewClothVC: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate{
 
-    var cloth = Cloth([])
+    var cloth : Cloth!
     @IBOutlet weak var collectionView: UICollectionView!
     
     
@@ -39,7 +39,8 @@ class AddNewClothVC: UIViewController , UIImagePickerControllerDelegate , UINavi
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        
+        let uid = getUserId()!
+        cloth = Cloth([] , userId : uid)
     }
 
     /*

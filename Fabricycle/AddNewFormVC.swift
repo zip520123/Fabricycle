@@ -15,7 +15,7 @@ class AddNewFormVC: UIViewController , UIImagePickerControllerDelegate , UINavig
     static var apiKey = ""
     static let apiURL = "https://vision.googleapis.com/v1/images:annotate?key=\(apiKey)"
     var clothList = [Cloth]()
-    var uid = ""
+    var uid : String!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var pointLabel: UILabel!
     
@@ -23,16 +23,11 @@ class AddNewFormVC: UIViewController , UIImagePickerControllerDelegate , UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         loadApikey()
-        getUser()
+        self.uid = getUserId()!
         setUpTableView()
         
     }
-    func getUser(){
-        if let user = FIRAuth.auth()?.currentUser{
-            uid = user.uid
-        }
-
-    }
+    
     func setUpTableView(){
         tableView.delegate = self
         tableView.dataSource = self
@@ -55,15 +50,18 @@ class AddNewFormVC: UIViewController , UIImagePickerControllerDelegate , UINavig
     @IBAction func submitButtonClick(_ sender: Any) {
         if clothList.count == 0 {return}
         let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-//        let cloth = clothList.first!
+
         var uploadCount = 0
+        let formItemsRef = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/FormItems")
+        let newFormObject = formItemsRef.childByAutoId()
+        
         for cloth in clothList {
             
             cloth.uploadAllImage(){
                 uploadCount += 1
-                let formItemsRef = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/FormItems")
-                let newFormObject = formItemsRef.childByAutoId()
-                newFormObject.setValue(cloth.imageListOnString)
+                
+                let newClothObject = newFormObject.childByAutoId()
+                newClothObject.setValue(cloth.imageListOnString)
                 if uploadCount == self.clothList.count {
                     hud.hide(animated: true)
                     _ = self.navigationController?.popViewController(animated: true)

@@ -12,6 +12,9 @@
 		E70C1BFE1F49A16F005EAEA2 /* ClothCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFD1F49A16F005EAEA2 /* ClothCollectionCell.swift */; };
 		E70C1C001F49A2DC005EAEA2 /* Cloth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFF1F49A2DC005EAEA2 /* Cloth.swift */; };
 		E73B283B1F4D1D01007135A6 /* FormItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B283A1F4D1D01007135A6 /* FormItemVC.swift */; };
+		E7DEED561F4FC0B700D15022 /* FabricycleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED551F4FC0B700D15022 /* FabricycleTests.swift */; };
+		E7DEED5E1F4FC2C700D15022 /* FabricycleUploadTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED5D1F4FC2C700D15022 /* FabricycleUploadTest.swift */; };
+		E7DEED601F4FFC7400D15022 /* Utilty.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED5F1F4FFC7400D15022 /* Utilty.swift */; };
 		E7E154891F481DF7001D5929 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E154881F481DF7001D5929 /* AppDelegate.swift */; };
 		E7E1548E1F481DF7001D5929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E1548C1F481DF7001D5929 /* Main.storyboard */; };
 		E7E154901F481DF7001D5929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7E1548F1F481DF7001D5929 /* Assets.xcassets */; };
@@ -25,16 +28,35 @@
 		E7E154AC1F4883F3001D5929 /* AddNewFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E154AB1F4883F3001D5929 /* AddNewFormCell.swift */; };
 		E7E154AE1F4929EC001D5929 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E154AD1F4929EC001D5929 /* User.swift */; };
 		E7E154B01F492A5D001D5929 /* FormObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E154AF1F492A5D001D5929 /* FormObject.swift */; };
+		EEC00256D3A2E70059FF8652 /* Pods_FabricycleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E209BA981C2D14D8AD7329 /* Pods_FabricycleTests.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E7DEED581F4FC0B700D15022 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7E1547D1F481DF7001D5929 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7E154841F481DF7001D5929;
+			remoteInfo = Fabricycle;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		28BC6AE33507A5C546930D01 /* Pods_Fabricycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fabricycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39CBDBBA368A2E4622374824 /* Pods-FabricycleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FabricycleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FabricycleTests/Pods-FabricycleTests.release.xcconfig"; sourceTree = "<group>"; };
+		6FF4E2BC47CCDB3539DB09CD /* Pods-FabricycleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FabricycleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FabricycleTests/Pods-FabricycleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C135058DDCA13435544E294A /* Pods-Fabricycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fabricycle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fabricycle/Pods-Fabricycle.release.xcconfig"; sourceTree = "<group>"; };
 		C3BC8A9A9F9B95B3C60C1E59 /* Pods-Fabricycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fabricycle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fabricycle/Pods-Fabricycle.debug.xcconfig"; sourceTree = "<group>"; };
+		C6E209BA981C2D14D8AD7329 /* Pods_FabricycleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FabricycleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E70C1BFB1F49A119005EAEA2 /* AddNewClothVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewClothVC.swift; sourceTree = "<group>"; };
 		E70C1BFD1F49A16F005EAEA2 /* ClothCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothCollectionCell.swift; sourceTree = "<group>"; };
 		E70C1BFF1F49A2DC005EAEA2 /* Cloth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloth.swift; sourceTree = "<group>"; };
 		E73B283A1F4D1D01007135A6 /* FormItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormItemVC.swift; sourceTree = "<group>"; };
+		E7DEED531F4FC0B700D15022 /* FabricycleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FabricycleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7DEED551F4FC0B700D15022 /* FabricycleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FabricycleTests.swift; sourceTree = "<group>"; };
+		E7DEED571F4FC0B700D15022 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7DEED5D1F4FC2C700D15022 /* FabricycleUploadTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FabricycleUploadTest.swift; sourceTree = "<group>"; };
+		E7DEED5F1F4FFC7400D15022 /* Utilty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilty.swift; sourceTree = "<group>"; };
 		E7E154851F481DF7001D5929 /* Fabricycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fabricycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E154881F481DF7001D5929 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7E1548D1F481DF7001D5929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +77,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E7DEED501F4FC0B700D15022 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEC00256D3A2E70059FF8652 /* Pods_FabricycleTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7E154821F481DF7001D5929 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -70,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				28BC6AE33507A5C546930D01 /* Pods_Fabricycle.framework */,
+				C6E209BA981C2D14D8AD7329 /* Pods_FabricycleTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -93,6 +124,7 @@
 				E7E154911F481DF7001D5929 /* LaunchScreen.storyboard */,
 				E7E154941F481DF7001D5929 /* Info.plist */,
 				E7E154A21F48775F001D5929 /* Fabricycle-Bridging-Header.h */,
+				E7DEED5F1F4FFC7400D15022 /* Utilty.swift */,
 			);
 			name = "support file";
 			sourceTree = "<group>";
@@ -102,6 +134,8 @@
 			children = (
 				C3BC8A9A9F9B95B3C60C1E59 /* Pods-Fabricycle.debug.xcconfig */,
 				C135058DDCA13435544E294A /* Pods-Fabricycle.release.xcconfig */,
+				6FF4E2BC47CCDB3539DB09CD /* Pods-FabricycleTests.debug.xcconfig */,
+				39CBDBBA368A2E4622374824 /* Pods-FabricycleTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -115,10 +149,21 @@
 			name = view;
 			sourceTree = "<group>";
 		};
+		E7DEED541F4FC0B700D15022 /* FabricycleTests */ = {
+			isa = PBXGroup;
+			children = (
+				E7DEED5D1F4FC2C700D15022 /* FabricycleUploadTest.swift */,
+				E7DEED551F4FC0B700D15022 /* FabricycleTests.swift */,
+				E7DEED571F4FC0B700D15022 /* Info.plist */,
+			);
+			path = FabricycleTests;
+			sourceTree = "<group>";
+		};
 		E7E1547C1F481DF7001D5929 = {
 			isa = PBXGroup;
 			children = (
 				E7E154871F481DF7001D5929 /* Fabricycle */,
+				E7DEED541F4FC0B700D15022 /* FabricycleTests */,
 				E7E154861F481DF7001D5929 /* Products */,
 				E76EA3C7BEE8F90CE0C51F60 /* Pods */,
 				19A82D9FD4ADF7C337B44725 /* Frameworks */,
@@ -129,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				E7E154851F481DF7001D5929 /* Fabricycle.app */,
+				E7DEED531F4FC0B700D15022 /* FabricycleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,6 +209,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E7DEED521F4FC0B700D15022 /* FabricycleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7DEED5A1F4FC0B700D15022 /* Build configuration list for PBXNativeTarget "FabricycleTests" */;
+			buildPhases = (
+				9FA1BE91B9AB80D8688846CC /* [CP] Check Pods Manifest.lock */,
+				E7DEED4F1F4FC0B700D15022 /* Sources */,
+				E7DEED501F4FC0B700D15022 /* Frameworks */,
+				E7DEED511F4FC0B700D15022 /* Resources */,
+				3920EFE3827C46B6C3520B89 /* [CP] Embed Pods Frameworks */,
+				57DBC15BE6449F9D2F0CF8CD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E7DEED591F4FC0B700D15022 /* PBXTargetDependency */,
+			);
+			name = FabricycleTests;
+			productName = FabricycleTests;
+			productReference = E7DEED531F4FC0B700D15022 /* FabricycleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E7E154841F481DF7001D5929 /* Fabricycle */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7E154971F481DF7001D5929 /* Build configuration list for PBXNativeTarget "Fabricycle" */;
@@ -194,6 +261,12 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = zip520123;
 				TargetAttributes = {
+					E7DEED521F4FC0B700D15022 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = KCLCJ9X7RB;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E7E154841F481DF7001D5929;
+					};
 					E7E154841F481DF7001D5929 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = N2M8C53W8L;
@@ -223,11 +296,19 @@
 			projectRoot = "";
 			targets = (
 				E7E154841F481DF7001D5929 /* Fabricycle */,
+				E7DEED521F4FC0B700D15022 /* FabricycleTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E7DEED511F4FC0B700D15022 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7E154831F481DF7001D5929 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -249,13 +330,61 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fabricycle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3920EFE3827C46B6C3520B89 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FabricycleTests/Pods-FabricycleTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS10.3/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS10.3/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-iOS10.3/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD-iOS10.3/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Material-iOS10.3/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage-iOS10.3/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS10.3/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FabricycleTests/Pods-FabricycleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57DBC15BE6449F9D2F0CF8CD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FabricycleTests/Pods-FabricycleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		660F3C810F3A4D233A2396DF /* [CP] Embed Pods Frameworks */ = {
@@ -264,13 +393,46 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Fabricycle/Pods-Fabricycle-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS10.0/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS10.0/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-iOS10.0/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD-iOS10.0/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Material-iOS10.0/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage-iOS10.0/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS10.0/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fabricycle/Pods-Fabricycle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FA1BE91B9AB80D8688846CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FabricycleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CD987D485DCD7E02DC15B6BD /* [CP] Copy Pods Resources */ = {
@@ -304,10 +466,20 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E7DEED4F1F4FC0B700D15022 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7DEED5E1F4FC2C700D15022 /* FabricycleUploadTest.swift in Sources */,
+				E7DEED561F4FC0B700D15022 /* FabricycleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7E154811F481DF7001D5929 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7DEED601F4FFC7400D15022 /* Utilty.swift in Sources */,
 				E70C1C001F49A2DC005EAEA2 /* Cloth.swift in Sources */,
 				E7E154AC1F4883F3001D5929 /* AddNewFormCell.swift in Sources */,
 				E7E1549B1F486E53001D5929 /* MainPageVC.swift in Sources */,
@@ -324,6 +496,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E7DEED591F4FC0B700D15022 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7E154841F481DF7001D5929 /* Fabricycle */;
+			targetProxy = E7DEED581F4FC0B700D15022 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E7E1548C1F481DF7001D5929 /* Main.storyboard */ = {
@@ -345,6 +525,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E7DEED5B1F4FC0B700D15022 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FF4E2BC47CCDB3539DB09CD /* Pods-FabricycleTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = KCLCJ9X7RB;
+				INFOPLIST_FILE = FabricycleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lin.FabricycleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fabricycle/Fabricycle-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fabricycle.app/Fabricycle";
+			};
+			name = Debug;
+		};
+		E7DEED5C1F4FC0B700D15022 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39CBDBBA368A2E4622374824 /* Pods-FabricycleTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = KCLCJ9X7RB;
+				INFOPLIST_FILE = FabricycleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lin.FabricycleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fabricycle/Fabricycle-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fabricycle.app/Fabricycle";
+			};
+			name = Release;
+		};
 		E7E154951F481DF7001D5929 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -477,6 +689,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E7DEED5A1F4FC0B700D15022 /* Build configuration list for PBXNativeTarget "FabricycleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7DEED5B1F4FC0B700D15022 /* Debug */,
+				E7DEED5C1F4FC0B700D15022 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E7E154801F481DF7001D5929 /* Build configuration list for PBXProject "Fabricycle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -15,17 +15,17 @@ class Cloth : NSObject{
     var imageList : [UIImage]!
     var imageListOnString = [String]()
     var uploadStats = false
-    init(_ imageList: [UIImage]) {
+    let userId : String
+    init(_ imageList: [UIImage] , userId : String) {
         self.imageList = imageList
         self.imageListOnString = [String]()
         self.ref = nil
         self.uploadStats = false
+        self.userId = userId
     }
-    init(snapshot: FIRDataSnapshot) {
-        
-        ref = snapshot.ref
-        let json = JSON(snapshot.value) as! [String: AnyObject]
-        
+//    init(snapshot: FIRDataSnapshot) {
+//        ref = snapshot.ref
+//        let json = JSON(snapshot.value) as! [String: AnyObject]
 //        imageListOnString = json["imageListOnString"]?.array
 //        key = snapshot.key
 //        let snapshotValue = snapshot.value as! [String: AnyObject]
@@ -33,7 +33,7 @@ class Cloth : NSObject{
 //        addedByUser = snapshotValue["addedByUser"] as! String
 //        completed = snapshotValue["completed"] as! Bool
 //        ref = snapshot.ref
-    }
+//    }
     func uploadAllImage(block : @escaping ()->Void){
         var uploadCount = 0
         var tempString = [String]()
@@ -45,8 +45,8 @@ class Cloth : NSObject{
             let imageName = "\(uuidString).jpg"
             
             // Create a reference to the file you want to upload
-            let userId = getUserId()
-            let riversRef = storageRef.child("images/\(userId!)/\(imageName)")
+
+            let riversRef = storageRef.child("images/\(userId)/\(imageName)")
             
             let metaData = FIRStorageMetadata()
             metaData.contentType = "image/jpg"
@@ -70,25 +70,17 @@ class Cloth : NSObject{
             uploadTask.resume()
             uploadTask.observe(.success) { snapshot in
                 print("upload success")
-                
-                // Upload completed successfully
             }
         }
     }
-    func allUploadSuccess(_ block : ()->Void){
+    private func allUploadSuccess(_ block : ()->Void){
         for (index, item) in self.imageListOnString.enumerated() {
             print("cloth:\(index) , string: \(item)")
         }
         block()
         print("all Upload Success")
     }
-    func getUserId()-> String?{
-        if let user = FIRAuth.auth()?.currentUser{
-            return user.uid
-        }else{
-            return nil
-        }
-    }
+
 
     
 }
