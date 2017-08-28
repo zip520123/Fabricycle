@@ -15,6 +15,12 @@
 		E7DEED561F4FC0B700D15022 /* FabricycleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED551F4FC0B700D15022 /* FabricycleTests.swift */; };
 		E7DEED5E1F4FC2C700D15022 /* FabricycleUploadTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED5D1F4FC2C700D15022 /* FabricycleUploadTest.swift */; };
 		E7DEED601F4FFC7400D15022 /* Utilty.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED5F1F4FFC7400D15022 /* Utilty.swift */; };
+		E7DEED631F53C47000D15022 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DEED611F53C47000D15022 /* FBSDKCoreKit.framework */; };
+		E7DEED641F53C47100D15022 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DEED621F53C47000D15022 /* FBSDKLoginKit.framework */; };
+		E7DEED671F53CF2300D15022 /* apikey.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7DEED651F53CF2300D15022 /* apikey.plist */; };
+		E7DEED681F53CF2300D15022 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7DEED661F53CF2300D15022 /* GoogleService-Info.plist */; };
+		E7DEED6A1F53E22A00D15022 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED691F53E22A00D15022 /* ProfileVC.swift */; };
+		E7DEED6C1F53E37200D15022 /* FabricycleTabBarC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED6B1F53E37200D15022 /* FabricycleTabBarC.swift */; };
 		E7E154891F481DF7001D5929 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E154881F481DF7001D5929 /* AppDelegate.swift */; };
 		E7E1548E1F481DF7001D5929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E1548C1F481DF7001D5929 /* Main.storyboard */; };
 		E7E154901F481DF7001D5929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7E1548F1F481DF7001D5929 /* Assets.xcassets */; };
@@ -22,8 +28,6 @@
 		E7E1549B1F486E53001D5929 /* MainPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E1549A1F486E53001D5929 /* MainPageVC.swift */; };
 		E7E1549D1F487022001D5929 /* AddNewFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E1549C1F487022001D5929 /* AddNewFormVC.swift */; };
 		E7E1549F1F4871B4001D5929 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E1549E1F4871B4001D5929 /* LoginViewController.swift */; };
-		E7E154A11F48733F001D5929 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7E154A01F48733F001D5929 /* GoogleService-Info.plist */; };
-		E7E154A51F487A5E001D5929 /* apikey.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7E154A41F487A5E001D5929 /* apikey.plist */; };
 		E7E154AA1F487ED7001D5929 /* ClothObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E154A91F487ED7001D5929 /* ClothObject.swift */; };
 		E7E154AC1F4883F3001D5929 /* AddNewFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E154AB1F4883F3001D5929 /* AddNewFormCell.swift */; };
 		E7E154AE1F4929EC001D5929 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E154AD1F4929EC001D5929 /* User.swift */; };
@@ -57,6 +61,12 @@
 		E7DEED571F4FC0B700D15022 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7DEED5D1F4FC2C700D15022 /* FabricycleUploadTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FabricycleUploadTest.swift; sourceTree = "<group>"; };
 		E7DEED5F1F4FFC7400D15022 /* Utilty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilty.swift; sourceTree = "<group>"; };
+		E7DEED611F53C47000D15022 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		E7DEED621F53C47000D15022 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		E7DEED651F53CF2300D15022 /* apikey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = apikey.plist; sourceTree = "<group>"; };
+		E7DEED661F53CF2300D15022 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E7DEED691F53E22A00D15022 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		E7DEED6B1F53E37200D15022 /* FabricycleTabBarC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FabricycleTabBarC.swift; sourceTree = "<group>"; };
 		E7E154851F481DF7001D5929 /* Fabricycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fabricycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E154881F481DF7001D5929 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7E1548D1F481DF7001D5929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,10 +76,8 @@
 		E7E1549A1F486E53001D5929 /* MainPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageVC.swift; sourceTree = "<group>"; };
 		E7E1549C1F487022001D5929 /* AddNewFormVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewFormVC.swift; sourceTree = "<group>"; };
 		E7E1549E1F4871B4001D5929 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		E7E154A01F48733F001D5929 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7E154A21F48775F001D5929 /* Fabricycle-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fabricycle-Bridging-Header.h"; sourceTree = "<group>"; };
 		E7E154A31F48777A001D5929 /* Fabricycle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fabricycle.entitlements; sourceTree = "<group>"; };
-		E7E154A41F487A5E001D5929 /* apikey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = apikey.plist; sourceTree = "<group>"; };
 		E7E154A91F487ED7001D5929 /* ClothObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothObject.swift; sourceTree = "<group>"; };
 		E7E154AB1F4883F3001D5929 /* AddNewFormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewFormCell.swift; sourceTree = "<group>"; };
 		E7E154AD1F4929EC001D5929 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -90,6 +98,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7D2E054863877951450113D /* Pods_Fabricycle.framework in Frameworks */,
+				E7DEED631F53C47000D15022 /* FBSDKCoreKit.framework in Frameworks */,
+				E7DEED641F53C47100D15022 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +109,8 @@
 		19A82D9FD4ADF7C337B44725 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7DEED611F53C47000D15022 /* FBSDKCoreKit.framework */,
+				E7DEED621F53C47000D15022 /* FBSDKLoginKit.framework */,
 				28BC6AE33507A5C546930D01 /* Pods_Fabricycle.framework */,
 				C6E209BA981C2D14D8AD7329 /* Pods_FabricycleTests.framework */,
 			);
@@ -117,8 +129,8 @@
 		E70C1BFA1F499E92005EAEA2 /* support file */ = {
 			isa = PBXGroup;
 			children = (
-				E7E154A01F48733F001D5929 /* GoogleService-Info.plist */,
-				E7E154A41F487A5E001D5929 /* apikey.plist */,
+				E7DEED651F53CF2300D15022 /* apikey.plist */,
+				E7DEED661F53CF2300D15022 /* GoogleService-Info.plist */,
 				E7E154A31F48777A001D5929 /* Fabricycle.entitlements */,
 				E7E1548F1F481DF7001D5929 /* Assets.xcassets */,
 				E7E154911F481DF7001D5929 /* LaunchScreen.storyboard */,
@@ -191,6 +203,8 @@
 				E73B283A1F4D1D01007135A6 /* FormItemVC.swift */,
 				E70C1BF91F499E89005EAEA2 /* New Form flow */,
 				E70C1BFA1F499E92005EAEA2 /* support file */,
+				E7DEED691F53E22A00D15022 /* ProfileVC.swift */,
+				E7DEED6B1F53E37200D15022 /* FabricycleTabBarC.swift */,
 			);
 			path = Fabricycle;
 			sourceTree = "<group>";
@@ -314,10 +328,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7E154931F481DF7001D5929 /* LaunchScreen.storyboard in Resources */,
+				E7DEED671F53CF2300D15022 /* apikey.plist in Resources */,
 				E7E154901F481DF7001D5929 /* Assets.xcassets in Resources */,
-				E7E154A11F48733F001D5929 /* GoogleService-Info.plist in Resources */,
 				E7E1548E1F481DF7001D5929 /* Main.storyboard in Resources */,
-				E7E154A51F487A5E001D5929 /* apikey.plist in Resources */,
+				E7DEED681F53CF2300D15022 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +495,7 @@
 			files = (
 				E7DEED601F4FFC7400D15022 /* Utilty.swift in Sources */,
 				E70C1C001F49A2DC005EAEA2 /* Cloth.swift in Sources */,
+				E7DEED6A1F53E22A00D15022 /* ProfileVC.swift in Sources */,
 				E7E154AC1F4883F3001D5929 /* AddNewFormCell.swift in Sources */,
 				E7E1549B1F486E53001D5929 /* MainPageVC.swift in Sources */,
 				E73B283B1F4D1D01007135A6 /* FormItemVC.swift in Sources */,
@@ -491,6 +506,7 @@
 				E70C1BFE1F49A16F005EAEA2 /* ClothCollectionCell.swift in Sources */,
 				E7E154891F481DF7001D5929 /* AppDelegate.swift in Sources */,
 				E7E154B01F492A5D001D5929 /* FormObject.swift in Sources */,
+				E7DEED6C1F53E37200D15022 /* FabricycleTabBarC.swift in Sources */,
 				E7E154AE1F4929EC001D5929 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -584,6 +600,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "~/Downloads/FacebookSDKs-iOS-4.26.0";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -635,6 +652,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "~/Downloads/FacebookSDKs-iOS-4.26.0";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -659,6 +677,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Fabricycle/Fabricycle.entitlements;
 				DEVELOPMENT_TEAM = N2M8C53W8L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Fabricycle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -676,6 +698,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Fabricycle/Fabricycle.entitlements;
 				DEVELOPMENT_TEAM = N2M8C53W8L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Fabricycle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

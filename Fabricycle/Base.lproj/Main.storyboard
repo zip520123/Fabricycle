@@ -10,6 +10,28 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--歷史回收數據-->
+        <scene sceneID="Wec-Ua-CLI">
+            <objects>
+                <viewController id="Vqz-we-gq3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tyR-pG-KVO"/>
+                        <viewControllerLayoutGuide type="bottom" id="f4z-xM-bqe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hw0-Yo-4Qd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="歷史回收數據" id="eNp-Qo-69x"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" id="SW9-qI-gk3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hsh-fW-WO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="494" y="42"/>
+        </scene>
         <!--回收頁面-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -23,7 +45,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fge-p3-kh0">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainPageCell" textLabel="hS6-he-hOI" detailTextLabel="ppZ-sp-7mW" style="IBUITableViewCellStyleSubtitle" id="EaF-D6-7bi">
@@ -62,11 +84,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="回收頁面" id="Cr2-nV-1bl">
-                        <barButtonItem key="leftBarButtonItem" title="logout" id="lfJ-oR-TvP">
-                            <connections>
-                                <action selector="logoutClick:" destination="BYZ-38-t0r" id="t3v-Nq-u37"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cuo-nb-LT1">
                             <connections>
                                 <action selector="addNewForm:" destination="BYZ-38-t0r" id="JZ5-Mg-9cL"/>
@@ -81,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1177" y="108"/>
         </scene>
         <!--新增回收表單-->
         <scene sceneID="AGI-fZ-iir">
@@ -130,14 +147,14 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="147" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pmF-pC-aza">
-                                <rect key="frame" x="0.0" y="151" width="375" height="470"/>
+                                <rect key="frame" x="0.0" y="151" width="375" height="421"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="147" id="OBs-NT-hbp" customClass="AddNewFormCell" customModule="Fabricycle" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="147"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OBs-NT-hbp" id="umD-BQ-kQ0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="146.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d1b-3s-sFt">
@@ -171,7 +188,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ps5-uM-avE">
-                                <rect key="frame" x="16" y="629" width="343" height="30"/>
+                                <rect key="frame" x="16" y="580" width="343" height="30"/>
                                 <state key="normal" title="確認送出"/>
                                 <connections>
                                     <action selector="submitButtonClick:" destination="gqP-6G-K93" eventType="touchUpInside" id="YiD-Ew-Bw1"/>
@@ -227,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aoj-bt-lMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1848.8" y="671.51424287856082"/>
+            <point key="canvasLocation" x="2788" y="671.51424287856082"/>
         </scene>
         <!--add cloth-->
         <scene sceneID="AdP-eq-zfc">
@@ -417,21 +434,23 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="signUpButton" destination="Bf8-QO-T78" id="WWA-iK-wTp"/>
                         <outlet property="textFieldLoginEmail" destination="zlN-Qt-oxr" id="EtR-lR-HH1"/>
                         <outlet property="textFieldLoginPassword" destination="DgT-Fo-WCu" id="rIn-yx-Z8w"/>
-                        <segue destination="FOM-oS-Ua0" kind="presentation" identifier="LoginToList" id="URg-Zh-E2D"/>
+                        <segue destination="LlQ-VB-VwM" kind="presentation" identifier="LoginToList" id="URg-Zh-E2D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OEE-Pg-At5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-628" y="793"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--歷史回收-->
         <scene sceneID="CP5-hz-bS6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FOM-oS-Ua0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="歷史回收" id="zGZ-3V-Syk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="188-vA-hTz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="188-vA-hTz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -442,12 +461,81 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Mwj-y9-Cp8"/>
+                        <segue destination="Vqz-we-gq3" kind="relationship" relationship="rootViewController" id="dqq-OC-7ji"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JzS-HR-mZA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="735" y="793"/>
+        </scene>
+        <!--Fabricycle Tab BarC-->
+        <scene sceneID="QjK-FW-JQg">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="LlQ-VB-VwM" customClass="FabricycleTabBarC" customModule="Fabricycle" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Shn-3g-Ain">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.84754790229999999" green="0.53485182080000004" blue="0.93773915819999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="FOM-oS-Ua0" kind="relationship" relationship="viewControllers" id="qvQ-Xm-2Q5"/>
+                        <segue destination="X5V-JP-xUY" kind="relationship" relationship="viewControllers" id="ETY-GI-FfW"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sTM-ag-XiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="104.8" y="792.95352323838085"/>
+        </scene>
+        <!--個人資訊-->
+        <scene sceneID="Inw-4S-Uap">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X5V-JP-xUY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="個人資訊" id="Arn-jB-BAv"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ira-T8-Y2G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.84754790229999999" green="0.53485182080000004" blue="0.93773915819999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rog-bb-2pL" kind="relationship" relationship="rootViewController" id="bdA-Ec-XP7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lFf-cQ-5YE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="734" y="1458"/>
+        </scene>
+        <!--個人資訊-->
+        <scene sceneID="JTb-Gt-cHM">
+            <objects>
+                <viewController id="rog-bb-2pL" customClass="ProfileVC" customModule="Fabricycle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sHZ-Kg-bmy"/>
+                        <viewControllerLayoutGuide type="bottom" id="OH8-fg-ra9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cy0-2q-6yf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="個人資訊" id="kqH-4h-Arh">
+                        <barButtonItem key="leftBarButtonItem" title="logout" id="BwM-A7-rM1">
+                            <connections>
+                                <action selector="logoutClick:" destination="rog-bb-2pL" id="5Eh-6f-6JN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1xw-gA-q8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1431" y="1456"/>
         </scene>
     </scenes>
 </document>

@@ -11,3 +11,6 @@ func getUserId()->String?{
     let user = FIRAuth.auth()?.currentUser
     return user?.uid
 }
+extension UIAlertController {
+
+}

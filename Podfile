@@ -14,6 +14,8 @@ def default_pods
   pod 'MBProgressHUD', '~> 1.0.0'
   pod 'SDWebImage', '~> 4.0'
   pod 'Material', '~> 2.0'
+  
+  pod 'IQKeyboardManagerSwift', '4.0.10'
 
 end
 target 'FabricycleTests' do

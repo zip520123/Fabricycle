@@ -41,6 +41,10 @@ class FabricycleTests: XCTestCase {
         //then
         cloth.uploadAllImage {
             XCTAssertEqual(cloth.imageListOnString.count , 2)
+            for (i ,item) in cloth.imageListOnString.enumerated() {
+                print("cloth :\(i),\(item)")
+            }
+            
         }
         
         
