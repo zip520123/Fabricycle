@@ -21,18 +21,29 @@
                     <view key="view" contentMode="scaleToFill" id="hw0-Yo-4Qd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhP-hs-0bS">
+                                <rect key="frame" x="40" y="79" width="295" height="30"/>
+                                <state key="normal" title="新增回收單"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="bdc-Fb-xOE"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rhP-hs-0bS" firstAttribute="top" secondItem="tyR-pG-KVO" secondAttribute="bottom" constant="15" id="HW8-gw-EmZ"/>
+                            <constraint firstItem="rhP-hs-0bS" firstAttribute="leading" secondItem="hw0-Yo-4Qd" secondAttribute="leadingMargin" constant="24" id="l6v-QT-7ea"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rhP-hs-0bS" secondAttribute="trailing" constant="24" id="vrU-41-eWg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="歷史回收數據" id="eNp-Qo-69x"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="SW9-qI-gk3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hsh-fW-WO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="494" y="42"/>
         </scene>
-        <!--回收頁面-->
+        <!--歷史回收單-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="MainPageVC" customModule="Fabricycle" customModuleProvider="target" sceneMemberID="viewController">
@@ -83,11 +94,11 @@
                             <constraint firstItem="fge-p3-kh0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bLU-j0-yl1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="回收頁面" id="Cr2-nV-1bl">
+                    <navigationItem key="navigationItem" title="歷史回收單" id="Cr2-nV-1bl">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cuo-nb-LT1">
                             <connections>
                                 <action selector="addNewForm:" destination="BYZ-38-t0r" id="JZ5-Mg-9cL"/>
-                                <segue destination="gqP-6G-K93" kind="show" id="oIf-gd-KD9"/>
+                                <segue destination="rRb-ZF-AgE" kind="show" id="f3N-tv-Bhq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -98,7 +109,88 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177" y="108"/>
+            <point key="canvasLocation" x="1279" y="140"/>
+        </scene>
+        <!--Add New Recycle Number-->
+        <scene sceneID="Jhw-7V-3AA">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="rRb-ZF-AgE" customClass="AddNewRecycleNumber" customModule="Fabricycle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zdY-Pl-qfX"/>
+                        <viewControllerLayoutGuide type="bottom" id="aNd-sn-3v4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HTg-m6-e8C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nk5-d9-W6U">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="242" id="xiw-Dy-QDR" customClass="RecycleClothNumberCell" customModule="Fabricycle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="242"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xiw-Dy-QDR" id="kdj-Wo-mpl">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="241.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEk-mJ-nnG">
+                                                    <rect key="frame" x="44" y="110" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tj3-Sj-Ag0">
+                                                    <rect key="frame" x="44" y="167" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1g0-RO-rQ1">
+                                                    <rect key="frame" x="127" y="60" width="240" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="5sd-RN-851" customClass="AddNewSellClothCell" customModule="Fabricycle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="270" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5sd-RN-851" id="zqU-aE-IHS">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AJG-ZK-Dgg" customClass="SingleClothCell" customModule="Fabricycle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="314" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AJG-ZK-Dgg" id="Qlw-0f-ywK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nk5-d9-W6U" firstAttribute="leading" secondItem="HTg-m6-e8C" secondAttribute="leading" id="IcI-a3-rFY"/>
+                            <constraint firstItem="nk5-d9-W6U" firstAttribute="top" secondItem="zdY-Pl-qfX" secondAttribute="bottom" id="SCQ-hg-GfQ"/>
+                            <constraint firstItem="aNd-sn-3v4" firstAttribute="top" secondItem="nk5-d9-W6U" secondAttribute="bottom" id="Wei-nH-nNO"/>
+                            <constraint firstAttribute="trailing" secondItem="nk5-d9-W6U" secondAttribute="trailing" id="l9b-Mm-GrS"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tabview" destination="nk5-d9-W6U" id="uUs-GN-kH1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bbb-Bp-bWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2176.8000000000002" y="4.9475262368815596"/>
         </scene>
         <!--新增回收表單-->
         <scene sceneID="AGI-fZ-iir">
@@ -112,25 +204,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPW-mq-8NF">
+                                <rect key="frame" x="40" y="28" width="295" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="efg-HN-3XH" kind="show" id="8vt-lj-I4C"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N7P-9I-bg9">
-                                <rect key="frame" x="16" y="79" width="343" height="30"/>
+                                <rect key="frame" x="16" y="80" width="343" height="20.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="回收數量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7b-gl-dqS">
-                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="回收數量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7b-gl-dqS">
+                                        <rect key="frame" x="0.0" y="0.0" width="332.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Hh-G3-MGa">
-                                        <rect key="frame" x="69.5" y="0.0" width="273.5" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LI1-4C-0Uu">
+                                        <rect key="frame" x="332.5" y="0.0" width="10.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                    </textField>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgg-tX-uKU">
-                                <rect key="frame" x="16" y="117" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="108.5" width="343" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="預測可獲得點數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2X-DE-Wdh">
                                         <rect key="frame" x="0.0" y="0.0" width="332.5" height="20.5"/>
@@ -147,7 +246,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="147" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pmF-pC-aza">
-                                <rect key="frame" x="0.0" y="151" width="375" height="421"/>
+                                <rect key="frame" x="0.0" y="142.5" width="375" height="478.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="147" id="OBs-NT-hbp" customClass="AddNewFormCell" customModule="Fabricycle" customModuleProvider="target">
@@ -188,7 +287,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ps5-uM-avE">
-                                <rect key="frame" x="16" y="580" width="343" height="30"/>
+                                <rect key="frame" x="16" y="629" width="343" height="30"/>
                                 <state key="normal" title="確認送出"/>
                                 <connections>
                                     <action selector="submitButtonClick:" destination="gqP-6G-K93" eventType="touchUpInside" id="YiD-Ew-Bw1"/>
@@ -197,13 +296,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="oPW-mq-8NF" firstAttribute="leading" secondItem="sql-IA-5ra" secondAttribute="leadingMargin" constant="24" id="1GA-kR-0XM"/>
                             <constraint firstItem="vgg-tX-uKU" firstAttribute="top" secondItem="N7P-9I-bg9" secondAttribute="bottom" constant="8" id="6iy-Ip-vTH"/>
                             <constraint firstItem="Ps5-uM-avE" firstAttribute="leading" secondItem="sql-IA-5ra" secondAttribute="leadingMargin" id="C5l-Ii-ils"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vgg-tX-uKU" secondAttribute="trailing" id="EkE-k9-vND"/>
                             <constraint firstItem="pmF-pC-aza" firstAttribute="top" secondItem="vgg-tX-uKU" secondAttribute="bottom" constant="13.5" id="JnW-hy-56t"/>
+                            <constraint firstItem="oPW-mq-8NF" firstAttribute="top" secondItem="Vbq-8j-XiA" secondAttribute="bottom" constant="8" id="Rp8-Co-Sqk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="N7P-9I-bg9" secondAttribute="trailing" id="X35-zc-eyR"/>
-                            <constraint firstItem="N7P-9I-bg9" firstAttribute="top" secondItem="Vbq-8j-XiA" secondAttribute="bottom" constant="15" id="doC-lI-qEh"/>
+                            <constraint firstItem="N7P-9I-bg9" firstAttribute="top" secondItem="Vbq-8j-XiA" secondAttribute="bottom" constant="60" id="doC-lI-qEh"/>
                             <constraint firstItem="N7P-9I-bg9" firstAttribute="leading" secondItem="sql-IA-5ra" secondAttribute="leadingMargin" id="g1H-j1-KUv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oPW-mq-8NF" secondAttribute="trailing" constant="24" id="njr-1S-I69"/>
                             <constraint firstAttribute="trailing" secondItem="pmF-pC-aza" secondAttribute="trailing" id="qqN-p7-H0c"/>
                             <constraint firstItem="2I9-gK-ZbA" firstAttribute="top" secondItem="Ps5-uM-avE" secondAttribute="bottom" constant="8" id="rx7-V7-4Fj"/>
                             <constraint firstItem="Ps5-uM-avE" firstAttribute="trailing" secondItem="sql-IA-5ra" secondAttribute="trailingMargin" id="u6A-ff-Eg7"/>
@@ -212,7 +314,7 @@
                             <constraint firstItem="vgg-tX-uKU" firstAttribute="leading" secondItem="sql-IA-5ra" secondAttribute="leadingMargin" id="yeT-P3-fMv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="新增回收單" id="zXL-W2-T55">
+                    <navigationItem key="navigationItem" title="Recycling" id="zXL-W2-T55">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="kaO-hX-fyU">
                             <connections>
                                 <segue destination="ac4-WA-1a7" kind="show" id="J6t-ax-UVt"/>
@@ -226,7 +328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mqr-T2-6Ad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1848.8" y="-6.746626686656672"/>
+            <point key="canvasLocation" x="2279" y="-667"/>
         </scene>
         <!--Form ItemVC-->
         <scene sceneID="mYc-pN-lJX">
@@ -246,6 +348,24 @@
             </objects>
             <point key="canvasLocation" x="2788" y="671.51424287856082"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="oqg-Uw-rkp">
+            <objects>
+                <viewController id="efg-HN-3XH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Atf-4G-fNn"/>
+                        <viewControllerLayoutGuide type="bottom" id="dZs-JM-lNa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W5p-kB-1wF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hzq-yW-9ud" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3015" y="-747"/>
+        </scene>
         <!--add cloth-->
         <scene sceneID="AdP-eq-zfc">
             <objects>
@@ -259,7 +379,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LjZ-Mh-Dht">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v3S-Pd-cNg">
                                     <size key="itemSize" width="161" height="161"/>
@@ -330,7 +450,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hG2-Se-Wgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Qij-cN-pfX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2781.5999999999999" y="-85.007496251874073"/>
+            <point key="canvasLocation" x="3180" y="-84"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Rfg-AZ-6wr">

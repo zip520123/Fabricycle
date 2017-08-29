@@ -11,7 +11,7 @@ import MBProgressHUD
 import Alamofire
 import SwiftyJSON
 
-class AddNewFormVC: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate{
+class AddNewFormVC: UIViewController {
     static var apiKey = ""
     static let apiURL = "https://vision.googleapis.com/v1/images:annotate?key=\(apiKey)"
     var clothList = [Cloth]()
@@ -81,14 +81,7 @@ class AddNewFormVC: UIViewController , UIImagePickerControllerDelegate , UINavig
 //        }
     }
  
-    @IBAction func takePicture(_ sender: Any) {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.sourceType = .camera
-        picker.cameraCaptureMode = .photo
-        picker.cameraOverlayView = UIImageView(image:#imageLiteral(resourceName: "cut-2"))
-        present(picker, animated: true)
-    }
+
     
 
     @IBAction func getClothFromNewCloth(segue : UIStoryboardSegue){

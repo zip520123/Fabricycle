@@ -21,6 +21,10 @@
 		E7DEED681F53CF2300D15022 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7DEED661F53CF2300D15022 /* GoogleService-Info.plist */; };
 		E7DEED6A1F53E22A00D15022 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED691F53E22A00D15022 /* ProfileVC.swift */; };
 		E7DEED6C1F53E37200D15022 /* FabricycleTabBarC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED6B1F53E37200D15022 /* FabricycleTabBarC.swift */; };
+		E7DEED711F554F1300D15022 /* AddNewRecycleNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED701F554F1300D15022 /* AddNewRecycleNumber.swift */; };
+		E7DEED731F55507A00D15022 /* RecycleClothNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED721F55507A00D15022 /* RecycleClothNumberCell.swift */; };
+		E7DEED771F55523200D15022 /* AddNewSellClothCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED761F55523200D15022 /* AddNewSellClothCell.swift */; };
+		E7DEED791F55526900D15022 /* SingleClothCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED781F55526900D15022 /* SingleClothCell.swift */; };
 		E7E154891F481DF7001D5929 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E154881F481DF7001D5929 /* AppDelegate.swift */; };
 		E7E1548E1F481DF7001D5929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E1548C1F481DF7001D5929 /* Main.storyboard */; };
 		E7E154901F481DF7001D5929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7E1548F1F481DF7001D5929 /* Assets.xcassets */; };
@@ -67,6 +71,10 @@
 		E7DEED661F53CF2300D15022 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7DEED691F53E22A00D15022 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		E7DEED6B1F53E37200D15022 /* FabricycleTabBarC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FabricycleTabBarC.swift; sourceTree = "<group>"; };
+		E7DEED701F554F1300D15022 /* AddNewRecycleNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewRecycleNumber.swift; sourceTree = "<group>"; };
+		E7DEED721F55507A00D15022 /* RecycleClothNumberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecycleClothNumberCell.swift; sourceTree = "<group>"; };
+		E7DEED761F55523200D15022 /* AddNewSellClothCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewSellClothCell.swift; sourceTree = "<group>"; };
+		E7DEED781F55526900D15022 /* SingleClothCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleClothCell.swift; sourceTree = "<group>"; };
 		E7E154851F481DF7001D5929 /* Fabricycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fabricycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E154881F481DF7001D5929 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7E1548D1F481DF7001D5929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,8 +128,12 @@
 		E70C1BF91F499E89005EAEA2 /* New Form flow */ = {
 			isa = PBXGroup;
 			children = (
+				E7DEED701F554F1300D15022 /* AddNewRecycleNumber.swift */,
 				E7E1549C1F487022001D5929 /* AddNewFormVC.swift */,
 				E70C1BFB1F49A119005EAEA2 /* AddNewClothVC.swift */,
+				E7DEED721F55507A00D15022 /* RecycleClothNumberCell.swift */,
+				E7DEED761F55523200D15022 /* AddNewSellClothCell.swift */,
+				E7DEED781F55526900D15022 /* SingleClothCell.swift */,
 			);
 			name = "New Form flow";
 			sourceTree = "<group>";
@@ -497,12 +509,16 @@
 				E70C1C001F49A2DC005EAEA2 /* Cloth.swift in Sources */,
 				E7DEED6A1F53E22A00D15022 /* ProfileVC.swift in Sources */,
 				E7E154AC1F4883F3001D5929 /* AddNewFormCell.swift in Sources */,
+				E7DEED791F55526900D15022 /* SingleClothCell.swift in Sources */,
 				E7E1549B1F486E53001D5929 /* MainPageVC.swift in Sources */,
 				E73B283B1F4D1D01007135A6 /* FormItemVC.swift in Sources */,
 				E7E1549D1F487022001D5929 /* AddNewFormVC.swift in Sources */,
+				E7DEED711F554F1300D15022 /* AddNewRecycleNumber.swift in Sources */,
 				E70C1BFC1F49A119005EAEA2 /* AddNewClothVC.swift in Sources */,
+				E7DEED771F55523200D15022 /* AddNewSellClothCell.swift in Sources */,
 				E7E154AA1F487ED7001D5929 /* ClothObject.swift in Sources */,
 				E7E1549F1F4871B4001D5929 /* LoginViewController.swift in Sources */,
+				E7DEED731F55507A00D15022 /* RecycleClothNumberCell.swift in Sources */,
 				E70C1BFE1F49A16F005EAEA2 /* ClothCollectionCell.swift in Sources */,
 				E7E154891F481DF7001D5929 /* AppDelegate.swift in Sources */,
 				E7E154B01F492A5D001D5929 /* FormObject.swift in Sources */,

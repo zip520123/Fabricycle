@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddNewClothVC: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate{
+class AddNewClothVC: UIViewController , UIImagePickerControllerDelegate {
 
     var cloth : Cloth!
     @IBOutlet weak var collectionView: UICollectionView!
