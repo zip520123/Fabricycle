@@ -13,6 +13,7 @@ class AddNewClothVC: UIViewController , UIImagePickerControllerDelegate {
     var cloth : Cloth!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     
     @IBAction func cameraButtonClick(_ sender: Any) {
         let picker = UIImagePickerController()

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C7D2E054863877951450113D /* Pods_Fabricycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BC6AE33507A5C546930D01 /* Pods_Fabricycle.framework */; };
+		D5BB75AB1F55939700CC635D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BB75AA1F55939700CC635D /* Bolts.framework */; };
 		E70C1BFC1F49A119005EAEA2 /* AddNewClothVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFB1F49A119005EAEA2 /* AddNewClothVC.swift */; };
 		E70C1BFE1F49A16F005EAEA2 /* ClothCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFD1F49A16F005EAEA2 /* ClothCollectionCell.swift */; };
 		E70C1C001F49A2DC005EAEA2 /* Cloth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFF1F49A2DC005EAEA2 /* Cloth.swift */; };
@@ -56,6 +57,7 @@
 		C135058DDCA13435544E294A /* Pods-Fabricycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fabricycle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fabricycle/Pods-Fabricycle.release.xcconfig"; sourceTree = "<group>"; };
 		C3BC8A9A9F9B95B3C60C1E59 /* Pods-Fabricycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fabricycle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fabricycle/Pods-Fabricycle.debug.xcconfig"; sourceTree = "<group>"; };
 		C6E209BA981C2D14D8AD7329 /* Pods_FabricycleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FabricycleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5BB75AA1F55939700CC635D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E70C1BFB1F49A119005EAEA2 /* AddNewClothVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewClothVC.swift; sourceTree = "<group>"; };
 		E70C1BFD1F49A16F005EAEA2 /* ClothCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothCollectionCell.swift; sourceTree = "<group>"; };
 		E70C1BFF1F49A2DC005EAEA2 /* Cloth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloth.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				C7D2E054863877951450113D /* Pods_Fabricycle.framework in Frameworks */,
 				E7DEED631F53C47000D15022 /* FBSDKCoreKit.framework in Frameworks */,
 				E7DEED641F53C47100D15022 /* FBSDKLoginKit.framework in Frameworks */,
+				D5BB75AB1F55939700CC635D /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +120,7 @@
 		19A82D9FD4ADF7C337B44725 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D5BB75AA1F55939700CC635D /* Bolts.framework */,
 				E7DEED611F53C47000D15022 /* FBSDKCoreKit.framework */,
 				E7DEED621F53C47000D15022 /* FBSDKLoginKit.framework */,
 				28BC6AE33507A5C546930D01 /* Pods_Fabricycle.framework */,

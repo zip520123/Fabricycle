@@ -7,12 +7,19 @@
 //
 
 import UIKit
-
+import Material
 class AddNewSellClothCell: UITableViewCell {
 
+    @IBOutlet weak var numberLabel: UILabel!
+    
+    @IBOutlet weak var selledLabel: UILabel!
+    
+    @IBOutlet weak var cameraImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        cameraImageView.image = Icon.cm.photoCamera?.tint(with: Color.grey.darken3)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
