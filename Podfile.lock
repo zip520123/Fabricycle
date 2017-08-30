@@ -39,6 +39,7 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.8)
+  - IQKeyboardManagerSwift (4.0.10)
   - Material (2.5.2):
     - Material/Core (= 2.5.2)
   - Material/Core (2.5.2)
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - IQKeyboardManagerSwift (= 4.0.10)
   - Material (~> 2.0)
   - MBProgressHUD (~> 1.0.0)
   - SDWebImage (~> 4.0)
@@ -70,11 +72,12 @@ SPEC CHECKSUMS:
   FirebaseStorage: a5c55b23741a49a72af8f30f95b3bb5ddbeda12d
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
+  IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
   Material: 00ae261fa04dd3f3f8584d07e44ac658fa1bc6fd
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 5db5f232e37f4e1aa5fa14a3c88246b58f93e92e
+PODFILE CHECKSUM: 16ce1933c66d13237da73b152e1745ea24cab4f3
 
 COCOAPODS: 1.3.1

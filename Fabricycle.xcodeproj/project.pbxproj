@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19DB4B7B5F24B9FA69C59896 /* libPods-FabricycleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5631D96E52D2983C22BD6C7 /* libPods-FabricycleTests.a */; };
 		C7D2E054863877951450113D /* Pods_Fabricycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BC6AE33507A5C546930D01 /* Pods_Fabricycle.framework */; };
 		D5BB75AB1F55939700CC635D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BB75AA1F55939700CC635D /* Bolts.framework */; };
 		E70C1BFC1F49A119005EAEA2 /* AddNewClothVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFB1F49A119005EAEA2 /* AddNewClothVC.swift */; };
@@ -26,6 +27,7 @@
 		E7DEED731F55507A00D15022 /* RecycleClothNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED721F55507A00D15022 /* RecycleClothNumberCell.swift */; };
 		E7DEED771F55523200D15022 /* AddNewSellClothCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED761F55523200D15022 /* AddNewSellClothCell.swift */; };
 		E7DEED791F55526900D15022 /* SingleClothCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED781F55526900D15022 /* SingleClothCell.swift */; };
+		E7DEED7B1F56A66E00D15022 /* SetRecycleClothNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED7A1F56A66E00D15022 /* SetRecycleClothNumberVC.swift */; };
 		E7E154891F481DF7001D5929 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E154881F481DF7001D5929 /* AppDelegate.swift */; };
 		E7E1548E1F481DF7001D5929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E1548C1F481DF7001D5929 /* Main.storyboard */; };
 		E7E154901F481DF7001D5929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7E1548F1F481DF7001D5929 /* Assets.xcassets */; };
@@ -37,7 +39,6 @@
 		E7E154AC1F4883F3001D5929 /* AddNewFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E154AB1F4883F3001D5929 /* AddNewFormCell.swift */; };
 		E7E154AE1F4929EC001D5929 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E154AD1F4929EC001D5929 /* User.swift */; };
 		E7E154B01F492A5D001D5929 /* FormObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E154AF1F492A5D001D5929 /* FormObject.swift */; };
-		EEC00256D3A2E70059FF8652 /* Pods_FabricycleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E209BA981C2D14D8AD7329 /* Pods_FabricycleTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +55,9 @@
 		28BC6AE33507A5C546930D01 /* Pods_Fabricycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fabricycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39CBDBBA368A2E4622374824 /* Pods-FabricycleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FabricycleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FabricycleTests/Pods-FabricycleTests.release.xcconfig"; sourceTree = "<group>"; };
 		6FF4E2BC47CCDB3539DB09CD /* Pods-FabricycleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FabricycleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FabricycleTests/Pods-FabricycleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B5631D96E52D2983C22BD6C7 /* libPods-FabricycleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FabricycleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C135058DDCA13435544E294A /* Pods-Fabricycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fabricycle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fabricycle/Pods-Fabricycle.release.xcconfig"; sourceTree = "<group>"; };
 		C3BC8A9A9F9B95B3C60C1E59 /* Pods-Fabricycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fabricycle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fabricycle/Pods-Fabricycle.debug.xcconfig"; sourceTree = "<group>"; };
-		C6E209BA981C2D14D8AD7329 /* Pods_FabricycleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FabricycleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5BB75AA1F55939700CC635D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E70C1BFB1F49A119005EAEA2 /* AddNewClothVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewClothVC.swift; sourceTree = "<group>"; };
 		E70C1BFD1F49A16F005EAEA2 /* ClothCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothCollectionCell.swift; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 		E7DEED721F55507A00D15022 /* RecycleClothNumberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecycleClothNumberCell.swift; sourceTree = "<group>"; };
 		E7DEED761F55523200D15022 /* AddNewSellClothCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewSellClothCell.swift; sourceTree = "<group>"; };
 		E7DEED781F55526900D15022 /* SingleClothCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleClothCell.swift; sourceTree = "<group>"; };
+		E7DEED7A1F56A66E00D15022 /* SetRecycleClothNumberVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetRecycleClothNumberVC.swift; sourceTree = "<group>"; };
 		E7E154851F481DF7001D5929 /* Fabricycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fabricycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E154881F481DF7001D5929 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7E1548D1F481DF7001D5929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,7 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEC00256D3A2E70059FF8652 /* Pods_FabricycleTests.framework in Frameworks */,
+				19DB4B7B5F24B9FA69C59896 /* libPods-FabricycleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +126,7 @@
 				E7DEED611F53C47000D15022 /* FBSDKCoreKit.framework */,
 				E7DEED621F53C47000D15022 /* FBSDKLoginKit.framework */,
 				28BC6AE33507A5C546930D01 /* Pods_Fabricycle.framework */,
-				C6E209BA981C2D14D8AD7329 /* Pods_FabricycleTests.framework */,
+				B5631D96E52D2983C22BD6C7 /* libPods-FabricycleTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -138,6 +140,7 @@
 				E7DEED721F55507A00D15022 /* RecycleClothNumberCell.swift */,
 				E7DEED761F55523200D15022 /* AddNewSellClothCell.swift */,
 				E7DEED781F55526900D15022 /* SingleClothCell.swift */,
+				E7DEED7A1F56A66E00D15022 /* SetRecycleClothNumberVC.swift */,
 			);
 			name = "New Form flow";
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS10.3/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS10.3/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-iOS10.3/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift-iOS10.3/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD-iOS10.3/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Material-iOS10.3/Material.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage-iOS10.3/SDWebImage.framework",
@@ -392,6 +396,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -424,19 +429,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Fabricycle/Pods-Fabricycle-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS10.0/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS10.0/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-iOS10.0/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD-iOS10.0/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/Material-iOS10.0/Material.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage-iOS10.0/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS10.0/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -520,6 +527,7 @@
 				E7DEED711F554F1300D15022 /* AddNewRecycleNumber.swift in Sources */,
 				E70C1BFC1F49A119005EAEA2 /* AddNewClothVC.swift in Sources */,
 				E7DEED771F55523200D15022 /* AddNewSellClothCell.swift in Sources */,
+				E7DEED7B1F56A66E00D15022 /* SetRecycleClothNumberVC.swift in Sources */,
 				E7E154AA1F487ED7001D5929 /* ClothObject.swift in Sources */,
 				E7E1549F1F4871B4001D5929 /* LoginViewController.swift in Sources */,
 				E7DEED731F55507A00D15022 /* RecycleClothNumberCell.swift in Sources */,

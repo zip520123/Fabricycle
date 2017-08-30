@@ -100,25 +100,6 @@ strip_invalid_archs() {
   fi
 }
 
-
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-iOS10.3/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS10.3/GTMSessionFetcher.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-iOS10.3/GoogleToolboxForMac.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD-iOS10.3/MBProgressHUD.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Material-iOS10.3/Material.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage-iOS10.3/SDWebImage.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS10.3/SwiftyJSON.framework"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-iOS10.3/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS10.3/GTMSessionFetcher.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-iOS10.3/GoogleToolboxForMac.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD-iOS10.3/MBProgressHUD.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Material-iOS10.3/Material.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage-iOS10.3/SDWebImage.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS10.3/SwiftyJSON.framework"
-fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
 fi

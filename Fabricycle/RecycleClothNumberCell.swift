@@ -7,12 +7,15 @@
 //
 
 import UIKit
-
+import Material
 class RecycleClothNumberCell: UITableViewCell {
 
+    @IBOutlet weak var recycleNumberLabel: UILabel!
+    
+    @IBOutlet weak var rightArrowImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        rightArrowImageView.image = Icon.cm.arrowBack?.tint(with: Color.grey.darken4)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

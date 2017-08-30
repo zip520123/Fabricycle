@@ -11,6 +11,7 @@ import UIKit
 class AddNewRecycleNumber: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var clothList = [Cloth]()
+    var recycleClothNumber = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -19,7 +20,10 @@ class AddNewRecycleNumber: UIViewController {
 
     }
     @IBAction func getRecycleNumber(segue : UIStoryboardSegue){
-    
+        if let setRecycleNumberVC = segue.source as? SetRecycleClothNumberVC {
+            recycleClothNumber = setRecycleNumberVC.selectInt
+            tableView.reloadData()
+        }
     }
     @IBAction func getSellCloth(segue : UIStoryboardSegue){
         if let addNewClothVC = segue.source as? AddNewClothVC {
@@ -41,9 +45,11 @@ extension AddNewRecycleNumber : UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "RecycleClothNumberCell")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RecycleClothNumberCell") as! RecycleClothNumberCell
             
-            return cell!
+            cell.recycleNumberLabel.text = String(format : "%02d",self.recycleClothNumber)
+            
+            return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddNewSellClothCell")
             

@@ -102,22 +102,24 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-iOS10.0/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS10.0/GTMSessionFetcher.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-iOS10.0/GoogleToolboxForMac.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD-iOS10.0/MBProgressHUD.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Material-iOS10.0/Material.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage-iOS10.0/SDWebImage.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS10.0/SwiftyJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Material/Material.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-iOS10.0/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS10.0/GTMSessionFetcher.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-iOS10.0/GoogleToolboxForMac.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD-iOS10.0/MBProgressHUD.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Material-iOS10.0/Material.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage-iOS10.0/SDWebImage.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS10.0/SwiftyJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Material/Material.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
