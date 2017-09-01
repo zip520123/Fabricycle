@@ -17,7 +17,7 @@ class AddNewRecycleNumber: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 220
-
+        
     }
     @IBAction func getRecycleNumber(segue : UIStoryboardSegue){
         if let setRecycleNumberVC = segue.source as? SetRecycleClothNumberVC {
@@ -34,11 +34,14 @@ class AddNewRecycleNumber: UIViewController {
             
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
 }
 extension AddNewRecycleNumber : UITableViewDelegate, UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 2 + clothList.count
     }
     
     
@@ -51,13 +54,15 @@ extension AddNewRecycleNumber : UITableViewDelegate, UITableViewDataSource {
             
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AddNewSellClothCell")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AddNewSellClothCell") as! AddNewSellClothCell
+            cell.numberLabel.text = String(format : "%02d", clothList.count)
             
-            return cell!
+            return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SingleClothCell")
             
-            return cell!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SingleClothCell") as! SingleClothCell
+            
+            return cell
         }
 
     }

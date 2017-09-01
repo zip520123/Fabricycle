@@ -20,6 +20,7 @@ class AddNewSellClothCell: UITableViewCell {
         super.awakeFromNib()
         
         cameraImageView.image = Icon.cm.photoCamera?.tint(with: Color.grey.darken3)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

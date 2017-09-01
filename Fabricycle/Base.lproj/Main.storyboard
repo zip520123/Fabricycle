@@ -131,7 +131,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TOC-fE-ur7" id="QgD-8S-TEO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ynb-uF-3Ua">
@@ -182,7 +182,7 @@
                                         <rect key="frame" x="0.0" y="228" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AJG-ZK-Dgg" id="Qlw-0f-ywK">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T-Shirt 520 dollers" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thr-Wa-AXN">
@@ -206,7 +206,7 @@
                                         <rect key="frame" x="0.0" y="428" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xiw-Dy-QDR" id="kdj-Wo-mpl">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEk-mJ-nnG">
@@ -268,7 +268,7 @@
             </objects>
             <point key="canvasLocation" x="2066" y="145"/>
         </scene>
-        <!--Set Recycle Cloth NumberVC-->
+        <!--Recycle Number-->
         <scene sceneID="5Tc-3P-rBA">
             <objects>
                 <viewController id="LFw-or-Is2" customClass="SetRecycleClothNumberVC" customModule="Fabricycle" customModuleProvider="target" sceneMemberID="viewController">
@@ -315,6 +315,13 @@
                             <constraint firstItem="zpU-og-Xi3" firstAttribute="top" secondItem="i76-k0-j5x" secondAttribute="bottom" constant="8" id="zta-Fc-NMk"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Recycle Number" id="Y43-Vp-Xhi">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="MDh-Cq-2GM">
+                            <connections>
+                                <segue destination="8Qd-Wu-R17" kind="unwind" unwindAction="getRecycleNumberWithSegue:" id="4GI-HT-lpQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="clothNumberTextField" destination="gIp-O9-2U8" id="cDA-Yv-pbV"/>
                         <segue destination="8Qd-Wu-R17" kind="unwind" unwindAction="getRecycleNumberWithSegue:" id="mkC-yV-SoJ"/>
@@ -323,7 +330,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iaH-2j-RA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8Qd-Wu-R17" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2997.5999999999999" y="500.59970014992507"/>
+            <point key="canvasLocation" x="3100" y="546"/>
         </scene>
         <!--新增回收表單-->
         <scene sceneID="AGI-fZ-iir">
@@ -386,7 +393,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="147"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OBs-NT-hbp" id="umD-BQ-kQ0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="146"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="146.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d1b-3s-sFt">
