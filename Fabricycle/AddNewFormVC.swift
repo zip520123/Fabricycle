@@ -86,7 +86,7 @@ class AddNewFormVC: UIViewController {
 
     @IBAction func getClothFromNewCloth(segue : UIStoryboardSegue){
         if let addNewClothVC = segue.source as? AddNewClothVC {
-            if addNewClothVC.cloth.imageList.count != 0 {
+            if addNewClothVC.price != 0 {
                 clothList.append(addNewClothVC.cloth)
                 pointLabel.text = "\(clothList.count)"
                 self.tableView.reloadData()

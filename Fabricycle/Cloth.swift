@@ -16,12 +16,14 @@ class Cloth : NSObject{
     var imageListOnString = [String]()
     var uploadStats = false
     let userId : String
-    init(_ imageList: [UIImage] , userId : String) {
-        self.imageList = imageList
+    var price = 0
+    
+    override init() {
+        self.imageList = []
         self.imageListOnString = [String]()
         self.ref = nil
         self.uploadStats = false
-        self.userId = userId
+        self.userId = getUserId()!
     }
 //    init(snapshot: FIRDataSnapshot) {
 //        ref = snapshot.ref

@@ -12,12 +12,17 @@ class AddNewRecycleNumber: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var clothList = [Cloth]()
     var recycleClothNumber = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 220
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     @IBAction func getRecycleNumber(segue : UIStoryboardSegue){
         if let setRecycleNumberVC = segue.source as? SetRecycleClothNumberVC {
@@ -26,16 +31,20 @@ class AddNewRecycleNumber: UIViewController {
         }
     }
     @IBAction func getSellCloth(segue : UIStoryboardSegue){
-        if let addNewClothVC = segue.source as? AddNewClothVC {
-            
-            clothList.append(addNewClothVC.cloth)
-            
+        if let newSellClothVC = segue.source as? AddNewSellClothVC {
+            if clothList.index(of: newSellClothVC.cloth) == nil {
+                clothList.append(newSellClothVC.cloth)
+            }
+
             self.tableView.reloadData()
             
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "selectCloth" {
+            let addNewClothVC = segue.destination as! AddNewSellClothVC
+            addNewClothVC.cloth = sender as! Cloth
+        }
     }
 }
 extension AddNewRecycleNumber : UITableViewDelegate, UITableViewDataSource {
@@ -61,10 +70,31 @@ extension AddNewRecycleNumber : UITableViewDelegate, UITableViewDataSource {
         default:
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "SingleClothCell") as! SingleClothCell
-            
+            let cloth = clothList[indexPath.row - 2]
+            cell.clothImageView.image = cloth.imageList.first
+            cell.clothDescripLabel.text = "Price : \(cloth.price)"
             return cell
         }
 
+    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.row > 1{
+            return true
+        }else{
+            return false
+        }
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            clothList.remove(at: indexPath.row - 2)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row > 1 {
+            performSegue(withIdentifier: "selectCloth", sender: clothList[indexPath.row - 2])
+        }
     }
 
 }

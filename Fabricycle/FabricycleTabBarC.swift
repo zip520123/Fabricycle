@@ -7,28 +7,24 @@
 //
 
 import UIKit
-
+import Material
 class FabricycleTabBarC: UITabBarController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tabBar.tintColor = UIColor.white
+        tabBar.barTintColor = mainColor
         setUpBarImage()
     }
     
     func setUpBarImage(){
-        
+        let bottomIconList = [Icon.cm.menu!,Icon.cm.settings!]
+        for (index,item) in tabBar.items!.enumerated() {
+            item.image = bottomIconList[index]
+        }
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

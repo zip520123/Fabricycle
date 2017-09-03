@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		19DB4B7B5F24B9FA69C59896 /* libPods-FabricycleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5631D96E52D2983C22BD6C7 /* libPods-FabricycleTests.a */; };
 		C7D2E054863877951450113D /* Pods_Fabricycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BC6AE33507A5C546930D01 /* Pods_Fabricycle.framework */; };
+		D57091A91F5A9B43005B4067 /* AddNewSellClothVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091A81F5A9B43005B4067 /* AddNewSellClothVC.swift */; };
+		D57091AC1F5ABEA0005B4067 /* AddNewSellClothDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091AB1F5ABEA0005B4067 /* AddNewSellClothDescriptionCell.swift */; };
+		D57091AE1F5B91BE005B4067 /* FabricycleNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091AD1F5B91BE005B4067 /* FabricycleNC.swift */; };
+		D57091B31F5B9B82005B4067 /* SelectClothPriceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091B21F5B9B82005B4067 /* SelectClothPriceVC.swift */; };
+		D57091B51F5B9DCE005B4067 /* SelectPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091B41F5B9DCE005B4067 /* SelectPriceCell.swift */; };
 		D5BB75AB1F55939700CC635D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BB75AA1F55939700CC635D /* Bolts.framework */; };
 		E70C1BFC1F49A119005EAEA2 /* AddNewClothVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFB1F49A119005EAEA2 /* AddNewClothVC.swift */; };
 		E70C1BFE1F49A16F005EAEA2 /* ClothCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFD1F49A16F005EAEA2 /* ClothCollectionCell.swift */; };
@@ -58,6 +63,11 @@
 		B5631D96E52D2983C22BD6C7 /* libPods-FabricycleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FabricycleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C135058DDCA13435544E294A /* Pods-Fabricycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fabricycle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fabricycle/Pods-Fabricycle.release.xcconfig"; sourceTree = "<group>"; };
 		C3BC8A9A9F9B95B3C60C1E59 /* Pods-Fabricycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fabricycle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fabricycle/Pods-Fabricycle.debug.xcconfig"; sourceTree = "<group>"; };
+		D57091A81F5A9B43005B4067 /* AddNewSellClothVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewSellClothVC.swift; sourceTree = "<group>"; };
+		D57091AB1F5ABEA0005B4067 /* AddNewSellClothDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewSellClothDescriptionCell.swift; sourceTree = "<group>"; };
+		D57091AD1F5B91BE005B4067 /* FabricycleNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FabricycleNC.swift; sourceTree = "<group>"; };
+		D57091B21F5B9B82005B4067 /* SelectClothPriceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectClothPriceVC.swift; sourceTree = "<group>"; };
+		D57091B41F5B9DCE005B4067 /* SelectPriceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPriceCell.swift; sourceTree = "<group>"; };
 		D5BB75AA1F55939700CC635D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E70C1BFB1F49A119005EAEA2 /* AddNewClothVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewClothVC.swift; sourceTree = "<group>"; };
 		E70C1BFD1F49A16F005EAEA2 /* ClothCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothCollectionCell.swift; sourceTree = "<group>"; };
@@ -131,16 +141,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E70C1BF91F499E89005EAEA2 /* New Form flow */ = {
+		D57091AA1F5ABE62005B4067 /* new sell cloth */ = {
+			isa = PBXGroup;
+			children = (
+				D57091A81F5A9B43005B4067 /* AddNewSellClothVC.swift */,
+				D57091AB1F5ABEA0005B4067 /* AddNewSellClothDescriptionCell.swift */,
+				D57091B21F5B9B82005B4067 /* SelectClothPriceVC.swift */,
+				D57091B41F5B9DCE005B4067 /* SelectPriceCell.swift */,
+			);
+			name = "new sell cloth";
+			sourceTree = "<group>";
+		};
+		D57091AF1F5B927E005B4067 /* Temp */ = {
+			isa = PBXGroup;
+			children = (
+				D57091AD1F5B91BE005B4067 /* FabricycleNC.swift */,
+				E7DEED6B1F53E37200D15022 /* FabricycleTabBarC.swift */,
+			);
+			name = Temp;
+			sourceTree = "<group>";
+		};
+		D57091B61F5BAAC9005B4067 /* addNewForm */ = {
 			isa = PBXGroup;
 			children = (
 				E7DEED701F554F1300D15022 /* AddNewRecycleNumber.swift */,
+			);
+			name = addNewForm;
+			sourceTree = "<group>";
+		};
+		E70C1BF91F499E89005EAEA2 /* New Form flow */ = {
+			isa = PBXGroup;
+			children = (
+				D57091B61F5BAAC9005B4067 /* addNewForm */,
 				E7E1549C1F487022001D5929 /* AddNewFormVC.swift */,
 				E70C1BFB1F49A119005EAEA2 /* AddNewClothVC.swift */,
 				E7DEED721F55507A00D15022 /* RecycleClothNumberCell.swift */,
 				E7DEED761F55523200D15022 /* AddNewSellClothCell.swift */,
 				E7DEED781F55526900D15022 /* SingleClothCell.swift */,
 				E7DEED7A1F56A66E00D15022 /* SetRecycleClothNumberVC.swift */,
+				D57091AA1F5ABE62005B4067 /* new sell cloth */,
 			);
 			name = "New Form flow";
 			sourceTree = "<group>";
@@ -223,7 +262,7 @@
 				E70C1BF91F499E89005EAEA2 /* New Form flow */,
 				E70C1BFA1F499E92005EAEA2 /* support file */,
 				E7DEED691F53E22A00D15022 /* ProfileVC.swift */,
-				E7DEED6B1F53E37200D15022 /* FabricycleTabBarC.swift */,
+				D57091AF1F5B927E005B4067 /* Temp */,
 			);
 			path = Fabricycle;
 			sourceTree = "<group>";
@@ -517,9 +556,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7DEED601F4FFC7400D15022 /* Utilty.swift in Sources */,
+				D57091B31F5B9B82005B4067 /* SelectClothPriceVC.swift in Sources */,
 				E70C1C001F49A2DC005EAEA2 /* Cloth.swift in Sources */,
+				D57091B51F5B9DCE005B4067 /* SelectPriceCell.swift in Sources */,
 				E7DEED6A1F53E22A00D15022 /* ProfileVC.swift in Sources */,
 				E7E154AC1F4883F3001D5929 /* AddNewFormCell.swift in Sources */,
+				D57091AE1F5B91BE005B4067 /* FabricycleNC.swift in Sources */,
 				E7DEED791F55526900D15022 /* SingleClothCell.swift in Sources */,
 				E7E1549B1F486E53001D5929 /* MainPageVC.swift in Sources */,
 				E73B283B1F4D1D01007135A6 /* FormItemVC.swift in Sources */,
@@ -528,7 +570,9 @@
 				E70C1BFC1F49A119005EAEA2 /* AddNewClothVC.swift in Sources */,
 				E7DEED771F55523200D15022 /* AddNewSellClothCell.swift in Sources */,
 				E7DEED7B1F56A66E00D15022 /* SetRecycleClothNumberVC.swift in Sources */,
+				D57091A91F5A9B43005B4067 /* AddNewSellClothVC.swift in Sources */,
 				E7E154AA1F487ED7001D5929 /* ClothObject.swift in Sources */,
+				D57091AC1F5ABEA0005B4067 /* AddNewSellClothDescriptionCell.swift in Sources */,
 				E7E1549F1F4871B4001D5929 /* LoginViewController.swift in Sources */,
 				E7DEED731F55507A00D15022 /* RecycleClothNumberCell.swift in Sources */,
 				E70C1BFE1F49A16F005EAEA2 /* ClothCollectionCell.swift in Sources */,

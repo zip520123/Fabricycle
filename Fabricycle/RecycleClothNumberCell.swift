@@ -15,7 +15,11 @@ class RecycleClothNumberCell: UITableViewCell {
     @IBOutlet weak var rightArrowImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        rightArrowImageView.image = Icon.cm.arrowBack?.tint(with: Color.grey.darken4)
+        let icon = Icon.cm.arrowBack!.tint(with: Color.grey.darken4)!
+//        let image = UIImage(cgImage: icon.cgImage!, scale: 1.0, orientation: UIImageOrientation.up)
+        
+        rightArrowImageView.image = icon
+        rightArrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat( Double.pi / 180 * 180));
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -1,21 +1,19 @@
 //
-//  SingleClothCell.swift
+//  SelectPriceCell.swift
 //  Fabricycle
 //
-//  Created by zip520123 on 2017/8/29.
+//  Created by Slin on 2017/9/3.
 //  Copyright © 2017年 zip520123. All rights reserved.
 //
 
 import UIKit
 
-class SingleClothCell: UITableViewCell {
+class SelectPriceCell: UITableViewCell {
 
-    @IBOutlet weak var clothImageView: UIImageView!
-
-    @IBOutlet weak var clothDescripLabel: UILabel!
+    @IBOutlet weak var priceFileld: UITextField!
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

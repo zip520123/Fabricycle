@@ -24,12 +24,10 @@ import UIKit
 import Firebase
 import FBSDKLoginKit
 import Material
+import MBProgressHUD
 class LoginViewController: UIViewController ,FBSDKLoginButtonDelegate{
     
-    
-    
-    
-    
+
     // MARK: Constants
     let loginToList = "LoginToList"
     
@@ -41,8 +39,18 @@ class LoginViewController: UIViewController ,FBSDKLoginButtonDelegate{
     
     // MARK: Actions
     @IBAction func loginDidTouch(_ sender: AnyObject) {
-        FIRAuth.auth()!.signIn(withEmail: textFieldLoginEmail.text!,
-                               password: textFieldLoginPassword.text!)
+        let hud = MBProgressHUD.showAdded(to: view, animated: true)
+        
+        FIRAuth.auth()?.signIn(withEmail: textFieldLoginEmail.text!, password: textFieldLoginPassword.text!, completion: { (firUser, error) in
+            hud.hide(animated: true)
+            if error != nil {
+                
+                UIAlertController.showErrorMsg(errorMsg: error!.localizedDescription)
+                
+            }
+        })
+        
+        
     }
     
     @IBAction func signUpDidTouch(_ sender: AnyObject) {
@@ -94,7 +102,7 @@ class LoginViewController: UIViewController ,FBSDKLoginButtonDelegate{
                 self.performSegue(withIdentifier: self.loginToList, sender: nil)
             }
         }
-        
+        view.backgroundColor = mainColor
         setUpFBbutton()
     }
     func setUpFBbutton(){
