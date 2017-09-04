@@ -16,25 +16,22 @@ class SetRecycleClothNumberVC: UIViewController {
         super.viewDidLoad()
 
         clothNumberTextField.delegate = self
+        clothNumberTextField.addTarget(self, action: #selector(self.setSelectInt(textField:)), for: .editingChanged)
+    }
+    func setSelectInt(textField : UITextField){
+        if let text = textField.text ,  let inputNumber = Int(text) {
+            self.selectInt = inputNumber
+        }
     }
 
   
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        clothNumberTextField.becomeFirstResponder()
     }
-    */
-
 }
 extension SetRecycleClothNumberVC : UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if let text = textField.text ,  let inputNumber = Int(text) {
-            self.selectInt = inputNumber
-        }
+
     }
 }

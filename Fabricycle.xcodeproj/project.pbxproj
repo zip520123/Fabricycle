@@ -14,6 +14,9 @@
 		D57091AE1F5B91BE005B4067 /* FabricycleNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091AD1F5B91BE005B4067 /* FabricycleNC.swift */; };
 		D57091B31F5B9B82005B4067 /* SelectClothPriceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091B21F5B9B82005B4067 /* SelectClothPriceVC.swift */; };
 		D57091B51F5B9DCE005B4067 /* SelectPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091B41F5B9DCE005B4067 /* SelectPriceCell.swift */; };
+		D57091B81F5BACA1005B4067 /* DeliverInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091B71F5BACA1005B4067 /* DeliverInfoVC.swift */; };
+		D57091BA1F5BAE36005B4067 /* DelliverinfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091B91F5BAE36005B4067 /* DelliverinfoCell.swift */; };
+		D57091BC1F5BAF4B005B4067 /* DeiliverinfoCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091BB1F5BAF4B005B4067 /* DeiliverinfoCell2.swift */; };
 		D5BB75AB1F55939700CC635D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BB75AA1F55939700CC635D /* Bolts.framework */; };
 		E70C1BFC1F49A119005EAEA2 /* AddNewClothVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFB1F49A119005EAEA2 /* AddNewClothVC.swift */; };
 		E70C1BFE1F49A16F005EAEA2 /* ClothCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFD1F49A16F005EAEA2 /* ClothCollectionCell.swift */; };
@@ -68,6 +71,9 @@
 		D57091AD1F5B91BE005B4067 /* FabricycleNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FabricycleNC.swift; sourceTree = "<group>"; };
 		D57091B21F5B9B82005B4067 /* SelectClothPriceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectClothPriceVC.swift; sourceTree = "<group>"; };
 		D57091B41F5B9DCE005B4067 /* SelectPriceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPriceCell.swift; sourceTree = "<group>"; };
+		D57091B71F5BACA1005B4067 /* DeliverInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliverInfoVC.swift; sourceTree = "<group>"; };
+		D57091B91F5BAE36005B4067 /* DelliverinfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelliverinfoCell.swift; sourceTree = "<group>"; };
+		D57091BB1F5BAF4B005B4067 /* DeiliverinfoCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeiliverinfoCell2.swift; sourceTree = "<group>"; };
 		D5BB75AA1F55939700CC635D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E70C1BFB1F49A119005EAEA2 /* AddNewClothVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewClothVC.swift; sourceTree = "<group>"; };
 		E70C1BFD1F49A16F005EAEA2 /* ClothCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothCollectionCell.swift; sourceTree = "<group>"; };
@@ -165,6 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				E7DEED701F554F1300D15022 /* AddNewRecycleNumber.swift */,
+				D57091B71F5BACA1005B4067 /* DeliverInfoVC.swift */,
+				D57091B91F5BAE36005B4067 /* DelliverinfoCell.swift */,
+				D57091BB1F5BAF4B005B4067 /* DeiliverinfoCell2.swift */,
 			);
 			name = addNewForm;
 			sourceTree = "<group>";
@@ -567,6 +576,7 @@
 				E73B283B1F4D1D01007135A6 /* FormItemVC.swift in Sources */,
 				E7E1549D1F487022001D5929 /* AddNewFormVC.swift in Sources */,
 				E7DEED711F554F1300D15022 /* AddNewRecycleNumber.swift in Sources */,
+				D57091BA1F5BAE36005B4067 /* DelliverinfoCell.swift in Sources */,
 				E70C1BFC1F49A119005EAEA2 /* AddNewClothVC.swift in Sources */,
 				E7DEED771F55523200D15022 /* AddNewSellClothCell.swift in Sources */,
 				E7DEED7B1F56A66E00D15022 /* SetRecycleClothNumberVC.swift in Sources */,
@@ -574,9 +584,11 @@
 				E7E154AA1F487ED7001D5929 /* ClothObject.swift in Sources */,
 				D57091AC1F5ABEA0005B4067 /* AddNewSellClothDescriptionCell.swift in Sources */,
 				E7E1549F1F4871B4001D5929 /* LoginViewController.swift in Sources */,
+				D57091BC1F5BAF4B005B4067 /* DeiliverinfoCell2.swift in Sources */,
 				E7DEED731F55507A00D15022 /* RecycleClothNumberCell.swift in Sources */,
 				E70C1BFE1F49A16F005EAEA2 /* ClothCollectionCell.swift in Sources */,
 				E7E154891F481DF7001D5929 /* AppDelegate.swift in Sources */,
+				D57091B81F5BACA1005B4067 /* DeliverInfoVC.swift in Sources */,
 				E7E154B01F492A5D001D5929 /* FormObject.swift in Sources */,
 				E7DEED6C1F53E37200D15022 /* FabricycleTabBarC.swift in Sources */,
 				E7E154AE1F4929EC001D5929 /* User.swift in Sources */,
@@ -760,6 +772,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Fabricycle/Fabricycle-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
 			};
 			name = Debug;
 		};
@@ -781,6 +794,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Fabricycle/Fabricycle-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
 			};
 			name = Release;
 		};

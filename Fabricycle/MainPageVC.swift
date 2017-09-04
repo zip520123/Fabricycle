@@ -12,7 +12,8 @@ class MainPageVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var uid : String!
 
-    var jsonForms = [JSON]()
+//    var jsonForms = [JSON]()
+    var formList : [FormObject] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         uid = getUserId()!
@@ -21,21 +22,28 @@ class MainPageVC: UIViewController {
     func setUpTableView(){
         tableView.delegate = self
         tableView.dataSource = self
-        let formItemsRef = FIRDatabase.database().reference(withPath: "ID/\(self.uid)/FormItems")
+        let formItemsRef = FIRDatabase.database().reference(withPath: "ID/\(getUserId()!)/FormItems")
         formItemsRef.observe(.value, with: { (snapshot) in
+
             let json = JSON(snapshot.value)
             print(json.description)
-            var tempJSON = [JSON]()
-            for (_,value) in json.dictionaryValue {
-                tempJSON.append(value)
+            var formObjectList : [FormObject] = []
+            for (key,value) in json.dictionaryValue {
+                let formObject = FormObject(json: value , id: key)
+                formObjectList.append(formObject)
+                
             }
-//            self.displayString = tempString
-            self.jsonForms = tempJSON
+            self.formList = formObjectList
+            
             self.tableView.reloadData()
         })
         
     }
-    
+    @IBAction func getNewForm(segue : UIStoryboardSegue){
+        if segue.source.isKind(of: DeliverInfoVC.classForCoder()){
+            
+        }
+    }
     @IBAction func logoutClick(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -56,18 +64,18 @@ class MainPageVC: UIViewController {
 }
 extension MainPageVC : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return jsonForms.count
+        return formList.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "mainPageCell", for: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainPageCell")
-        let formItem = jsonForms[indexPath.row].dictionaryValue
-        for (key , value) in formItem {
-            cell?.textLabel?.text = key
-            cell?.detailTextLabel?.text = value.stringValue
-        }
+        let formItem = formList[indexPath.row]
+//        for (key , value) in formItem {
+            cell?.textLabel?.text = formItem.uid
+            cell?.detailTextLabel?.text = formItem.status.rawValue
+//        }
 //        let text = clothJson.arrayValue.first!.stringValue
 //        cell?.textLabel?.text = text
 //        let cloth = clothList[indexPath.row]
@@ -80,8 +88,8 @@ extension MainPageVC : UITableViewDelegate , UITableViewDataSource {
         
         
         
-        let formItem = jsonForms[indexPath.row]
-        performSegue(withIdentifier: "showFormItem", sender: formItem)
+//        let formItem = jsonForms[indexPath.row]
+//        performSegue(withIdentifier: "showFormItem", sender: formItem)
         
 //        // 1
 //        guard let cell = tableView.cellForRow(at: indexPath) else { return }

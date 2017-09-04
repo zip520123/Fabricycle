@@ -7,12 +7,12 @@
 //
 
 import UIKit
-
+import SwiftyJSON
 class AddNewRecycleNumber: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var clothList = [Cloth]()
     var recycleClothNumber = 0
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -45,6 +45,16 @@ class AddNewRecycleNumber: UIViewController {
             let addNewClothVC = segue.destination as! AddNewSellClothVC
             addNewClothVC.cloth = sender as! Cloth
         }
+        if segue.identifier == "deliverInfo"{
+            let deVC = segue.destination as! DeliverInfoVC
+            
+            var formObject = FormObject(clothList: clothList)
+            formObject.recycleClothNumber = self.recycleClothNumber
+            
+            deVC.formObejct = formObject
+            
+        }
+        
     }
 }
 extension AddNewRecycleNumber : UITableViewDelegate, UITableViewDataSource {

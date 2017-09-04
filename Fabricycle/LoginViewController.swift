@@ -116,8 +116,8 @@ class LoginViewController: UIViewController ,FBSDKLoginButtonDelegate{
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
 
         if let error = error {
-            let alert = UIAlertController(title: "error", message: error.localizedDescription, preferredStyle: .alert)
-            self.present(alert, animated: true, completion : nil)
+            UIAlertController.showErrorMsg(errorMsg: error.localizedDescription)
+            
             print(error.localizedDescription)
             return
         }
@@ -128,13 +128,13 @@ class LoginViewController: UIViewController ,FBSDKLoginButtonDelegate{
                 if error != nil {
                     return
                 }else{
-                    let alert = UIAlertController(title: "error", message: error!.localizedDescription, preferredStyle: .alert)
-                    self.present(alert, animated: true, completion : nil)
+                    UIAlertController.showErrorMsg(errorMsg: error!.localizedDescription)
+                    
                 }
             })
         }else{
-            let alert = UIAlertController(title: "error", message: "FB access token nil", preferredStyle: .alert)
-            self.present(alert, animated: true, completion : nil)
+            UIAlertController.showErrorMsg(errorMsg: "FB access token nil")
+
             
         }
         

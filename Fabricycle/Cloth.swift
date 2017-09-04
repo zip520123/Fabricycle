@@ -11,19 +11,36 @@ import SwiftyJSON
 let storage = FIRStorage.storage()
 let storageRef = storage.reference()
 class Cloth : NSObject{
-    let ref: FIRDatabaseReference?
+
     var imageList : [UIImage]!
     var imageListOnString = [String]()
     var uploadStats = false
-    let userId : String
+
     var price = 0
-    
+    var descr : String
     override init() {
         self.imageList = []
         self.imageListOnString = [String]()
-        self.ref = nil
+
         self.uploadStats = false
-        self.userId = getUserId()!
+ 
+        self.descr = ""
+    }
+    init(json : JSON){
+        self.imageList = []
+        self.price = json["price"].intValue
+        self.descr = json["descr"].stringValue
+        var clothURLs : [String] = []
+        for item in json["clothURL"].arrayValue {
+            clothURLs.append(item.stringValue)
+        }
+        self.imageListOnString = clothURLs
+        self.uploadStats = false
+ 
+    }
+    func returnUrlForFireBase()->Any{
+        
+        return [ "price" : price , "descr" : descr , "clothURL" : imageListOnString]
     }
 //    init(snapshot: FIRDataSnapshot) {
 //        ref = snapshot.ref
@@ -48,7 +65,7 @@ class Cloth : NSObject{
             
             // Create a reference to the file you want to upload
 
-            let riversRef = storageRef.child("images/\(userId)/\(imageName)")
+            let riversRef = storageRef.child("images/\(getUserId()!)/\(imageName)")
             
             let metaData = FIRStorageMetadata()
             metaData.contentType = "image/jpg"
