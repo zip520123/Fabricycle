@@ -948,6 +948,14 @@
                                             <outlet property="clothImageView" destination="y41-9G-2zd" id="h3X-U6-WKy"/>
                                         </connections>
                                     </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZXO-UH-GYG">
+                                        <rect key="frame" x="214" y="0.0" width="161" height="161"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="161" height="161"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
