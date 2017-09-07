@@ -11,6 +11,7 @@ import Material
 class AddNewSellClothDescriptionCell: UITableViewCell {
 
     @IBOutlet weak var rightImageView: UIImageView!
+    
     @IBOutlet weak var descriptionLabel: UILabel!
     
     override func awakeFromNib() {

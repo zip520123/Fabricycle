@@ -45,6 +45,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    class func topVC() -> UIViewController?{
+        guard var rootVC =  UIApplication.shared.keyWindow?.rootViewController else {return nil }
+        //var returnVC = rootVC
+        
+        while true {
+            if rootVC.isKind(of: UITabBarController.self){
+                rootVC = (rootVC as! UITabBarController).selectedViewController!
+                continue
+            }
+            if rootVC.isKind(of:UINavigationController.self){
+                rootVC = (rootVC as! UINavigationController).visibleViewController!
+                continue
+            }
+            if rootVC.presentedViewController != nil {
+                rootVC = rootVC.presentedViewController!
+                continue
+            }
+            return rootVC
+        }
+        
+    }
 
 
 }

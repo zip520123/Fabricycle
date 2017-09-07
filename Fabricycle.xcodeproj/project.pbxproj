@@ -21,6 +21,7 @@
 		E70C1BFC1F49A119005EAEA2 /* AddNewClothVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFB1F49A119005EAEA2 /* AddNewClothVC.swift */; };
 		E70C1BFE1F49A16F005EAEA2 /* ClothCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFD1F49A16F005EAEA2 /* ClothCollectionCell.swift */; };
 		E70C1C001F49A2DC005EAEA2 /* Cloth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFF1F49A2DC005EAEA2 /* Cloth.swift */; };
+		E71A4A911F5EE81A008A57DA /* EditClothDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71A4A901F5EE81A008A57DA /* EditClothDescriptionVC.swift */; };
 		E73B283B1F4D1D01007135A6 /* FormItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B283A1F4D1D01007135A6 /* FormItemVC.swift */; };
 		E7DEED561F4FC0B700D15022 /* FabricycleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED551F4FC0B700D15022 /* FabricycleTests.swift */; };
 		E7DEED5E1F4FC2C700D15022 /* FabricycleUploadTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED5D1F4FC2C700D15022 /* FabricycleUploadTest.swift */; };
@@ -78,6 +79,7 @@
 		E70C1BFB1F49A119005EAEA2 /* AddNewClothVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewClothVC.swift; sourceTree = "<group>"; };
 		E70C1BFD1F49A16F005EAEA2 /* ClothCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothCollectionCell.swift; sourceTree = "<group>"; };
 		E70C1BFF1F49A2DC005EAEA2 /* Cloth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloth.swift; sourceTree = "<group>"; };
+		E71A4A901F5EE81A008A57DA /* EditClothDescriptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditClothDescriptionVC.swift; sourceTree = "<group>"; };
 		E73B283A1F4D1D01007135A6 /* FormItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormItemVC.swift; sourceTree = "<group>"; };
 		E7DEED531F4FC0B700D15022 /* FabricycleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FabricycleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DEED551F4FC0B700D15022 /* FabricycleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FabricycleTests.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				D57091AB1F5ABEA0005B4067 /* AddNewSellClothDescriptionCell.swift */,
 				D57091B21F5B9B82005B4067 /* SelectClothPriceVC.swift */,
 				D57091B41F5B9DCE005B4067 /* SelectPriceCell.swift */,
+				E71A4A901F5EE81A008A57DA /* EditClothDescriptionVC.swift */,
 			);
 			name = "new sell cloth";
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				D57091B51F5B9DCE005B4067 /* SelectPriceCell.swift in Sources */,
 				E7DEED6A1F53E22A00D15022 /* ProfileVC.swift in Sources */,
 				E7E154AC1F4883F3001D5929 /* AddNewFormCell.swift in Sources */,
+				E71A4A911F5EE81A008A57DA /* EditClothDescriptionVC.swift in Sources */,
 				D57091AE1F5B91BE005B4067 /* FabricycleNC.swift in Sources */,
 				E7DEED791F55526900D15022 /* SingleClothCell.swift in Sources */,
 				E7E1549B1F486E53001D5929 /* MainPageVC.swift in Sources */,

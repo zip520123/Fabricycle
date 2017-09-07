@@ -62,10 +62,8 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
         }
         
         for cloth in formObejct.clothList {
-            DispatchQueue.global(qos: .userInitiated).async {
-                cloth.uploadAllImage {
-                    uploadCount += 1
-                }
+            cloth.uploadAllImage {
+                uploadCount += 1
                 if uploadCount == self.formObejct.clothList.count {
                     DispatchQueue.main.async {
                         MBProgressHUD.hide(for: self.view, animated: true)
@@ -73,9 +71,8 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
                         
                     }
                 }
-                
             }
-            
+
         }
         
         
@@ -115,18 +112,20 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
         }
         return 0
     }
-//    var userName = "unkown"
+
     func setUserName(textField : UITextField ){
         formObejct.userName = textField.text!
-        
+        UserDefaults.standard.set(textField.text, forKey: userName)
     }
-//    var userPhone = "unkown"
+
     func setPhone(textField : UITextField ){
         formObejct.phoneNumber = textField.text!
+        UserDefaults.standard.set(textField.text, forKey: userPhone)
     }
-//    var userAddress = "unkown"
+
     func textViewDidChange(_ textView: UITextView) {
         formObejct.address = textView.text
+        UserDefaults.standard.set(textView.text, forKey: userAddress)
 
     }
     
@@ -136,9 +135,10 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! DelliverinfoCell
             cell.nameTextField.addTarget(self, action: #selector(self.setUserName), for: .editingChanged)
             cell.phoneTextField.addTarget(self, action: #selector(self.setPhone), for: .editingChanged)
-
             cell.addressTextView.delegate = self
-
+            cell.nameTextField.text = UserDefaults.standard.getUserName()
+            cell.phoneTextField.text = UserDefaults.standard.getUserPhone()
+            cell.addressTextView.text = UserDefaults.standard.getUserAddress()
             
             return cell
         case 1:

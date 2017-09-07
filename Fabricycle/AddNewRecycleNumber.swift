@@ -98,6 +98,7 @@ extension AddNewRecycleNumber : UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             clothList.remove(at: indexPath.row - 2)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.reloadData()
 
         }
     }

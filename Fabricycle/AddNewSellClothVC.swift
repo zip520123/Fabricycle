@@ -32,6 +32,7 @@ class AddNewSellClothVC: UIViewController ,UIImagePickerControllerDelegate{
         if cloth == nil {
             cloth = Cloth()
         }
+        setImage()
         let tipGesture = UITapGestureRecognizer(target: self, action: #selector(self.takeNewCamera))
         takeCameraButton.addGestureRecognizer(tipGesture)
     }
@@ -51,6 +52,9 @@ class AddNewSellClothVC: UIViewController ,UIImagePickerControllerDelegate{
         
         self.cloth.imageList.append(uiImage)
         if cloth.imageList.count > 3 {_ = cloth.imageList.popLast()}
+        setImage()
+    }
+    func setImage(){
         for (index,item) in cloth.imageList.enumerated() {
             if index == 0 {
                 imageView1.image = item
@@ -65,6 +69,10 @@ class AddNewSellClothVC: UIViewController ,UIImagePickerControllerDelegate{
         cloth.price = price
         tableView.reloadData()
     }
+    func getClothDescription(_ text : String){
+        cloth.descr = text
+        tableView.reloadData()
+    }
 //    @IBAction func getPriceFromSegue(_ segue : UIStoryboardSegue){
 //        let vc = segue.source as! SelectClothPriceVC
 //        getPrice(vc.price)
@@ -76,6 +84,13 @@ class AddNewSellClothVC: UIViewController ,UIImagePickerControllerDelegate{
             vc.price = cloth.price
             vc.selectPriceBlock = { price in
                 self.getPrice(price)
+            }
+        }
+        if segue.identifier == "editVC" {
+            let vc = segue.destination as! EditClothDescriptionVC
+            vc.descr = cloth.descr
+            vc.editBlock = { text in
+                self.getClothDescription(text)
             }
         }
     }
@@ -111,7 +126,7 @@ extension AddNewSellClothVC: UITableViewDataSource , UITableViewDelegate {
 //            cell.detailTextLabel?.text = "\(cloth.price)"
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "description", for: indexPath) as! AddNewSellClothDescriptionCell
-           	
+           	cell.descriptionLabel.text = cloth.descr
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)

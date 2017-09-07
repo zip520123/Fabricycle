@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftyJSON
-struct FormObject {
+class FormObject {
     enum statusEnum : String {
         case deliver
         case waitForSend
@@ -38,9 +38,9 @@ struct FormObject {
         self.status = .deliver
         
         recycleClothNumber = 0
-        userName = "unkown"
-        phoneNumber = "unkown"
-        address = "unkown"
+        userName = UserDefaults.standard.getUserName()
+        phoneNumber = UserDefaults.standard.getUserPhone()
+        address = UserDefaults.standard.getUserAddress()
         
         transferType = .unset
     }
