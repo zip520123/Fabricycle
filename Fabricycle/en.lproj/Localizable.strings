@@ -1,0 +1,15 @@
+	/*
+ Locailzable.strings
+ Fabricycle
+ 
+ Created by Slin on 2017/9/8.
+ Copyright © 2017年 zip520123. All rights reserved.
+ */
+NavNameHistory = "History";
+NavNameProfile = "Profile";
+Price = "Price";
+PricingStrategy = "Pricing Strategy";
+SenderInfo = "Sender Info";
+WayOfDelivery = "Way of delivery";
+ConvenientToTheMerchant = "Convenient to the merchant";
+ToHomeReceipt = "To home receipt";

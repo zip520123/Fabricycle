@@ -84,9 +84,9 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "寄件人資訊"
+            return "SenderInfo".local
         case 1:
-            return "寄貨方式"
+            return "WayOfDelivery".local
         default:
             return nil
         }
@@ -146,14 +146,14 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
 
             switch indexPath.row {
             case 0:
-                cell.textLabel!.text = "便利超商寄貨"
+                cell.textLabel!.text = "ConvenientToTheMerchant".local
                 cell.detailTextLabel!.text = "關渡北投店"
                 if formObejct.transferType == .conviniateMarket {
                     cell.accessoryType = .checkmark
                 }
             case 1:
-                cell.textLabel!.text = "貨運到府收貨"
-                cell.detailTextLabel!.text = "全日 9:00 - 18:00"
+                cell.textLabel!.text = "ToHomeReceipt".local
+                cell.detailTextLabel!.text = "9:00 - 18:00"
                 if formObejct.transferType == .gotoHomerecive {
                     cell.accessoryType = .checkmark
                 }

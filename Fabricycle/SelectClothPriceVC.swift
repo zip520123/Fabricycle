@@ -25,10 +25,10 @@ class SelectClothPriceVC: UIViewController , UITableViewDelegate , UITableViewDa
         
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Price"
+        return "Price".local
     }
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "定價策略"
+        return "PricingStrategy".local
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

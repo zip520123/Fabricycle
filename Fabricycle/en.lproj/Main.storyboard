@@ -12,7 +12,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--歷史回收數據-->
+        <!--History-->
         <scene sceneID="Wec-Ua-CLI">
             <objects>
                 <viewController id="Vqz-we-gq3" sceneMemberID="viewController">
@@ -26,7 +26,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhP-hs-0bS">
                                 <rect key="frame" x="40" y="79" width="295" height="30"/>
-                                <state key="normal" title="新增回收單"/>
+                                <state key="normal" title="Add new recycle form"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="bdc-Fb-xOE"/>
                                 </connections>
@@ -39,13 +39,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="rhP-hs-0bS" secondAttribute="trailing" constant="24" id="vrU-41-eWg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="歷史回收數據" id="eNp-Qo-69x"/>
+                    <navigationItem key="navigationItem" title="History" id="eNp-Qo-69x"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hsh-fW-WO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="638" y="576"/>
         </scene>
-        <!--歷史回收單-->
+        <!--History Form-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="BYZ-38-t0r" customClass="MainPageVC" customModule="Fabricycle" customModuleProvider="target" sceneMemberID="viewController">
@@ -96,7 +96,7 @@
                             <constraint firstItem="fge-p3-kh0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bLU-j0-yl1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="歷史回收單" id="Cr2-nV-1bl">
+                    <navigationItem key="navigationItem" title="History Form" id="Cr2-nV-1bl">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cuo-nb-LT1">
                             <connections>
                                 <action selector="addNewForm:" destination="BYZ-38-t0r" id="JZ5-Mg-9cL"/>
@@ -1191,6 +1191,9 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="itemLocalString" value="NavNameHistory"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="Vqz-we-gq3" kind="relationship" relationship="rootViewController" id="dqq-OC-7ji"/>
                     </connections>
@@ -1234,6 +1237,9 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="itemLocalString" value="NavNameProfile"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="rog-bb-2pL" kind="relationship" relationship="rootViewController" id="bdA-Ec-XP7"/>
                     </connections>
@@ -1242,7 +1248,7 @@
             </objects>
             <point key="canvasLocation" x="734" y="1458"/>
         </scene>
-        <!--個人資訊-->
+        <!--Profile-->
         <scene sceneID="JTb-Gt-cHM">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="rog-bb-2pL" customClass="ProfileVC" customModule="Fabricycle" customModuleProvider="target" sceneMemberID="viewController">
@@ -1280,7 +1286,7 @@
                             <constraint firstItem="PsP-et-9oI" firstAttribute="leading" secondItem="cy0-2q-6yf" secondAttribute="leadingMargin" id="yah-wQ-TPq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="個人資訊" id="kqH-4h-Arh">
+                    <navigationItem key="navigationItem" title="Profile" id="kqH-4h-Arh">
                         <barButtonItem key="leftBarButtonItem" title="logout" id="BwM-A7-rM1">
                             <connections>
                                 <action selector="logoutClick:" destination="rog-bb-2pL" id="5Eh-6f-6JN"/>
