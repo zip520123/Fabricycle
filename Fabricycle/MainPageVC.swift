@@ -54,9 +54,10 @@ class MainPageVC: UIViewController {
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showFormItem" {
-            if let formVC = segue.destination as? FormItemVC {
-                formVC.jsonForm = sender as! JSON
+        if segue.identifier == "ShowFormObjectVC" {
+            if let formVC = segue.destination as? ShowFormObjectVC {
+                
+                formVC.fromObject = sender as! FormObject
             }
         }
     }
@@ -88,8 +89,8 @@ extension MainPageVC : UITableViewDelegate , UITableViewDataSource {
         
         
         
-//        let formItem = jsonForms[indexPath.row]
-//        performSegue(withIdentifier: "showFormItem", sender: formItem)
+        let formItem = formList[indexPath.row]
+        performSegue(withIdentifier: "ShowFormObjectVC", sender: formItem)
         
 //        // 1
 //        guard let cell = tableView.cellForRow(at: indexPath) else { return }

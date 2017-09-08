@@ -17,6 +17,7 @@
 		D57091B81F5BACA1005B4067 /* DeliverInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091B71F5BACA1005B4067 /* DeliverInfoVC.swift */; };
 		D57091BA1F5BAE36005B4067 /* DelliverinfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091B91F5BAE36005B4067 /* DelliverinfoCell.swift */; };
 		D57091BC1F5BAF4B005B4067 /* DeiliverinfoCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091BB1F5BAF4B005B4067 /* DeiliverinfoCell2.swift */; };
+		D59D633F1F62C86D00F972D2 /* ShowFormObjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59D633E1F62C86D00F972D2 /* ShowFormObjectVC.swift */; };
 		D5BB75AB1F55939700CC635D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BB75AA1F55939700CC635D /* Bolts.framework */; };
 		E70C1BFC1F49A119005EAEA2 /* AddNewClothVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFB1F49A119005EAEA2 /* AddNewClothVC.swift */; };
 		E70C1BFE1F49A16F005EAEA2 /* ClothCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFD1F49A16F005EAEA2 /* ClothCollectionCell.swift */; };
@@ -75,6 +76,7 @@
 		D57091B71F5BACA1005B4067 /* DeliverInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliverInfoVC.swift; sourceTree = "<group>"; };
 		D57091B91F5BAE36005B4067 /* DelliverinfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelliverinfoCell.swift; sourceTree = "<group>"; };
 		D57091BB1F5BAF4B005B4067 /* DeiliverinfoCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeiliverinfoCell2.swift; sourceTree = "<group>"; };
+		D59D633E1F62C86D00F972D2 /* ShowFormObjectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowFormObjectVC.swift; sourceTree = "<group>"; };
 		D5BB75AA1F55939700CC635D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E70C1BFB1F49A119005EAEA2 /* AddNewClothVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewClothVC.swift; sourceTree = "<group>"; };
 		E70C1BFD1F49A16F005EAEA2 /* ClothCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothCollectionCell.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				E7E1549E1F4871B4001D5929 /* LoginViewController.swift */,
 				E7E1548C1F481DF7001D5929 /* Main.storyboard */,
 				E7E1549A1F486E53001D5929 /* MainPageVC.swift */,
+				D59D633E1F62C86D00F972D2 /* ShowFormObjectVC.swift */,
 				E73B283A1F4D1D01007135A6 /* FormItemVC.swift */,
 				E70C1BF91F499E89005EAEA2 /* New Form flow */,
 				E70C1BFA1F499E92005EAEA2 /* support file */,
@@ -595,6 +598,7 @@
 				D57091B81F5BACA1005B4067 /* DeliverInfoVC.swift in Sources */,
 				E7E154B01F492A5D001D5929 /* FormObject.swift in Sources */,
 				E7DEED6C1F53E37200D15022 /* FabricycleTabBarC.swift in Sources */,
+				D59D633F1F62C86D00F972D2 /* ShowFormObjectVC.swift in Sources */,
 				E7E154AE1F4929EC001D5929 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
