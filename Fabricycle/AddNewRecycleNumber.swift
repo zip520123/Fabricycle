@@ -17,7 +17,7 @@ class AddNewRecycleNumber: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 220
+        tableView.rowHeight = 120
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +60,7 @@ class AddNewRecycleNumber: UIViewController {
 extension AddNewRecycleNumber : UITableViewDelegate, UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2 + clothList.count
+        return 2
     }
     
     

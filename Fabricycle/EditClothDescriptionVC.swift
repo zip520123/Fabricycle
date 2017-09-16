@@ -23,7 +23,11 @@ class EditClothDescriptionVC: UIViewController , UITextViewDelegate {
             editBlock(text)
         }
     }
-
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "edit this" {
+            textView.text = ""
+        }
+    }
     
 
     /*

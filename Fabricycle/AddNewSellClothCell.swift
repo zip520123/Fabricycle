@@ -19,8 +19,9 @@ class AddNewSellClothCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        cameraImageView.image = Icon.cm.photoCamera?.tint(with: Color.grey.darken3)
-        
+        cameraImageView.image = Icon.cm.add?.tint(with: mainColor)
+        selledLabel.textColor = mainColor
+        numberLabel.textColor = mainColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

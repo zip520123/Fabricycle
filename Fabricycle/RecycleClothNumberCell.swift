@@ -12,14 +12,20 @@ class RecycleClothNumberCell: UITableViewCell {
 
     @IBOutlet weak var recycleNumberLabel: UILabel!
     
+    @IBOutlet weak var recycleLabel: UILabel!
     @IBOutlet weak var rightArrowImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        let icon = Icon.cm.arrowBack!.tint(with: Color.grey.darken4)!
+        let icon = Icon.cm.arrowBack!.tint(with: Color.white)!
 //        let image = UIImage(cgImage: icon.cgImage!, scale: 1.0, orientation: UIImageOrientation.up)
         
         rightArrowImageView.image = icon
         rightArrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat( Double.pi / 180 * 180));
+        recycleNumberLabel.textColor = Color.white
+        recycleLabel.textColor = Color.white
+        contentView.backgroundColor = mainColor
+        contentView.shadowRadius = 12
+        selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

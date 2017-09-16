@@ -13,7 +13,7 @@ func getUserId()->String?{
     return user?.uid
 }
 
-let mainColor : UIColor = #colorLiteral(red: 0.1615852118, green: 0.3646870852, blue: 0.5849281549, alpha: 1)
+let mainColor : UIColor = #colorLiteral(red: 0.03729180247, green: 0.6208408475, blue: 0.7889618278, alpha: 1)
 let userName : String = "userName"
 let userPhone : String = "userPhone"
 let userAddress : String = "userAddress"

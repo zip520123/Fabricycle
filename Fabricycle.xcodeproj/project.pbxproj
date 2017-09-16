@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		19DB4B7B5F24B9FA69C59896 /* libPods-FabricycleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5631D96E52D2983C22BD6C7 /* libPods-FabricycleTests.a */; };
 		C7D2E054863877951450113D /* Pods_Fabricycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BC6AE33507A5C546930D01 /* Pods_Fabricycle.framework */; };
+		D538F1F21F6CFD6D00AA0C28 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D538F1F11F6CFD6D00AA0C28 /* MenuVC.swift */; };
+		D538F1F41F6D104400AA0C28 /* PreMainPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D538F1F31F6D104400AA0C28 /* PreMainPageVC.swift */; };
+		D538F1F71F6D1E2500AA0C28 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D538F1F61F6D1E2500AA0C28 /* SideMenuVC.swift */; };
 		D57091A91F5A9B43005B4067 /* AddNewSellClothVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091A81F5A9B43005B4067 /* AddNewSellClothVC.swift */; };
 		D57091AC1F5ABEA0005B4067 /* AddNewSellClothDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091AB1F5ABEA0005B4067 /* AddNewSellClothDescriptionCell.swift */; };
 		D57091AE1F5B91BE005B4067 /* FabricycleNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091AD1F5B91BE005B4067 /* FabricycleNC.swift */; };
@@ -69,6 +72,9 @@
 		B5631D96E52D2983C22BD6C7 /* libPods-FabricycleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FabricycleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C135058DDCA13435544E294A /* Pods-Fabricycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fabricycle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fabricycle/Pods-Fabricycle.release.xcconfig"; sourceTree = "<group>"; };
 		C3BC8A9A9F9B95B3C60C1E59 /* Pods-Fabricycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fabricycle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fabricycle/Pods-Fabricycle.debug.xcconfig"; sourceTree = "<group>"; };
+		D538F1F11F6CFD6D00AA0C28 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		D538F1F31F6D104400AA0C28 /* PreMainPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreMainPageVC.swift; sourceTree = "<group>"; };
+		D538F1F61F6D1E2500AA0C28 /* SideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		D57091A81F5A9B43005B4067 /* AddNewSellClothVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewSellClothVC.swift; sourceTree = "<group>"; };
 		D57091AB1F5ABEA0005B4067 /* AddNewSellClothDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewSellClothDescriptionCell.swift; sourceTree = "<group>"; };
 		D57091AD1F5B91BE005B4067 /* FabricycleNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FabricycleNC.swift; sourceTree = "<group>"; };
@@ -106,7 +112,7 @@
 		E7DEED7A1F56A66E00D15022 /* SetRecycleClothNumberVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetRecycleClothNumberVC.swift; sourceTree = "<group>"; };
 		E7E154851F481DF7001D5929 /* Fabricycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fabricycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E154881F481DF7001D5929 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E7E1548F1F481DF7001D5929 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E7E1548F1F481DF7001D5929 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Fabricycle/Assets.xcassets; sourceTree = "<group>"; };
 		E7E154941F481DF7001D5929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7E1549A1F486E53001D5929 /* MainPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageVC.swift; sourceTree = "<group>"; };
 		E7E1549C1F487022001D5929 /* AddNewFormVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewFormVC.swift; sourceTree = "<group>"; };
@@ -154,13 +160,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D538F1EF1F6CC1CE00AA0C28 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				E7DEED721F55507A00D15022 /* RecycleClothNumberCell.swift */,
+				E7DEED781F55526900D15022 /* SingleClothCell.swift */,
+				E7DEED761F55523200D15022 /* AddNewSellClothCell.swift */,
+				D57091AB1F5ABEA0005B4067 /* AddNewSellClothDescriptionCell.swift */,
+				D57091B41F5B9DCE005B4067 /* SelectPriceCell.swift */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		D538F1F51F6D1DE800AA0C28 /* SideMenuVC */ = {
+			isa = PBXGroup;
+			children = (
+				D538F1F61F6D1E2500AA0C28 /* SideMenuVC.swift */,
+				D538F1F11F6CFD6D00AA0C28 /* MenuVC.swift */,
+			);
+			name = SideMenuVC;
+			sourceTree = "<group>";
+		};
 		D57091AA1F5ABE62005B4067 /* new sell cloth */ = {
 			isa = PBXGroup;
 			children = (
+				D538F1EF1F6CC1CE00AA0C28 /* cell */,
 				D57091A81F5A9B43005B4067 /* AddNewSellClothVC.swift */,
-				D57091AB1F5ABEA0005B4067 /* AddNewSellClothDescriptionCell.swift */,
 				D57091B21F5B9B82005B4067 /* SelectClothPriceVC.swift */,
-				D57091B41F5B9DCE005B4067 /* SelectPriceCell.swift */,
 				E71A4A901F5EE81A008A57DA /* EditClothDescriptionVC.swift */,
 			);
 			name = "new sell cloth";
@@ -192,9 +218,6 @@
 				D57091B61F5BAAC9005B4067 /* addNewForm */,
 				E7E1549C1F487022001D5929 /* AddNewFormVC.swift */,
 				E70C1BFB1F49A119005EAEA2 /* AddNewClothVC.swift */,
-				E7DEED721F55507A00D15022 /* RecycleClothNumberCell.swift */,
-				E7DEED761F55523200D15022 /* AddNewSellClothCell.swift */,
-				E7DEED781F55526900D15022 /* SingleClothCell.swift */,
 				E7DEED7A1F56A66E00D15022 /* SetRecycleClothNumberVC.swift */,
 				D57091AA1F5ABE62005B4067 /* new sell cloth */,
 			);
@@ -207,7 +230,6 @@
 				E7DEED651F53CF2300D15022 /* apikey.plist */,
 				E7DEED661F53CF2300D15022 /* GoogleService-Info.plist */,
 				E7E154A31F48777A001D5929 /* Fabricycle.entitlements */,
-				E7E1548F1F481DF7001D5929 /* Assets.xcassets */,
 				E7E154911F481DF7001D5929 /* LaunchScreen.storyboard */,
 				E7E154941F481DF7001D5929 /* Info.plist */,
 				E7E154A21F48775F001D5929 /* Fabricycle-Bridging-Header.h */,
@@ -251,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				E7E154871F481DF7001D5929 /* Fabricycle */,
+				E7E1548F1F481DF7001D5929 /* Assets.xcassets */,
 				E7DEED541F4FC0B700D15022 /* FabricycleTests */,
 				E7E154861F481DF7001D5929 /* Products */,
 				E76EA3C7BEE8F90CE0C51F60 /* Pods */,
@@ -270,10 +293,12 @@
 		E7E154871F481DF7001D5929 /* Fabricycle */ = {
 			isa = PBXGroup;
 			children = (
+				D538F1F51F6D1DE800AA0C28 /* SideMenuVC */,
 				E7B814081F4BE198003DE997 /* view */,
 				E7E154A81F487E07001D5929 /* Model */,
 				E7E154881F481DF7001D5929 /* AppDelegate.swift */,
 				E7E1549E1F4871B4001D5929 /* LoginViewController.swift */,
+				D538F1F31F6D104400AA0C28 /* PreMainPageVC.swift */,
 				E7E1548C1F481DF7001D5929 /* Main.storyboard */,
 				E7E1549A1F486E53001D5929 /* MainPageVC.swift */,
 				D59D633E1F62C86D00F972D2 /* ShowFormObjectVC.swift */,
@@ -492,6 +517,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/LGSideMenuController/LGSideMenuController.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -503,6 +529,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGSideMenuController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -577,6 +604,7 @@
 			files = (
 				E7DEED601F4FFC7400D15022 /* Utilty.swift in Sources */,
 				D57091B31F5B9B82005B4067 /* SelectClothPriceVC.swift in Sources */,
+				D538F1F21F6CFD6D00AA0C28 /* MenuVC.swift in Sources */,
 				E70C1C001F49A2DC005EAEA2 /* Cloth.swift in Sources */,
 				D57091B51F5B9DCE005B4067 /* SelectPriceCell.swift in Sources */,
 				E7DEED6A1F53E22A00D15022 /* ProfileVC.swift in Sources */,
@@ -590,6 +618,7 @@
 				E7DEED711F554F1300D15022 /* AddNewRecycleNumber.swift in Sources */,
 				D57091BA1F5BAE36005B4067 /* DelliverinfoCell.swift in Sources */,
 				E70C1BFC1F49A119005EAEA2 /* AddNewClothVC.swift in Sources */,
+				D538F1F41F6D104400AA0C28 /* PreMainPageVC.swift in Sources */,
 				E7DEED771F55523200D15022 /* AddNewSellClothCell.swift in Sources */,
 				E7DEED7B1F56A66E00D15022 /* SetRecycleClothNumberVC.swift in Sources */,
 				D57091A91F5A9B43005B4067 /* AddNewSellClothVC.swift in Sources */,
@@ -605,6 +634,7 @@
 				E7DEED6C1F53E37200D15022 /* FabricycleTabBarC.swift in Sources */,
 				D59D633F1F62C86D00F972D2 /* ShowFormObjectVC.swift in Sources */,
 				E7E154AE1F4929EC001D5929 /* User.swift in Sources */,
+				D538F1F71F6D1E2500AA0C28 /* SideMenuVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

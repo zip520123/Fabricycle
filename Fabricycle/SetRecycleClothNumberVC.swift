@@ -23,7 +23,7 @@ class SetRecycleClothNumberVC: UIViewController {
             self.selectInt = inputNumber
         }
     }
-
+    
   
 
     override func viewDidAppear(_ animated: Bool) {
@@ -31,6 +31,9 @@ class SetRecycleClothNumberVC: UIViewController {
     }
 }
 extension SetRecycleClothNumberVC : UITextFieldDelegate{
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text = ""
+    }
     func textFieldDidEndEditing(_ textField: UITextField) {
 
     }

@@ -16,7 +16,8 @@ target 'Fabricycle' do
   pod 'Material', '~> 2.0'
   
   pod 'IQKeyboardManagerSwift', '4.0.10'
-
+  pod 'LGSideMenuController'
+  pod 'HGCircularSlider', '~> 2.0.0'
 end
 target 'FabricycleTests' do
 
