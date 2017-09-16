@@ -40,6 +40,7 @@ class SelectClothPriceVC: UIViewController , UITableViewDelegate , UITableViewDa
         cell.priceFileld.text = "\(price)"
 
         cell.priceFileld.addTarget(self, action: #selector(textChange(textField:)), for: .editingChanged)
+        cell.priceFileld.delegate = self
         cell.selectionStyle = .none
         return cell
         
@@ -53,6 +54,9 @@ class SelectClothPriceVC: UIViewController , UITableViewDelegate , UITableViewDa
         if let text = textField.text , let int = Int(text){
             selectPriceBlock(int)
         }
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text = ""
     }
 
 

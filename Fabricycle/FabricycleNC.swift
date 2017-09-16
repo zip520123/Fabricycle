@@ -54,7 +54,7 @@ class FabricycleNC: UINavigationController {
         setBarUI()
     }
     func setBarUI(){
-        if let _  = self.visibleViewController as? PreMainPageVC{
+        if (self.visibleViewController is PreMainPageVC || self.visibleViewController is AddNewRecycleNumber) {
             
             navigationBar.setBackgroundImage(UIImage(), for: .default)
         }else{

@@ -11,17 +11,28 @@ import SwiftyJSON
 let storage = FIRStorage.storage()
 let storageRef = storage.reference()
 class Cloth : NSObject{
-
+    enum selectType : Int {
+        case color = 1
+        case gender
+        case size
+    }
     var imageList : [UIImage]!
     var imageListOnString = [String]()
     var uploadStats = false
 
     var price = 0
     var descr : String
+    
+    var color : String
+    var gender : String
+    var size : String
+    
     override init() {
         self.imageList = []
         self.imageListOnString = [String]()
-
+        self.color = ""
+        self.gender = ""
+        self.size = ""
         self.uploadStats = false
  
         self.descr = "edit this"
@@ -30,6 +41,9 @@ class Cloth : NSObject{
         self.imageList = []
         self.price = json["price"].intValue
         self.descr = json["descr"].stringValue
+        self.color = json["color"].stringValue
+        self.gender = json["gender"].stringValue
+        self.size = json["size"].stringValue
         var clothURLs : [String] = []
         for item in json["clothURL"].arrayValue {
             clothURLs.append(item.stringValue)
@@ -40,7 +54,7 @@ class Cloth : NSObject{
     }
     func returnUrlForFireBase()->Any{
         
-        return [ "price" : price , "descr" : descr , "clothURL" : imageListOnString]
+        return [ "price" : price , "descr" : descr , "clothURL" : imageListOnString , "color" : color , "gender" : gender , "size" : size]
     }
 //    init(snapshot: FIRDataSnapshot) {
 //        ref = snapshot.ref

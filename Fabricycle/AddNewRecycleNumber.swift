@@ -10,6 +10,8 @@ import UIKit
 import SwiftyJSON
 class AddNewRecycleNumber: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     var clothList = [Cloth]()
     var recycleClothNumber = 0
 
@@ -19,6 +21,13 @@ class AddNewRecycleNumber: UIViewController {
         tableView.dataSource = self
         tableView.rowHeight = 120
         
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+//        let newLayout = UICollectionViewLayout()
+        
+        
+//        collectionView.collectionViewLayout = newLayout
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -48,7 +57,7 @@ class AddNewRecycleNumber: UIViewController {
         if segue.identifier == "deliverInfo"{
             let deVC = segue.destination as! DeliverInfoVC
             
-            var formObject = FormObject(clothList: clothList)
+            let formObject = FormObject(clothList: clothList)
             formObject.recycleClothNumber = self.recycleClothNumber
             
             deVC.formObejct = formObject
@@ -108,4 +117,43 @@ extension AddNewRecycleNumber : UITableViewDelegate, UITableViewDataSource {
         }
     }
 
+}
+extension AddNewRecycleNumber : UICollectionViewDelegate , UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
+        return clothList.count
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClothCell", for: indexPath) as! ClothCollectionCell
+        
+        let cloth = clothList[indexPath.row]
+        
+        cell.nameLabel.text = cloth.descr
+        cell.clothImageView.image = cloth.imageList.first
+        cell.priceLabel.text = cloth.price.description
+        return cell
+    
+    }
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    
+        let size = CGSize(width: collectionView.width / 2 - 25, height: collectionView.height * 0.8)
+        return size
+    }
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets{
+        let inset = UIEdgeInsetsMake(20, 20, 10, 20)
+        return inset
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        if indexPath.row > 1 {
+            performSegue(withIdentifier: "selectCloth", sender: clothList[indexPath.row ])
+        }
+    }
 }

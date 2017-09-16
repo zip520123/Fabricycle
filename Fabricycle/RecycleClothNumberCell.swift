@@ -14,6 +14,8 @@ class RecycleClothNumberCell: UITableViewCell {
     
     @IBOutlet weak var recycleLabel: UILabel!
     @IBOutlet weak var rightArrowImageView: UIImageView!
+    
+    @IBOutlet weak var bgView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         let icon = Icon.cm.arrowBack!.tint(with: Color.white)!
@@ -23,8 +25,9 @@ class RecycleClothNumberCell: UITableViewCell {
         rightArrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat( Double.pi / 180 * 180));
         recycleNumberLabel.textColor = Color.white
         recycleLabel.textColor = Color.white
-        contentView.backgroundColor = mainColor
-        contentView.shadowRadius = 12
+        bgView.backgroundColor = mainColor
+//        contentView.shadowRadius = 12
+        bgView.depthPreset = .depth3
         selectionStyle = .none
     }
 

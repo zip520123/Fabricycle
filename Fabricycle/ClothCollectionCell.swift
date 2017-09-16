@@ -7,9 +7,25 @@
 //
 
 import UIKit
-
+import Material
 class ClothCollectionCell: UICollectionViewCell {
     @IBOutlet weak var clothImageView: UIImageView!
     
+    @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var priceLabel: UILabel!
+    
+    @IBOutlet weak var bgView: UIView!
+    @IBOutlet weak var dotdotdotImage: UIImageView!
+    
+    override func awakeFromNib() {
+        dotdotdotImage.image = Icon.cm.moreVertical?.tint(with: Color.grey.lighten1)
+        bgView.depthPreset = .depth2
+        nameLabel.textColor = Color.grey.lighten1
+        
+        nameLabel.text = ""
+        priceLabel.text = "0"
+        
+        
+    }
 }

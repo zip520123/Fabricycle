@@ -22,6 +22,7 @@ class FormObject {
         case conviniateMarket
         case gotoHomerecive
     }
+
     var recycleClothNumber : Int
     var userName : String
     var phoneNumber : String
@@ -31,6 +32,8 @@ class FormObject {
     var status : statusEnum
     var ref: FIRDatabaseReference?
     var transferType : TransferType
+    
+    var deliverTimeScale : String
     var uid = "0"
     init(clothList : [Cloth]) {
         self.clothList = clothList
@@ -43,6 +46,7 @@ class FormObject {
         address = UserDefaults.standard.getUserAddress()
         
         transferType = .unset
+        deliverTimeScale = "unset"
     }
     init(json : JSON , id: String){
         self.uid = id
@@ -52,6 +56,7 @@ class FormObject {
         self.address = json["userAddress"].stringValue
         self.transferType = FormObject.TransferType(rawValue: json["tensfarType"].stringValue) ?? .unset
         self.recycleClothNumber = json["recycleClothNumber"].intValue
+        self.deliverTimeScale = json["deliverTimeScale"].stringValue
         var clothList : [Cloth] = []
         for (_ ,jsonCloth) in json["cloths"].dictionaryValue {
             let cloth = Cloth(json: jsonCloth)
@@ -70,23 +75,25 @@ class FormObject {
         self.address = json["userAddress"].stringValue
         self.transferType = FormObject.TransferType(rawValue: json["tensfarType"].stringValue) ?? .unset
         self.recycleClothNumber = json["recycleClothNumber"].intValue
+        self.deliverTimeScale = json["deliverTimeScale"].stringValue
         var clothList : [Cloth] = []
         for (_ ,jsonCloth) in json["cloths"].dictionaryValue {
             let cloth = Cloth(json: jsonCloth)
             clothList.append(cloth)
         }
         self.clothList = clothList
-//        key = snapshot.key
-//        let snapshotValue = snapshot.value as! [String: AnyObject]
-//        name = snapshotValue["name"] as! String
-//        addedByUser = snapshotValue["addedByUser"] as! String
-//        completed = snapshotValue["completed"] as! Bool
-//        let snapshotValue = snapshot.value as! [String: AnyObject]
-//        status = snapshotValue["status"] as! String
-//        clothList = snapshotValue["clothList"] as! [JSON]
-//        clothList = JSON([:])
-//        self.clothList = snapshot.value as! [String : AnyObject]
         self.ref = snapshot.ref
+    }
+    
+    func returnFormForFireBase()->Any{
+        return [ "status" : status ,
+                 "userName" : userName ,
+                 "phoneNumber" : phoneNumber ,
+                 "address" : address ,
+                 "transferType" : transferType ,
+                 "recycleClothNumber" : recycleClothNumber ,
+                 "deliverTimeScale" : deliverTimeScale
+                ]
     }
 //    func toAnyObject() -> Any {
 //        return [

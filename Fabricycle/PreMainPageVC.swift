@@ -7,13 +7,16 @@
 //
 
 import UIKit
-
+import Material
+import HGCircularSlider
 class PreMainPageVC: UIViewController {
 
+    
+    @IBOutlet weak var circlearSlider: CircularSlider!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
 
 

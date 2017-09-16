@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import LGSideMenuController
 class MenuVC: UIViewController {
 
     override func viewDidLoad() {
@@ -16,6 +16,12 @@ class MenuVC: UIViewController {
         
     }
 
+    @IBAction func logoutButtonClick(_ sender: Any) {
+        
+        sideMenuController!.hideLeftView()
+        try! FIRAuth.auth()!.signOut()
+        dismiss(animated: true, completion: nil)
+    }
     override var prefersStatusBarHidden: Bool {
         return true
     }
