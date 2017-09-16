@@ -15,11 +15,17 @@ class PreMainPageVC: UIViewController {
     @IBOutlet weak var circlearSlider: CircularSlider!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
     }
-
-
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    }
+    @IBAction func getNewForm(segue : UIStoryboardSegue){
+        if segue.source.isKind(of: DeliverInfoVC.classForCoder()){
+            
+        }
+    }
 
     /*
     // MARK: - Navigation

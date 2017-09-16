@@ -407,7 +407,7 @@
                                             <outlet property="recycleLabel" destination="tj3-Sj-Ag0" id="qx0-RK-5YU"/>
                                             <outlet property="recycleNumberLabel" destination="XEk-mJ-nnG" id="sai-oh-uXo"/>
                                             <outlet property="rightArrowImageView" destination="1g0-RO-rQ1" id="Mnu-36-7NW"/>
-                                            <segue destination="LFw-or-Is2" kind="show" id="DEG-Nq-AST"/>
+                                            <segue destination="LFw-or-Is2" kind="show" identifier="setRecycleNumber" id="DEG-Nq-AST"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddNewSellClothCell" rowHeight="120" id="TOC-fE-ur7" customClass="AddNewSellClothCell" customModule="Fabricycle" customModuleProvider="target">
@@ -964,7 +964,7 @@
                     <connections>
                         <outlet property="doneButton" destination="v4j-4h-604" id="OWn-f9-rXD"/>
                         <outlet property="tableView" destination="KcO-yv-hDX" id="cCG-Ab-7t2"/>
-                        <segue destination="CDu-qG-xz9" kind="unwind" identifier="performNewForm" unwindAction="getNewFormWithSegue:" id="s55-ik-3Jr"/>
+                        <segue destination="CDu-qG-xz9" kind="unwind" identifier="performNewForm" unwindAction="getNewFormWithSegue:" id="7iG-Lb-DAr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cgd-ob-Slg" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -12,6 +12,7 @@ class SetRecycleClothNumberVC: UIViewController {
 
     @IBOutlet weak var clothNumberTextField: UITextField!
     var selectInt = 0
+    var selectNumberBlock : (Int)-> Void = {_ in}
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +22,7 @@ class SetRecycleClothNumberVC: UIViewController {
     func setSelectInt(textField : UITextField){
         if let text = textField.text ,  let inputNumber = Int(text) {
             self.selectInt = inputNumber
+            selectNumberBlock(inputNumber)
         }
     }
     

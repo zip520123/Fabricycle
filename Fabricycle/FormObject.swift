@@ -86,11 +86,11 @@ class FormObject {
     }
     
     func returnFormForFireBase()->Any{
-        return [ "status" : status ,
+        return [ "status" : status.rawValue ,
                  "userName" : userName ,
                  "phoneNumber" : phoneNumber ,
                  "address" : address ,
-                 "transferType" : transferType ,
+                 "transferType" : transferType.rawValue ,
                  "recycleClothNumber" : recycleClothNumber ,
                  "deliverTimeScale" : deliverTimeScale
                 ]

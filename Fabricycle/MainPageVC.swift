@@ -39,11 +39,11 @@ class MainPageVC: UIViewController {
         })
         
     }
-    @IBAction func getNewForm(segue : UIStoryboardSegue){
-        if segue.source.isKind(of: DeliverInfoVC.classForCoder()){
-            
-        }
-    }
+//    @IBAction func getNewForm(segue : UIStoryboardSegue){
+//        if segue.source.isKind(of: DeliverInfoVC.classForCoder()){
+//            
+//        }
+//    }
     @IBAction func logoutClick(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

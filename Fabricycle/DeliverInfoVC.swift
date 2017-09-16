@@ -58,6 +58,7 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
         if formObejct.clothList.count == 0 {
             MBProgressHUD.hide(for: self.view, animated: true)
             deliverForm()
+            return
         }
         
         for cloth in formObejct.clothList {

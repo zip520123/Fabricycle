@@ -32,11 +32,13 @@ class AddNewRecycleNumber: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        collectionView.reloadData()
     }
     @IBAction func getRecycleNumber(segue : UIStoryboardSegue){
         if let setRecycleNumberVC = segue.source as? SetRecycleClothNumberVC {
             recycleClothNumber = setRecycleNumberVC.selectInt
             tableView.reloadData()
+            
         }
     }
     @IBAction func getSellCloth(segue : UIStoryboardSegue){
@@ -46,10 +48,18 @@ class AddNewRecycleNumber: UIViewController {
             }
 
             self.tableView.reloadData()
-            
+            collectionView.reloadData()
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "setRecycleNumber"{
+            let setNuberVC = segue.destination as! SetRecycleClothNumberVC
+            setNuberVC.selectInt = recycleClothNumber
+            setNuberVC.selectNumberBlock = { selectInt in
+                self.recycleClothNumber = selectInt
+                self.tableView.reloadData()
+            }
+        }
         if segue.identifier == "selectCloth" {
             let addNewClothVC = segue.destination as! AddNewSellClothVC
             addNewClothVC.cloth = sender as! Cloth
@@ -152,8 +162,8 @@ extension AddNewRecycleNumber : UICollectionViewDelegate , UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
-        if indexPath.row > 1 {
-            performSegue(withIdentifier: "selectCloth", sender: clothList[indexPath.row ])
-        }
+        
+        performSegue(withIdentifier: "selectCloth", sender: clothList[indexPath.row ])
+        
     }
 }

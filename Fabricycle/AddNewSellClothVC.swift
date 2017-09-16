@@ -166,8 +166,9 @@ extension AddNewSellClothVC: UITableViewDataSource , UITableViewDelegate {
         default:
             break
         }
-        
-        ActionSheetMultipleStringPicker.show(withTitle: title, rows: [selectRow], initialSelection: [selectRow.count], doneBlock: {
+        switch indexPath.row {
+        case 1,2,3:
+            ActionSheetMultipleStringPicker.show(withTitle: title, rows: [selectRow], initialSelection: [selectRow.count], doneBlock: {
                 picker, indexes, values in
                 switch indexPath.row {
                 case Cloth.selectType.color.rawValue:
@@ -180,14 +181,18 @@ extension AddNewSellClothVC: UITableViewDataSource , UITableViewDelegate {
                 default:
                     break
                 }
-            
+                
                 print("values = \(values)")
                 print("indexes = \(indexes)")
                 print("picker = \(picker)")
                 self.tableView.reloadData()
-            
+                
                 return
-        }, cancel: { ActionMultipleStringCancelBlock in return }, origin: self.view)
+            }, cancel: { ActionMultipleStringCancelBlock in return }, origin: self.view)
+        default:
+            break
+        }
+
         
       
     }

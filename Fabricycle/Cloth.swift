@@ -70,6 +70,11 @@ class Cloth : NSObject{
     func uploadAllImage(block : @escaping ()->Void){
         var uploadCount = 0
         var tempString = [String]()
+        if imageList.count == 0 {
+            allUploadSuccess(block)
+            return
+        }
+        
         for image in self.imageList {
             var data = Data()
             data = UIImageJPEGRepresentation(image, 0.6)!
