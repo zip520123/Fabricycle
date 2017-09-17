@@ -199,7 +199,7 @@ extension AddNewSellClothVC: UITableViewDataSource , UITableViewDelegate {
 }
 extension AddNewSellClothVC: iCarouselDelegate , iCarouselDataSource {
     public func numberOfItems(in carousel: iCarousel) -> Int {
-        pageControl.currentPage = cloth.imageList.count
+        pageControl.numberOfPages = cloth.imageList.count
         return cloth.imageList.count
     }
 
@@ -207,6 +207,7 @@ extension AddNewSellClothVC: iCarouselDelegate , iCarouselDataSource {
         let imageView = UIImageView(image: cloth.imageList[index])
         imageView.frame = carousel.frame
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     
     }
