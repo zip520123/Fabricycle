@@ -35,7 +35,7 @@ class Cloth : NSObject{
         self.size = ""
         self.uploadStats = false
  
-        self.descr = "edit this"
+        self.descr = "cloth name"
     }
     init(json : JSON){
         self.imageList = []

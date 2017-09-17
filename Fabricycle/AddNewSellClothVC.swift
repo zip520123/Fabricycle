@@ -205,6 +205,8 @@ extension AddNewSellClothVC: iCarouselDelegate , iCarouselDataSource {
 
     public func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
         let imageView = UIImageView(image: cloth.imageList[index])
+        imageView.frame = carousel.frame
+        imageView.contentMode = .scaleAspectFill
         return imageView
     
     }

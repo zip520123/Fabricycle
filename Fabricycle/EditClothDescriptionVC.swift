@@ -17,6 +17,7 @@ class EditClothDescriptionVC: UIViewController , UITextViewDelegate {
         super.viewDidLoad()
         editTextView.text = descr
         editTextView.delegate = self
+        title = "Description"
     }
     func textViewDidChange(_ textView: UITextView) {
         if let text = textView.text {
@@ -24,9 +25,9 @@ class EditClothDescriptionVC: UIViewController , UITextViewDelegate {
         }
     }
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == "edit this" {
-            textView.text = ""
-        }
+        
+        textView.text = ""
+        
     }
     
 

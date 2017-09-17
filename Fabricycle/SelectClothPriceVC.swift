@@ -28,7 +28,8 @@ class SelectClothPriceVC: UIViewController , UITableViewDelegate , UITableViewDa
         return "Price".local
     }
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "PricingStrategy".local
+//        return "PricingStrategy".local
+        return "此處告訴使用者我們的收費機制是什麼，藉由說明頁面讓使用這清楚了解我們的收費理念。"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
