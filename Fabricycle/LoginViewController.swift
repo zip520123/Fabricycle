@@ -36,6 +36,7 @@ class LoginViewController: UIViewController ,FBSDKLoginButtonDelegate{
     @IBOutlet weak var textFieldLoginPassword: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     
+    @IBOutlet weak var loginButton: UIButton!
     
     // MARK: Actions
     @IBAction func loginDidTouch(_ sender: AnyObject) {
@@ -52,6 +53,46 @@ class LoginViewController: UIViewController ,FBSDKLoginButtonDelegate{
         
         
     }
+    
+    @IBAction func sendForgetPasswordEmail(_ sender: Any) {
+        let alert = UIAlertController(title: "reset password",
+                                      message: nil,
+                                      preferredStyle: .alert)
+        
+        let sendAction = UIAlertAction(title: "Send",
+                                       style: .default) { action in
+                                        // 1
+                                        
+        if let emailField = alert.textFields?[0] , let email = emailField.text {
+            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+                FIRAuth.auth()?.sendPasswordReset(withEmail: email) { (error) in
+                    hud.hide(animated: true)
+                    if error != nil {
+                        UIAlertController.showErrorMsg(errorMsg: error!.localizedDescription)
+                    }else{
+                        UIAlertController.showMsg(title: nil, msg: "send email success")
+                    }
+                }
+            }
+                   
+                   
+                                        
+        }
+        let cancelAction = UIAlertAction(title: "Cancel",
+                                         style: .default)
+        
+        alert.addTextField { textEmail in
+            textEmail.placeholder = "Enter your email"
+        }
+        
+        
+        alert.addAction(sendAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
     
     @IBAction func signUpDidTouch(_ sender: AnyObject) {
         let alert = UIAlertController(title: "Register",
@@ -104,14 +145,18 @@ class LoginViewController: UIViewController ,FBSDKLoginButtonDelegate{
         }
         view.backgroundColor = mainColor
         setUpFBbutton()
+        setUpGoogleLoginButton()
     }
     func setUpFBbutton(){
-        let loginButton = FBSDKLoginButton()
-        loginButton.delegate = self
-        view.layout(loginButton).left(24).right(24).height(48)
-        loginButton.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 12).isActive = true
+        let FBloginButton = FBSDKLoginButton()
+        FBloginButton.delegate = self
+        view.layout(FBloginButton).centerHorizontally()
+        FBloginButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 12).isActive = true
+        FBloginButton.widthAnchor.constraint(equalTo: loginButton.widthAnchor, multiplier: 1).isActive = true
     }
-    
+    func setUpGoogleLoginButton(){
+        
+    }
         // MARK: - fb login button delegate
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
 
@@ -133,21 +178,11 @@ class LoginViewController: UIViewController ,FBSDKLoginButtonDelegate{
                 }
             })
         }else{
-            UIAlertController.showErrorMsg(errorMsg: "FB access token nil")
+            UIAlertController.showErrorMsg(errorMsg: "FB access token nil , login fail")
 
             
         }
-        
-        
-        //        [[FIRAuth auth] signInWithCredential:credential
-        //            completion:^(FIRUser *user, NSError *error) {
-        //            if (error) {
-        //            // ...
-        //            return;
-        //            }
-        //            // User successfully signed in. Get user data from the FIRUser object
-        //            // ...
-        //            }];
+
     }
     /**
      Sent to the delegate when the button was used to logout.

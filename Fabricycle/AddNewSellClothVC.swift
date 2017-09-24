@@ -34,6 +34,8 @@ class AddNewSellClothVC: UIViewController ,UIImagePickerControllerDelegate{
         
         carousel.delegate = self
         carousel.dataSource = self
+        carousel.isPagingEnabled = true
+        
         carousel.reloadData()
         let tipGesture = UITapGestureRecognizer(target: self, action: #selector(self.takeNewCamera))
         takeCameraButton.addGestureRecognizer(tipGesture)
@@ -158,7 +160,7 @@ extension AddNewSellClothVC: UITableViewDataSource , UITableViewDelegate {
         
         switch indexPath.row {
         case 1:
-            selectRow = ["red" , "blue" , "yellow" , "white" , "black"]
+            selectRow = ["red" , "blue" , "yellow" , "white" , "black" , "green" , "brown" , "Purple", "grey" ,"other"]
         case 2:
             selectRow = ["male" , "female" , "none"]
         case 3:

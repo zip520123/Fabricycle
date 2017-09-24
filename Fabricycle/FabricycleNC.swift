@@ -20,18 +20,24 @@ class FabricycleNC: UINavigationController {
         navigationBar.barTintColor = mainColor
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         
-        let menuItem = UIBarButtonItem(image: Icon.menu, style: .plain, target: self, action: #selector(self.showLGmenu))
-        self.visibleViewController?.navigationItem.setLeftBarButton(menuItem, animated: true)
-//        self.visibleViewController?.navigationItem.contentView.backgroundColor = mainColor
-        
-        let profileItem = UIBarButtonItem(image: UIImage(named: "profileImage"), style: .plain, target: self, action: nil)
-        self.visibleViewController?.navigationItem.setRightBarButton(profileItem, animated: true)
+
+
         
         
+        setProfileImte()
+        setMenuItem()
         navigationBar.isTranslucent = true
         setBarUI()
         navigationBar.shadowImage = UIImage()
         
+    }
+    func setMenuItem(){
+        let menuItem = UIBarButtonItem(image: Icon.menu, style: .plain, target: self, action: #selector(self.showLGmenu))
+        self.visibleViewController?.navigationItem.setLeftBarButton(menuItem, animated: true)
+    }
+    func setProfileImte(){
+        let profileItem = UIBarButtonItem(image: UIImage(named: "profileImage"), style: .plain, target: self, action: nil)
+        self.visibleViewController?.navigationItem.setRightBarButton(profileItem, animated: true)
     }
     func showLGmenu(){
         showLeftViewAnimated(nil)

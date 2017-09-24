@@ -41,6 +41,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="loadingPage" width="138" height="124"/>
+        <image name="loadingPage" width="1183" height="1183"/>
     </resources>
 </document>
