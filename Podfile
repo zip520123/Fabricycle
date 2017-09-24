@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '10.0'
 target 'Fabricycle' do
 
   use_frameworks!
@@ -8,6 +8,8 @@ target 'Fabricycle' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
+  pod 'GoogleSignIn'
+  
   pod 'Alamofire', '~> 4.0'
   pod 'SwiftyJSON'
   

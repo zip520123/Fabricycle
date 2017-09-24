@@ -25,7 +25,8 @@ import Firebase
 import FBSDKLoginKit
 import Material
 import MBProgressHUD
-class LoginViewController: UIViewController ,FBSDKLoginButtonDelegate{
+import GoogleSignIn
+class LoginViewController: UIViewController ,FBSDKLoginButtonDelegate , GIDSignInUIDelegate{
     
 
     // MARK: Constants
@@ -143,21 +144,54 @@ class LoginViewController: UIViewController ,FBSDKLoginButtonDelegate{
                 self.performSegue(withIdentifier: self.loginToList, sender: nil)
             }
         }
+        GIDSignIn.sharedInstance().uiDelegate = self
+//        GIDSignIn.sharedInstance().signIn()
         view.backgroundColor = mainColor
         setUpFBbutton()
         setUpGoogleLoginButton()
     }
+    let fbLoginButton = FBSDKLoginButton()
     func setUpFBbutton(){
-        let FBloginButton = FBSDKLoginButton()
-        FBloginButton.delegate = self
-        view.layout(FBloginButton).centerHorizontally()
-        FBloginButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 12).isActive = true
-        FBloginButton.widthAnchor.constraint(equalTo: loginButton.widthAnchor, multiplier: 1).isActive = true
+        fbLoginButton.delegate = self
+        view.layout(fbLoginButton).centerHorizontally()
+        fbLoginButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 12).isActive = true
+        fbLoginButton.widthAnchor.constraint(equalTo: loginButton.widthAnchor, multiplier: 1).isActive = true
+        fbLoginButton.heightAnchor.constraint(equalTo: loginButton.heightAnchor, multiplier: 1).isActive = true
+
     }
+    
+    let gIDSignInButton = GIDSignInButton()
     func setUpGoogleLoginButton(){
+        view.layout(gIDSignInButton).centerHorizontally()
+        gIDSignInButton.topAnchor.constraint(equalTo: fbLoginButton.bottomAnchor, constant: 12).isActive = true
+        gIDSignInButton.widthAnchor.constraint(equalTo: fbLoginButton.widthAnchor, multiplier: 1).isActive = true
+        gIDSignInButton.heightAnchor.constraint(equalTo: loginButton.heightAnchor, multiplier: 1).isActive = true
         
     }
-        // MARK: - fb login button delegate
+    // MARK: - google login
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        // ...
+        if let error = error {
+            // ...
+            return
+        }
+        
+        guard let authentication = user.authentication else { return }
+        let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        // ...
+        
+        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+            if let error = error {
+                UIAlertController.showErrorMsg(errorMsg: error.localizedDescription)
+                return
+            }
+
+        }
+    }
+    
+    
+    // MARK: - fb login button delegate
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
 
         if let error = error {
