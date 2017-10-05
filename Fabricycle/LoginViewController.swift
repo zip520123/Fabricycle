@@ -165,7 +165,7 @@ class LoginViewController: UIViewController ,FBSDKLoginButtonDelegate , GIDSignI
         view.layout(gIDSignInButton).centerHorizontally()
         gIDSignInButton.topAnchor.constraint(equalTo: fbLoginButton.bottomAnchor, constant: 12).isActive = true
         gIDSignInButton.widthAnchor.constraint(equalTo: fbLoginButton.widthAnchor, multiplier: 1).isActive = true
-        gIDSignInButton.heightAnchor.constraint(equalTo: loginButton.heightAnchor, multiplier: 1).isActive = true
+//        gIDSignInButton.heightAnchor.constraint(equalTo: loginButton.heightAnchor, multiplier: 1).isActive = true
         
     }
     // MARK: - google login

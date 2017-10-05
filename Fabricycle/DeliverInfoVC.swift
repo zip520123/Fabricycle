@@ -35,10 +35,17 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
 //        performSegue(withIdentifier: "performNewForm", sender: nil)
     }
     func deliverForm(){
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
-        let dateString = dateFormatter.string(from: Date())
-        let formUidString = dateString
+        
+        var formUidString = ""
+        if formObejct.uid != "0" {
+            formUidString = formObejct.uid
+        }else {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = formObjectDateFormatter
+            let dateString = dateFormatter.string(from: Date())
+            formUidString = dateString
+        }
+        
         
         let formItemsRef = FIRDatabase.database().reference(withPath: "ID/\(getUserId()!)/FormItems/\(formUidString)")
         formItemsRef.setValue(formObejct.returnFormForFireBase())
@@ -55,7 +62,7 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
     }
     func uploadAllClothImage(){
         var uploadCount = 0
-        if formObejct.clothList.count == 0 {
+        if formObejct.clothList.count == 0 || formObejct.uid != "0"{
             MBProgressHUD.hide(for: self.view, animated: true)
             deliverForm()
             return
@@ -122,12 +129,15 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
         formObejct.phoneNumber = textField.text!
         UserDefaults.standard.set(textField.text, forKey: userPhone)
     }
-
-    func textViewDidChange(_ textView: UITextView) {
-        formObejct.address = textView.text
-        UserDefaults.standard.set(textView.text, forKey: userAddress)
-
+    func setAddress(textField : UITextField ){
+        formObejct.address = textField.text!
+        UserDefaults.standard.set(textField.text, forKey: userAddress)
     }
+//    func textViewDidChange(_ textView: UITextView) {
+//        formObejct.address = textView.text
+//        UserDefaults.standard.set(textView.text, forKey: userAddress)
+//
+//    }
     let timeList = ["All day" , "09:00 - 12:00 AM" , "12:00 - 06:00 PM" , "06:00 - 09:00 PM"]
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
@@ -135,10 +145,17 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! DelliverinfoCell
             cell.nameTextField.addTarget(self, action: #selector(self.setUserName), for: .editingChanged)
             cell.phoneTextField.addTarget(self, action: #selector(self.setPhone), for: .editingChanged)
-            cell.addressTextView.delegate = self
-            cell.nameTextField.text = UserDefaults.standard.getUserName()
-            cell.phoneTextField.text = UserDefaults.standard.getUserPhone()
-            cell.addressTextView.text = UserDefaults.standard.getUserAddress()
+            cell.addressTextField.addTarget(self, action: #selector(self.setAddress), for: .editingChanged)
+            if formObejct.uid != "0"{
+                cell.nameTextField.text = formObejct.userName
+                cell.phoneTextField.text = formObejct.phoneNumber
+                cell.addressTextField.text = formObejct.address
+            }else{
+                cell.nameTextField.text = UserDefaults.standard.getUserName()
+                cell.phoneTextField.text = UserDefaults.standard.getUserPhone()
+                cell.addressTextField.text = UserDefaults.standard.getUserAddress()
+            }
+            
             
             return cell
         case 1:
@@ -146,23 +163,7 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
             
             cell.textLabel?.text = timeList[indexPath.row]
             cell.textLabel?.textColor = Color.grey.darken1
-            
-//            switch indexPath.row {
-//            case 0:
-//                cell.textLabel!.text = "ConvenientToTheMerchant".local
-//                cell.detailTextLabel!.text = "關渡北投店"
-//                if formObejct.transferType == .conviniateMarket {
-//                    cell.accessoryType = .checkmark
-//                }
-//            case 1:
-//                cell.textLabel!.text = "ToHomeReceipt".local
-//                cell.detailTextLabel!.text = "9:00 - 18:00"
-//                if formObejct.transferType == .gotoHomerecive {
-//                    cell.accessoryType = .checkmark
-//                }
-//            default:
-//                break
-//            }
+
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "")
@@ -184,32 +185,8 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
         let cell = tableView.cellForRow(at: indexPath)!
         cell.accessoryType = .checkmark
         formObejct.deliverTimeScale = timeList[indexPath.row]
-//        switch indexPath.section {
-//        case 1:
-//            let cell = tableView.cellForRow(at: indexPath)!
-//            cell.accessoryType = .checkmark
-//            switch indexPath.row {
-//            case 0:
-//                formObejct.transferType = .conviniateMarket
-//                break
-//            case 1:
-//                formObejct.transferType = .gotoHomerecive
-//                break
-//            default:
-//                break
-//            }
-//        default:
-//            break
-//        }
-    }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
+
 
 }

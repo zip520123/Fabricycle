@@ -17,6 +17,8 @@ let mainColor : UIColor = #colorLiteral(red: 0.03729180247, green: 0.6208408475,
 let userName : String = "userName"
 let userPhone : String = "userPhone"
 let userAddress : String = "userAddress"
+let formObjectDateFormatter : String = "YYYY-MM-dd HH:mm:ss"
+let formDateDisplayFormatter : String = "MMMM d, YYYY"
 extension String {
     var local: String {
         return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")

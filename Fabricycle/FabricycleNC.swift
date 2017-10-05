@@ -19,10 +19,7 @@ class FabricycleNC: UINavigationController {
 
         navigationBar.barTintColor = mainColor
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
-        
 
-
-        
         
         setProfileImte()
         setMenuItem()
@@ -36,11 +33,15 @@ class FabricycleNC: UINavigationController {
         self.visibleViewController?.navigationItem.setLeftBarButton(menuItem, animated: true)
     }
     func setProfileImte(){
-        let profileItem = UIBarButtonItem(image: UIImage(named: "profileImage"), style: .plain, target: self, action: nil)
+        let profileItem = UIBarButtonItem(image: UIImage(named: "profileImage"), style: .plain, target: self, action: #selector(self.showClothProfile))
         self.visibleViewController?.navigationItem.setRightBarButton(profileItem, animated: true)
     }
     func showLGmenu(){
         showLeftViewAnimated(nil)
+    }
+    func showClothProfile(){
+        let clothProfileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ClothProfile")
+        self.visibleViewController?.navigationController?.pushViewController(clothProfileVC, animated: true)
     }
     override func awakeFromNib() {
         super.awakeFromNib()

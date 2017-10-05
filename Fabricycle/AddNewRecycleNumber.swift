@@ -12,9 +12,9 @@ class AddNewRecycleNumber: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var clothList = [Cloth]()
-    var recycleClothNumber = 0
-
+//    var clothList = [Cloth]()
+//    var recycleClothNumber = 0
+    var formObject = FormObject(clothList: [])
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -24,10 +24,7 @@ class AddNewRecycleNumber: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-//        let newLayout = UICollectionViewLayout()
-        
-        
-//        collectionView.collectionViewLayout = newLayout
+
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -36,15 +33,15 @@ class AddNewRecycleNumber: UIViewController {
     }
     @IBAction func getRecycleNumber(segue : UIStoryboardSegue){
         if let setRecycleNumberVC = segue.source as? SetRecycleClothNumberVC {
-            recycleClothNumber = setRecycleNumberVC.selectInt
+            formObject.recycleClothNumber = setRecycleNumberVC.selectInt
             tableView.reloadData()
             
         }
     }
     @IBAction func getSellCloth(segue : UIStoryboardSegue){
         if let newSellClothVC = segue.source as? AddNewSellClothVC {
-            if clothList.index(of: newSellClothVC.cloth) == nil {
-                clothList.append(newSellClothVC.cloth)
+            if formObject.clothList.index(of: newSellClothVC.cloth) == nil {
+                formObject.clothList.append(newSellClothVC.cloth)
             }
 
             self.tableView.reloadData()
@@ -54,9 +51,9 @@ class AddNewRecycleNumber: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "setRecycleNumber"{
             let setNuberVC = segue.destination as! SetRecycleClothNumberVC
-            setNuberVC.selectInt = recycleClothNumber
+            setNuberVC.selectInt = formObject.recycleClothNumber
             setNuberVC.selectNumberBlock = { selectInt in
-                self.recycleClothNumber = selectInt
+                self.formObject.recycleClothNumber = selectInt
                 self.tableView.reloadData()
             }
         }
@@ -66,9 +63,6 @@ class AddNewRecycleNumber: UIViewController {
         }
         if segue.identifier == "deliverInfo"{
             let deVC = segue.destination as! DeliverInfoVC
-            
-            let formObject = FormObject(clothList: clothList)
-            formObject.recycleClothNumber = self.recycleClothNumber
             
             deVC.formObejct = formObject
             
@@ -88,18 +82,18 @@ extension AddNewRecycleNumber : UITableViewDelegate, UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "RecycleClothNumberCell") as! RecycleClothNumberCell
             
-            cell.recycleNumberLabel.text = String(format : "%02d",self.recycleClothNumber)
+            cell.recycleNumberLabel.text = String(format : "%02d",formObject.recycleClothNumber)
             
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddNewSellClothCell") as! AddNewSellClothCell
-            cell.numberLabel.text = String(format : "%02d", clothList.count)
+            cell.numberLabel.text = String(format : "%02d", formObject.clothList.count)
             
             return cell
         default:
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "SingleClothCell") as! SingleClothCell
-            let cloth = clothList[indexPath.row - 2]
+            let cloth = formObject.clothList[indexPath.row - 2]
             cell.clothImageView.image = cloth.imageList.first
             cell.clothDescripLabel.text = "Price : \(cloth.price)"
             return cell
@@ -115,7 +109,7 @@ extension AddNewRecycleNumber : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            clothList.remove(at: indexPath.row - 2)
+            formObject.clothList.remove(at: indexPath.row - 2)
             tableView.deleteRows(at: [indexPath], with: .automatic)
             tableView.reloadData()
 
@@ -123,7 +117,7 @@ extension AddNewRecycleNumber : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row > 1 {
-            performSegue(withIdentifier: "selectCloth", sender: clothList[indexPath.row - 2])
+            performSegue(withIdentifier: "selectCloth", sender: formObject.clothList[indexPath.row - 2])
         }
     }
 
@@ -131,13 +125,13 @@ extension AddNewRecycleNumber : UITableViewDelegate, UITableViewDataSource {
 extension AddNewRecycleNumber : UICollectionViewDelegate , UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return clothList.count
+        return formObject.clothList.count
     }
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClothCell", for: indexPath) as! ClothCollectionCell
         
-        let cloth = clothList[indexPath.row]
+        let cloth = formObject.clothList[indexPath.row]
         
         cell.nameLabel.text = cloth.descr
         cell.clothImageView.image = cloth.imageList.first
@@ -163,7 +157,7 @@ extension AddNewRecycleNumber : UICollectionViewDelegate , UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         
-        performSegue(withIdentifier: "selectCloth", sender: clothList[indexPath.row ])
+        performSegue(withIdentifier: "selectCloth", sender: formObject.clothList[indexPath.row ])
         
     }
 }

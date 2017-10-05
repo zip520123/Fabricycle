@@ -48,16 +48,11 @@ class MainPageVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-
-    @IBAction func addNewForm(_ sender: Any) {
-        
-        
-    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowFormObjectVC" {
-            if let formVC = segue.destination as? ShowFormObjectVC {
+        if segue.identifier == "AddNewRecycleNumber" {
+            if let formVC = segue.destination as? AddNewRecycleNumber {
                 
-                formVC.fromObject = sender as! FormObject
+                formVC.formObject = sender as! FormObject
             }
         }
     }
@@ -74,8 +69,25 @@ extension MainPageVC : UITableViewDelegate , UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainPageCell")
         let formItem = formList[indexPath.row]
 //        for (key , value) in formItem {
-            cell?.textLabel?.text = formItem.uid
+        let dateFomatter = DateFormatter()
+        dateFomatter.dateFormat = formObjectDateFormatter
+        let formDate = dateFomatter.date(from: formItem.uid)
+        let displayFomatter = DateFormatter()
+        displayFomatter.dateFormat = formDateDisplayFormatter
+//        cell?.textLabel?.text = formDate != nil ? displayFomatter.string(from: formDate! ) : formItem.uid
+        cell?.textLabel?.text = displayFomatter.string(from: formDate ?? Date() )
             cell?.detailTextLabel?.text = formItem.status.rawValue
+        switch formItem.status {
+        case .deliver , .waitForSend:
+            cell?.detailTextLabel?.textColor = mainColor
+            break
+        case .accept , .sending , .review:
+            cell?.detailTextLabel?.textColor = UIColor.gray
+            break
+        case .error:
+            cell?.detailTextLabel?.textColor = UIColor.red
+            break
+        }
 //        }
 //        let text = clothJson.arrayValue.first!.stringValue
 //        cell?.textLabel?.text = text
@@ -86,11 +98,16 @@ extension MainPageVC : UITableViewDelegate , UITableViewDataSource {
         return cell!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
-        
         let formItem = formList[indexPath.row]
-        performSegue(withIdentifier: "ShowFormObjectVC", sender: formItem)
+        switch formItem.status {
+        case .deliver , .waitForSend:
+            let formItem = formList[indexPath.row]
+            performSegue(withIdentifier: "AddNewRecycleNumber", sender: formItem)
+        default:
+            break
+        }
+        
+        
         
 //        // 1
 //        guard let cell = tableView.cellForRow(at: indexPath) else { return }

@@ -91,6 +91,7 @@ class PreMainPageVC: UIViewController {
         recycleCountLabel.text = "0"
         sellNumber.text = "0"
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         
     }

@@ -15,7 +15,9 @@ class DelliverinfoCell: UITableViewCell {
     
     @IBOutlet weak var phoneTextField: UITextField!
     
-    @IBOutlet weak var addressTextView: UITextView!
+ 
+    
+    @IBOutlet weak var addressTextField: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()

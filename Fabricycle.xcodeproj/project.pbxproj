@@ -12,6 +12,8 @@
 		D538F1F21F6CFD6D00AA0C28 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D538F1F11F6CFD6D00AA0C28 /* MenuVC.swift */; };
 		D538F1F41F6D104400AA0C28 /* PreMainPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D538F1F31F6D104400AA0C28 /* PreMainPageVC.swift */; };
 		D538F1F71F6D1E2500AA0C28 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D538F1F61F6D1E2500AA0C28 /* SideMenuVC.swift */; };
+		D55E00B21F83C6220008AAA6 /* ClothProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55E00B11F83C6220008AAA6 /* ClothProfileVC.swift */; };
+		D55E00B41F84D98F0008AAA6 /* ClothCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55E00B31F84D98F0008AAA6 /* ClothCollectionCell.xib */; };
 		D57091A91F5A9B43005B4067 /* AddNewSellClothVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091A81F5A9B43005B4067 /* AddNewSellClothVC.swift */; };
 		D57091AC1F5ABEA0005B4067 /* AddNewSellClothDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091AB1F5ABEA0005B4067 /* AddNewSellClothDescriptionCell.swift */; };
 		D57091AE1F5B91BE005B4067 /* FabricycleNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57091AD1F5B91BE005B4067 /* FabricycleNC.swift */; };
@@ -76,6 +78,8 @@
 		D538F1F11F6CFD6D00AA0C28 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		D538F1F31F6D104400AA0C28 /* PreMainPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreMainPageVC.swift; sourceTree = "<group>"; };
 		D538F1F61F6D1E2500AA0C28 /* SideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
+		D55E00B11F83C6220008AAA6 /* ClothProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothProfileVC.swift; sourceTree = "<group>"; };
+		D55E00B31F84D98F0008AAA6 /* ClothCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClothCollectionCell.xib; sourceTree = "<group>"; };
 		D57091A81F5A9B43005B4067 /* AddNewSellClothVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewSellClothVC.swift; sourceTree = "<group>"; };
 		D57091AB1F5ABEA0005B4067 /* AddNewSellClothDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewSellClothDescriptionCell.swift; sourceTree = "<group>"; };
 		D57091AD1F5B91BE005B4067 /* FabricycleNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FabricycleNC.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 				D57091B91F5BAE36005B4067 /* DelliverinfoCell.swift */,
 				D57091BB1F5BAF4B005B4067 /* DeiliverinfoCell2.swift */,
 				E70C1BFD1F49A16F005EAEA2 /* ClothCollectionCell.swift */,
+				D55E00B31F84D98F0008AAA6 /* ClothCollectionCell.xib */,
 			);
 			name = addNewForm;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 				E7E1549A1F486E53001D5929 /* MainPageVC.swift */,
 				D59D633E1F62C86D00F972D2 /* ShowFormObjectVC.swift */,
 				E73B283A1F4D1D01007135A6 /* FormItemVC.swift */,
+				D55E00B11F83C6220008AAA6 /* ClothProfileVC.swift */,
 				E70C1BF91F499E89005EAEA2 /* New Form flow */,
 				E70C1BFA1F499E92005EAEA2 /* support file */,
 				E7DEED691F53E22A00D15022 /* ProfileVC.swift */,
@@ -443,6 +449,7 @@
 				E7E154931F481DF7001D5929 /* LaunchScreen.storyboard in Resources */,
 				E7DEED671F53CF2300D15022 /* apikey.plist in Resources */,
 				E7E154901F481DF7001D5929 /* Assets.xcassets in Resources */,
+				D55E00B41F84D98F0008AAA6 /* ClothCollectionCell.xib in Resources */,
 				D57AC5D61F62DEAE00E01E72 /* Localizable.strings in Resources */,
 				E7E1548E1F481DF7001D5929 /* Main.storyboard in Resources */,
 				E7DEED681F53CF2300D15022 /* GoogleService-Info.plist in Resources */,
@@ -629,6 +636,7 @@
 				E7DEED601F4FFC7400D15022 /* Utilty.swift in Sources */,
 				D57091B31F5B9B82005B4067 /* SelectClothPriceVC.swift in Sources */,
 				D538F1F21F6CFD6D00AA0C28 /* MenuVC.swift in Sources */,
+				D55E00B21F83C6220008AAA6 /* ClothProfileVC.swift in Sources */,
 				E70C1C001F49A2DC005EAEA2 /* Cloth.swift in Sources */,
 				D57091B51F5B9DCE005B4067 /* SelectPriceCell.swift in Sources */,
 				E7DEED6A1F53E22A00D15022 /* ProfileVC.swift in Sources */,

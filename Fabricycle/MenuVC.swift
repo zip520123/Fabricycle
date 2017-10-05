@@ -17,7 +17,6 @@ class MenuVC: UIViewController {
     }
 
     @IBAction func logoutButtonClick(_ sender: Any) {
-        
         sideMenuController!.hideLeftView()
         try! FIRAuth.auth()!.signOut()
         dismiss(animated: true, completion: nil)
@@ -36,6 +35,14 @@ class MenuVC: UIViewController {
     }
  
     @IBAction func History(_ sender: Any) {
+        let history = self.storyboard!.instantiateViewController(withIdentifier: "History")
+        
+        let fNC = sideMenuController!.rootViewController as? FabricycleNC
+        fNC?.setViewControllers([history], animated: false)
+        fNC?.setBarUI()
+        fNC?.setMenuItem()
+        fNC?.navigationItem.setRightBarButton(nil, animated: true)
+        sideMenuController!.hideLeftView(animated: true, delay: 0.0 , completionHandler: nil)
     }
     
     @IBAction func Setting(_ sender: Any) {

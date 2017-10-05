@@ -20,7 +20,7 @@ target 'Fabricycle' do
   pod 'IQKeyboardManagerSwift', '4.0.10'
   pod 'LGSideMenuController'
   pod 'HGCircularSlider', '~> 2.0.0'
-  pod 'HMSegmentedControl'
+  pod 'HMSegmentedControl'	
   pod 'iCarousel'
   pod 'ActionSheetPicker-3.0'
 end

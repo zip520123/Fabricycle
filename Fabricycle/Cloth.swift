@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import SDWebImage
 let storage = FIRStorage.storage()
 let storageRef = storage.reference()
 class Cloth : NSObject{
@@ -38,6 +39,7 @@ class Cloth : NSObject{
         self.descr = "cloth name"
     }
     init(json : JSON){
+        
         self.imageList = []
         self.price = json["price"].intValue
         self.descr = json["descr"].stringValue
@@ -47,10 +49,26 @@ class Cloth : NSObject{
         var clothURLs : [String] = []
         for item in json["clothURL"].arrayValue {
             clothURLs.append(item.stringValue)
+            
+            
         }
         self.imageListOnString = clothURLs
         self.uploadStats = false
- 
+        super.init()
+        donwloadimage()
+
+    }
+    func donwloadimage(){
+        for item in imageListOnString {
+            let url = URL(string: item)
+            SDWebImageDownloader.shared().downloadImage(with: url, options: [], progress: nil, completed: { (image, data, error, bool) in
+                if error == nil && image != nil {
+                    self.imageList.append(image!)
+                }
+                
+            })
+        }
+        
     }
     func returnUrlForFireBase()->Any{
         
