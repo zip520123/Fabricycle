@@ -153,6 +153,7 @@ class LoginViewController: UIViewController ,FBSDKLoginButtonDelegate , GIDSignI
     let fbLoginButton = FBSDKLoginButton()
     func setUpFBbutton(){
         fbLoginButton.delegate = self
+        
         view.layout(fbLoginButton).centerHorizontally()
         fbLoginButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 12).isActive = true
         fbLoginButton.widthAnchor.constraint(equalTo: loginButton.widthAnchor, multiplier: 1).isActive = true
@@ -170,24 +171,24 @@ class LoginViewController: UIViewController ,FBSDKLoginButtonDelegate , GIDSignI
     }
     // MARK: - google login
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        // ...
-        if let error = error {
-            // ...
-            return
-        }
-        
-        guard let authentication = user.authentication else { return }
-        let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                       accessToken: authentication.accessToken)
-        // ...
-        
-        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
-            if let error = error {
-                UIAlertController.showErrorMsg(errorMsg: error.localizedDescription)
-                return
-            }
-
-        }
+//        if let error = error {
+//            print("error : \(error.localizedDescription)")
+//            return
+//        }
+//        
+//        guard let authentication = user.authentication else {
+//            print("error : user.authentication")
+//            return }
+//        let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken,
+//                                                       accessToken: authentication.accessToken)
+//        
+//        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+//            if let error = error {
+//                UIAlertController.showErrorMsg(errorMsg: error.localizedDescription)
+//                return
+//            }
+//
+//        }
     }
     
     
@@ -200,9 +201,8 @@ class LoginViewController: UIViewController ,FBSDKLoginButtonDelegate , GIDSignI
             print(error.localizedDescription)
             return
         }
-        
-        if FBSDKAccessToken.current() != nil {
-            let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        if result.token != nil {
+            let credential = FIRFacebookAuthProvider.credential(withAccessToken: result.token.tokenString)
             FIRAuth.auth()?.signIn(with: credential, completion: { (firUser, error) in
                 if error != nil {
                     return
@@ -212,11 +212,11 @@ class LoginViewController: UIViewController ,FBSDKLoginButtonDelegate , GIDSignI
                 }
             })
         }else{
-            UIAlertController.showErrorMsg(errorMsg: "FB access token nil , login fail")
-
-            
+            print("not get fb token")
         }
-
+        
+        
+        
     }
     /**
      Sent to the delegate when the button was used to logout.

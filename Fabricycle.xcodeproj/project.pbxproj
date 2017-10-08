@@ -223,6 +223,8 @@
 		D5BE89D91F6EB7290027E141 /* unuse */ = {
 			isa = PBXGroup;
 			children = (
+				E73B283A1F4D1D01007135A6 /* FormItemVC.swift */,
+				D59D633E1F62C86D00F972D2 /* ShowFormObjectVC.swift */,
 				E70C1BFB1F49A119005EAEA2 /* AddNewClothVC.swift */,
 			);
 			name = unuse;
@@ -264,6 +266,18 @@
 				39CBDBBA368A2E4622374824 /* Pods-FabricycleTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E780ACE21F89C2C800CB26F8 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				E7E1549E1F4871B4001D5929 /* LoginViewController.swift */,
+				D538F1F31F6D104400AA0C28 /* PreMainPageVC.swift */,
+				E7E1549A1F486E53001D5929 /* MainPageVC.swift */,
+				D5BF48381F7634B000E9F67E /* SignUpVC.swift */,
+				D55E00B11F83C6220008AAA6 /* ClothProfileVC.swift */,
+			);
+			name = login;
 			sourceTree = "<group>";
 		};
 		E7B814081F4BE198003DE997 /* view */ = {
@@ -308,18 +322,12 @@
 		E7E154871F481DF7001D5929 /* Fabricycle */ = {
 			isa = PBXGroup;
 			children = (
+				E780ACE21F89C2C800CB26F8 /* login */,
 				D538F1F51F6D1DE800AA0C28 /* SideMenuVC */,
 				E7B814081F4BE198003DE997 /* view */,
 				E7E154A81F487E07001D5929 /* Model */,
 				E7E154881F481DF7001D5929 /* AppDelegate.swift */,
-				E7E1549E1F4871B4001D5929 /* LoginViewController.swift */,
-				D538F1F31F6D104400AA0C28 /* PreMainPageVC.swift */,
 				E7E1548C1F481DF7001D5929 /* Main.storyboard */,
-				D5BF48381F7634B000E9F67E /* SignUpVC.swift */,
-				E7E1549A1F486E53001D5929 /* MainPageVC.swift */,
-				D59D633E1F62C86D00F972D2 /* ShowFormObjectVC.swift */,
-				E73B283A1F4D1D01007135A6 /* FormItemVC.swift */,
-				D55E00B11F83C6220008AAA6 /* ClothProfileVC.swift */,
 				E70C1BF91F499E89005EAEA2 /* New Form flow */,
 				E70C1BFA1F499E92005EAEA2 /* support file */,
 				E7DEED691F53E22A00D15022 /* ProfileVC.swift */,

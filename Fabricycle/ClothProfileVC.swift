@@ -12,7 +12,8 @@ import iCarousel
 import Material
 import SwiftyJSON
 import SDWebImage
-class ClothProfileVC: UIViewController , iCarouselDelegate , iCarouselDataSource{
+import MBProgressHUD
+class ClothProfileVC: UIViewController , iCarouselDelegate , iCarouselDataSource ,UIImagePickerControllerDelegate {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var icarousel: iCarousel!
@@ -36,9 +37,11 @@ class ClothProfileVC: UIViewController , iCarouselDelegate , iCarouselDataSource
 
 //        imageView.sd_setImage(with: FIRAuth.auth()?.currentUser?.photoURL)
         imageView.sd_setImage(with: FIRAuth.auth()?.currentUser?.photoURL, placeholderImage: UIImage(named: "profileImage"))
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFit
         let gustuer = UITapGestureRecognizer(target: self, action: #selector(self.pickerUserPhoto))
         imageView.addGestureRecognizer(gustuer)
-        
+        imageView.isUserInteractionEnabled = true
         icarousel.delegate = self
         icarousel.dataSource = self
         icarousel.isPagingEnabled = true
@@ -46,8 +49,15 @@ class ClothProfileVC: UIViewController , iCarouselDelegate , iCarouselDataSource
         getData()
     }
     func pickerUserPhoto(){
-        
+        // The photo library is the default source, editing not allowed
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .savedPhotosAlbum
+        present(picker, animated: true)
     }
+    
+    
+    
     func getData(){
         let formItemsRef = FIRDatabase.database().reference(withPath: "ID/\(getUserId()!)/FormItems")
         formItemsRef.observe(.value, with: { (snapshot) in
@@ -65,6 +75,52 @@ class ClothProfileVC: UIViewController , iCarouselDelegate , iCarouselDataSource
         })
             
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        picker.dismiss(animated: true)
+        
+        guard let uiImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {return}
+        imageView.image = uiImage
+        
+        let uploadRef = storageRef.child("profilePicture/\(getUserId()!)/")
+        
+        let metaData = FIRStorageMetadata()
+        metaData.contentType = "image/jpg"
+        var data = Data()
+        data = UIImageJPEGRepresentation(uiImage, 0.8)!
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        let uploadTask = uploadRef.put(data, metadata: metaData) { (metadata, error) in
+            print(error.debugDescription)
+            hud.hide(animated: true, afterDelay: 3)
+            guard let metadata = metadata else {
+                hud.label.text = "upload error"
+                
+                return
+            }
+            hud.label.text = "success"
+            
+            // Metadata contains file metadata such as size, content-type, and download URL.
+            let downloadURL = metadata.downloadURL()
+            
+//            let user = FIRAuth.auth()?.currentUser?.photoURL = metaData.downloadURL()
+            let changeRequest = FIRAuth.auth()?.currentUser?.profileChangeRequest()
+            changeRequest?.photoURL = downloadURL
+            changeRequest?.commitChanges { (error) in
+                if error == nil {
+                    
+                }
+            }
+            
+            
+            
+        }
+        uploadTask.resume()
+        uploadTask.observe(.success) { snapshot in
+            print("upload success")
+        }
+    }
+    
+        // MARK: - icarousel
     func numberOfItems(in carousel: iCarousel) -> Int {
         return 2
     }
@@ -109,13 +165,15 @@ extension ClothProfileVC : UICollectionViewDelegate , UICollectionViewDataSource
         var clothList : [Cloth] = []
         for item in formObjectList {
             clothList += item.clothList
+            if clothList.count == indexPath.row {
+                let cloth = clothList[indexPath.row]
+                cell.nameLabel.text = cloth.descr
+                cell.clothImageView.sd_setImage(with: URL(string: cloth.imageListOnString.first ?? "") )
+                cell.priceLabel.text = cloth.price.description
+                break
+            }
         }
-        let cloth = clothList[indexPath.row]
-
         
-        cell.nameLabel.text = cloth.descr
-        cell.clothImageView.sd_setImage(with: URL(string: cloth.imageListOnString.first ?? "") )
-        cell.priceLabel.text = cloth.price.description
         return cell
         
     }
@@ -141,7 +199,28 @@ extension ClothProfileVC : UICollectionViewDelegate , UICollectionViewDataSource
             clothList += item.clothList
         }
         let cloth = clothList[indexPath.row]
-        performSegue(withIdentifier: "selectCloth", sender: cloth)
+        var count = 0
+        for item in formObjectList {
+            count += item.clothList.count
+            if count >= indexPath.row {
+                if item.status == .deliver || item.status == .waitForSend {
+                    performSegue(withIdentifier: "selectCloth", sender: cloth)
+                }else{
+                    UIAlertController.showMsg(title: "only deliver , wait for send status can modify", msg: "")
+                    let alert = UIAlertController(title: "only deliver , wait for send status can modifty", message: nil, preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                       self.performSegue(withIdentifier: "showFormObject", sender: nil)
+                    })
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+                    alert.addAction(okAction)
+                    alert.addAction(cancelAction)
+                    present(alert, animated: true, completion: nil)
+                    
+                    
+                }
+            }
+        }
+        
         
     }
 }

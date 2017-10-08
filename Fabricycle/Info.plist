@@ -34,7 +34,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>436</string>
+	<string>448</string>
 	<key>FacebookAppID</key>
 	<string>334812090278018</string>
 	<key>FacebookDisplayName</key>
@@ -49,9 +49,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>拍衣服用</string>
+	<string>Take cloth photo.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>上傳衣服照片</string>
+	<string>Upload cloth photo or user profile photo.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

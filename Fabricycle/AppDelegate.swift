@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,GIDSignInDelegate{
         
         FIRApp.configure()
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+//        [[FBSDKApplicationDelegate sharedInstance] application:application
+//            didFinishLaunchingWithOptions:launchOptions];
+        
         IQKeyboardManager.sharedManager().enable = true
         
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
@@ -48,7 +52,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,GIDSignInDelegate{
         guard let authentication = user.authentication else { return }
         let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
-       
+        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+            if let error = error {
+                UIAlertController.showErrorMsg(errorMsg: error.localizedDescription)
+                return
+            }
+            
+        }
     }
 
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
