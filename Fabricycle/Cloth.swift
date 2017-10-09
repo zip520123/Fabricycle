@@ -20,7 +20,7 @@ class Cloth : NSObject{
     var imageList : [UIImage]!
     var imageListOnString = [String]()
     var uploadStats = false
-
+    var sold = false
     var price = 0
     var descr : String
     

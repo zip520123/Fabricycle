@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HkF-Tz-91A">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--AboutVC-->
+        <scene sceneID="RtF-lC-Kjy">
+            <objects>
+                <viewController id="HkF-Tz-91A" customClass="AboutVC" customModule="Fabricycle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4EK-wH-o7B"/>
+                        <viewControllerLayoutGuide type="bottom" id="hAS-NB-nXy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iuq-Qx-3Kc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="firstBaseline" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IOi-Bd-iNd">
+                                <rect key="frame" x="16" y="28" width="343" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fabricycle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSJ-jt-BV5">
+                                        <rect key="frame" x="0.0" y="0.0" width="268.5" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0f-ro-HFQ">
+                                        <rect key="frame" x="276.5" y="22" width="66.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k06-P7-Jir">
+                                <rect key="frame" x="16" y="84" width="343" height="583"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SfU-0X-Zpd">
+                                        <rect key="frame" x="0.0" y="8" width="343" height="491.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UM-gd-5gc">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="406"/>
+                                                <mutableString key="text">Fabricycle is a company that dedicated to providing users with a brand-new experience of recycling clothes. Aims to help users deal with their old clothes and to make the recycling process easier and faster!The feature of Fabricycle is that we provide a service for users to sell their used clothes. That is to say, when users hand in their old clothes they can pick out some worthwhile clothes then Fabricycle will put those clothes on selling platform. The users do not have to manage their own stores but they can still act like a seller who can sell clothes and adjust the price through the APP. The clothes users don’t want to sell will be handed over to charity units. We hope that all the old clothes can own by someone and reach our “Recycle, Reuse, Reduce” goal.</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer service hotline: 0921254575" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="N3g-W2-dbp">
+                                                <rect key="frame" x="0.0" y="414" width="343" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer service mailbox: hahababee@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WAN-LK-uLC">
+                                                <rect key="frame" x="0.0" y="442.5" width="343" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright 2017 © HomTai Inc." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2d-T3-Tn9">
+                                                <rect key="frame" x="0.0" y="471" width="343" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SfU-0X-Zpd" firstAttribute="centerX" secondItem="k06-P7-Jir" secondAttribute="centerX" id="CgK-Aq-3fb"/>
+                                    <constraint firstItem="SfU-0X-Zpd" firstAttribute="leading" secondItem="k06-P7-Jir" secondAttribute="leading" id="D7T-Oy-baf"/>
+                                    <constraint firstItem="SfU-0X-Zpd" firstAttribute="top" secondItem="k06-P7-Jir" secondAttribute="top" constant="8" id="GkX-JE-UzP"/>
+                                    <constraint firstAttribute="bottom" secondItem="SfU-0X-Zpd" secondAttribute="bottom" id="MSM-UC-2HA"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="SfU-0X-Zpd" secondAttribute="trailing" id="imR-rV-OJf"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="IOi-Bd-iNd" secondAttribute="trailing" id="Axj-1D-u4C"/>
+                            <constraint firstItem="IOi-Bd-iNd" firstAttribute="leading" secondItem="iuq-Qx-3Kc" secondAttribute="leadingMargin" id="BAG-oG-hyt"/>
+                            <constraint firstItem="hAS-NB-nXy" firstAttribute="top" secondItem="k06-P7-Jir" secondAttribute="bottom" id="Qkd-h9-tdY"/>
+                            <constraint firstItem="k06-P7-Jir" firstAttribute="trailing" secondItem="iuq-Qx-3Kc" secondAttribute="trailingMargin" id="Tfi-Fv-1pV"/>
+                            <constraint firstItem="k06-P7-Jir" firstAttribute="leading" secondItem="iuq-Qx-3Kc" secondAttribute="leadingMargin" id="Vci-9z-0km"/>
+                            <constraint firstItem="k06-P7-Jir" firstAttribute="top" secondItem="IOi-Bd-iNd" secondAttribute="bottom" constant="8" id="ZHK-Fx-WIH"/>
+                            <constraint firstItem="IOi-Bd-iNd" firstAttribute="top" secondItem="4EK-wH-o7B" secondAttribute="bottom" constant="8" id="twl-ob-lLE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="versionLabel" destination="g0f-ro-HFQ" id="bRQ-zu-qTV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uhu-ky-eDM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>

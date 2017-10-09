@@ -76,7 +76,7 @@ class PreMainPageVC: UIViewController {
                 
             }else if recycleCount >= 100 {
                 discriptionText = "You've saved more than 500 trees"
-                self.beamImageView.image = UIImage(named: "slap")
+                self.beamImageView.image = UIImage(named: "tree")
                 self.circlearSlider.minimumValue = 0
                 self.circlearSlider.maximumValue = 100
                 self.circlearSlider.endPointValue = 100

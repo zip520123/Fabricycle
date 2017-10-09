@@ -30,6 +30,8 @@
 		E70C1BFE1F49A16F005EAEA2 /* ClothCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFD1F49A16F005EAEA2 /* ClothCollectionCell.swift */; };
 		E70C1C001F49A2DC005EAEA2 /* Cloth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C1BFF1F49A2DC005EAEA2 /* Cloth.swift */; };
 		E71A4A911F5EE81A008A57DA /* EditClothDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71A4A901F5EE81A008A57DA /* EditClothDescriptionVC.swift */; };
+		E71DD78D1F8B21AD00815141 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E71DD78C1F8B21AD00815141 /* About.storyboard */; };
+		E71DD78F1F8B301600815141 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71DD78E1F8B301600815141 /* AboutVC.swift */; };
 		E73B283B1F4D1D01007135A6 /* FormItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B283A1F4D1D01007135A6 /* FormItemVC.swift */; };
 		E7DEED561F4FC0B700D15022 /* FabricycleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED551F4FC0B700D15022 /* FabricycleTests.swift */; };
 		E7DEED5E1F4FC2C700D15022 /* FabricycleUploadTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DEED5D1F4FC2C700D15022 /* FabricycleUploadTest.swift */; };
@@ -99,6 +101,8 @@
 		E70C1BFD1F49A16F005EAEA2 /* ClothCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothCollectionCell.swift; sourceTree = "<group>"; };
 		E70C1BFF1F49A2DC005EAEA2 /* Cloth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloth.swift; sourceTree = "<group>"; };
 		E71A4A901F5EE81A008A57DA /* EditClothDescriptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditClothDescriptionVC.swift; sourceTree = "<group>"; };
+		E71DD78C1F8B21AD00815141 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		E71DD78E1F8B301600815141 /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		E73B283A1F4D1D01007135A6 /* FormItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormItemVC.swift; sourceTree = "<group>"; };
 		E7DEED531F4FC0B700D15022 /* FabricycleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FabricycleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DEED551F4FC0B700D15022 /* FabricycleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FabricycleTests.swift; sourceTree = "<group>"; };
@@ -257,6 +261,15 @@
 			name = "support file";
 			sourceTree = "<group>";
 		};
+		E71DD7871F8B1F8100815141 /* about */ = {
+			isa = PBXGroup;
+			children = (
+				E71DD78E1F8B301600815141 /* AboutVC.swift */,
+				E71DD78C1F8B21AD00815141 /* About.storyboard */,
+			);
+			name = about;
+			sourceTree = "<group>";
+		};
 		E76EA3C7BEE8F90CE0C51F60 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +335,7 @@
 		E7E154871F481DF7001D5929 /* Fabricycle */ = {
 			isa = PBXGroup;
 			children = (
+				E71DD7871F8B1F8100815141 /* about */,
 				E780ACE21F89C2C800CB26F8 /* login */,
 				D538F1F51F6D1DE800AA0C28 /* SideMenuVC */,
 				E7B814081F4BE198003DE997 /* view */,
@@ -456,6 +470,7 @@
 			files = (
 				E7E154931F481DF7001D5929 /* LaunchScreen.storyboard in Resources */,
 				E7DEED671F53CF2300D15022 /* apikey.plist in Resources */,
+				E71DD78D1F8B21AD00815141 /* About.storyboard in Resources */,
 				E7E154901F481DF7001D5929 /* Assets.xcassets in Resources */,
 				D55E00B41F84D98F0008AAA6 /* ClothCollectionCell.xib in Resources */,
 				D57AC5D61F62DEAE00E01E72 /* Localizable.strings in Resources */,
@@ -673,6 +688,7 @@
 				D57091B81F5BACA1005B4067 /* DeliverInfoVC.swift in Sources */,
 				E7E154B01F492A5D001D5929 /* FormObject.swift in Sources */,
 				E7DEED6C1F53E37200D15022 /* FabricycleTabBarC.swift in Sources */,
+				E71DD78F1F8B301600815141 /* AboutVC.swift in Sources */,
 				D59D633F1F62C86D00F972D2 /* ShowFormObjectVC.swift in Sources */,
 				E7E154AE1F4929EC001D5929 /* User.swift in Sources */,
 				D538F1F71F6D1E2500AA0C28 /* SideMenuVC.swift in Sources */,
@@ -863,6 +879,7 @@
 				INFOPLIST_FILE = Fabricycle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Lin.Fabricycle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Fabricycle/Fabricycle-Bridging-Header.h";
@@ -885,6 +902,7 @@
 				INFOPLIST_FILE = Fabricycle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Lin.Fabricycle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Fabricycle/Fabricycle-Bridging-Header.h";

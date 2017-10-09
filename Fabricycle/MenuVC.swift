@@ -36,22 +36,25 @@ class MenuVC: UIViewController {
  
     @IBAction func History(_ sender: Any) {
         let history = self.storyboard!.instantiateViewController(withIdentifier: "History")
-        
-        let fNC = sideMenuController!.rootViewController as? FabricycleNC
-        fNC?.setViewControllers([history], animated: false)
-        fNC?.setBarUI()
-        fNC?.setMenuItem()
-        fNC?.navigationItem.setRightBarButton(nil, animated: true)
-        sideMenuController!.hideLeftView(animated: true, delay: 0.0 , completionHandler: nil)
+        sideMenuShowVC(vc: history)
     }
     
     @IBAction func Setting(_ sender: Any) {
     }
 
     @IBAction func aboutUs(_ sender: Any) {
-        
+        let aboutVC = UIStoryboard.init(name: "About", bundle: nil).instantiateInitialViewController() as! AboutVC
+        aboutVC.title = "About"
+        sideMenuShowVC(vc: aboutVC)
     }
-    
+    func sideMenuShowVC(vc : UIViewController){
+        let fNC = sideMenuController!.rootViewController as? FabricycleNC
+        fNC?.setViewControllers([vc], animated: false)
+        fNC?.setBarUI()
+        fNC?.setMenuItem()
+        fNC?.navigationItem.setRightBarButton(nil, animated: true)
+        sideMenuController!.hideLeftView(animated: true, delay: 0.0 , completionHandler: nil)
+    }
     
     override var prefersStatusBarHidden: Bool {
         return true

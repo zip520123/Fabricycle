@@ -46,6 +46,7 @@ class ClothProfileVC: UIViewController , iCarouselDelegate , iCarouselDataSource
         icarousel.dataSource = self
         icarousel.isPagingEnabled = true
         icarousel.bounces = false
+        icarousel.clipsToBounds = true
         getData()
     }
     func pickerUserPhoto(){
@@ -137,10 +138,11 @@ class ClothProfileVC: UIViewController , iCarouselDelegate , iCarouselDataSource
         hmSegment.selectedSegmentIndex = carousel.currentItemIndex
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "selectCloth" {
+        if segue.identifier == "selectCloth"  || segue.identifier == "showFormObject"{
             let addNewClothVC = segue.destination as! AddNewSellClothVC
             addNewClothVC.cloth = sender as! Cloth
         }
+        
     }
     @IBAction func getSellCloth(segue : UIStoryboardSegue){
         if let newSellClothVC = segue.source as? AddNewSellClothVC {
@@ -165,7 +167,7 @@ extension ClothProfileVC : UICollectionViewDelegate , UICollectionViewDataSource
         var clothList : [Cloth] = []
         for item in formObjectList {
             clothList += item.clothList
-            if clothList.count == indexPath.row {
+            if clothList.count - 1 >= indexPath.row{
                 let cloth = clothList[indexPath.row]
                 cell.nameLabel.text = cloth.descr
                 cell.clothImageView.sd_setImage(with: URL(string: cloth.imageListOnString.first ?? "") )
@@ -202,14 +204,14 @@ extension ClothProfileVC : UICollectionViewDelegate , UICollectionViewDataSource
         var count = 0
         for item in formObjectList {
             count += item.clothList.count
-            if count >= indexPath.row {
+            if count - 1 >= indexPath.row {
                 if item.status == .deliver || item.status == .waitForSend {
                     performSegue(withIdentifier: "selectCloth", sender: cloth)
                 }else{
                     UIAlertController.showMsg(title: "only deliver , wait for send status can modify", msg: "")
                     let alert = UIAlertController(title: "only deliver , wait for send status can modifty", message: nil, preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: .default, handler: { (_) in
-                       self.performSegue(withIdentifier: "showFormObject", sender: nil)
+                       self.performSegue(withIdentifier: "showFormObject", sender: item)
                     })
                     let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
                     alert.addAction(okAction)
