@@ -28,6 +28,7 @@ class Cloth : NSObject{
     var gender : String
     var size : String
     
+    var ref: FIRDatabaseReference?
     override init() {
         self.imageList = []
         self.imageListOnString = [String]()
@@ -38,7 +39,7 @@ class Cloth : NSObject{
  
         self.descr = "cloth name"
     }
-    init(json : JSON){
+    init(json : JSON , ref : FIRDatabaseReference){
         
         self.imageList = []
         self.price = json["price"].intValue
@@ -54,6 +55,7 @@ class Cloth : NSObject{
         }
         self.imageListOnString = clothURLs
         self.uploadStats = false
+        self.ref = ref
         super.init()
         donwloadimage()
 

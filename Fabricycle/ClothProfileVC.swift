@@ -22,7 +22,7 @@ class ClothProfileVC: UIViewController , iCarouselDelegate , iCarouselDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hmSegment.sectionTitles = ["Selling" ,"Selled"];
+        hmSegment.sectionTitles = ["Selling" ,"Sold"];
         hmSegment.backgroundColor = mainColor
         hmSegment.titleTextAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 15), NSForegroundColorAttributeName:UIColor.white]
         hmSegment.selectionIndicatorColor = Color.white
@@ -60,20 +60,11 @@ class ClothProfileVC: UIViewController , iCarouselDelegate , iCarouselDataSource
     
     
     func getData(){
-        let formItemsRef = FIRDatabase.database().reference(withPath: "ID/\(getUserId()!)/FormItems")
-        formItemsRef.observe(.value, with: { (snapshot) in
-            let json = JSON(snapshot.value)
-            print(json.description)
-            var formObjectList : [FormObject] = []
-            for (key,value) in json.dictionaryValue {
-                let formObject = FormObject(json: value , id: key)
-                formObjectList.append(formObject)
-                
-            }
-            self.formObjectList = formObjectList
+        FormObject.getFormObjectList { (formList) in
+            self.formObjectList = formList
             self.icarousel.reloadData()
-            
-        })
+        }
+
             
     }
     
@@ -129,8 +120,10 @@ class ClothProfileVC: UIViewController , iCarouselDelegate , iCarouselDataSource
         let collection = UICollectionView(frame: carousel.frame, collectionViewLayout: UICollectionViewFlowLayout.init())
         
         collection.register(UINib(nibName: "ClothCollectionCell", bundle: nil) , forCellWithReuseIdentifier: "ClothCollectionCell")
-        collection.delegate = self
-        collection.dataSource = self
+        if index == 0 {
+            collection.delegate = self
+            collection.dataSource = self
+        }
         collection.backgroundColor = Color.grey.lighten4
         return collection
     }
@@ -146,8 +139,14 @@ class ClothProfileVC: UIViewController , iCarouselDelegate , iCarouselDataSource
     }
     @IBAction func getSellCloth(segue : UIStoryboardSegue){
         if let newSellClothVC = segue.source as? AddNewSellClothVC {
-            
-            icarousel.reloadData()
+           let cloth = newSellClothVC.cloth
+
+            cloth!.ref!.updateChildValues(cloth!.returnUrlForFireBase() as! [AnyHashable : Any]){ error, ref  in
+                
+                self.getData()
+            }
+
+           
         }
     }
     
@@ -201,22 +200,25 @@ extension ClothProfileVC : UICollectionViewDelegate , UICollectionViewDataSource
             clothList += item.clothList
         }
         let cloth = clothList[indexPath.row]
+        
+        performSegue(withIdentifier: "selectCloth", sender: cloth)
+        
         var count = 0
         for item in formObjectList {
             count += item.clothList.count
             if count - 1 >= indexPath.row {
                 if item.status == .deliver || item.status == .waitForSend {
-                    performSegue(withIdentifier: "selectCloth", sender: cloth)
+//                    performSegue(withIdentifier: "selectCloth", sender: cloth)
                 }else{
-                    UIAlertController.showMsg(title: "only deliver , wait for send status can modify", msg: "")
-                    let alert = UIAlertController(title: "only deliver , wait for send status can modifty", message: nil, preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "OK", style: .default, handler: { (_) in
-                       self.performSegue(withIdentifier: "showFormObject", sender: item)
-                    })
-                    let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-                    alert.addAction(okAction)
-                    alert.addAction(cancelAction)
-                    present(alert, animated: true, completion: nil)
+//                    UIAlertController.showMsg(title: "only deliver , wait for send status can modify", msg: "")
+//                    let alert = UIAlertController(title: "only deliver , wait for send status can modifty", message: nil, preferredStyle: .alert)
+//                    let okAction = UIAlertAction(title: "OK", style: .default, handler: { (_) in
+//                       self.performSegue(withIdentifier: "showFormObject", sender: item)
+//                    })
+//                    let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+//                    alert.addAction(okAction)
+//                    alert.addAction(cancelAction)
+//                    present(alert, animated: true, completion: nil)
                     
                     
                 }

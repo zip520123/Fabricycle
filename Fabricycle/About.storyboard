@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HkF-Tz-91A">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HkF-Tz-91A">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,29 +43,32 @@
                                 <rect key="frame" x="16" y="84" width="343" height="583"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SfU-0X-Zpd">
-                                        <rect key="frame" x="0.0" y="8" width="343" height="491.5"/>
+                                        <rect key="frame" x="0.0" y="8" width="343" height="486.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UM-gd-5gc">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="406"/>
-                                                <mutableString key="text">Fabricycle is a company that dedicated to providing users with a brand-new experience of recycling clothes. Aims to help users deal with their old clothes and to make the recycling process easier and faster!The feature of Fabricycle is that we provide a service for users to sell their used clothes. That is to say, when users hand in their old clothes they can pick out some worthwhile clothes then Fabricycle will put those clothes on selling platform. The users do not have to manage their own stores but they can still act like a seller who can sell clothes and adjust the price through the APP. The clothes users don’t want to sell will be handed over to charity units. We hope that all the old clothes can own by someone and reach our “Recycle, Reuse, Reduce” goal.</mutableString>
+                                                <mutableString key="text">Fabricycle is a service that dedicated to providing users with a brand-new experience of recycling clothes. Aims to help users deal with their old clothes and to make the recycling process easier and faster!
+
+The feature of Fabricycle is that we provide a service for users to sell their used clothes. That is to say, when users hand in their old clothes they can pick out some worthwhile clothes then Fabricycle will put those clothes on selling platform. The users do not have to manage their own stores but they can still act like a seller who can sell clothes and adjust the price through the APP. The clothes users don’t want to sell will be handed over to charity units. We hope that all the old clothes can own by someone and reach our “Recycle, Reuse, Reduce” goal.
+</mutableString>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer service hotline: 0921254575" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="N3g-W2-dbp">
-                                                <rect key="frame" x="0.0" y="414" width="343" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="414" width="343" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer service mailbox: hahababee@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WAN-LK-uLC">
-                                                <rect key="frame" x="0.0" y="442.5" width="343" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="440" width="343" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright 2017 © HomTai Inc." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2d-T3-Tn9">
-                                                <rect key="frame" x="0.0" y="471" width="343" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="466" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

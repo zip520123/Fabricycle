@@ -22,22 +22,12 @@ class MainPageVC: UIViewController {
     func setUpTableView(){
         tableView.delegate = self
         tableView.dataSource = self
-        let formItemsRef = FIRDatabase.database().reference(withPath: "ID/\(getUserId()!)/FormItems")
-        formItemsRef.observe(.value, with: { (snapshot) in
-
-            let json = JSON(snapshot.value)
-            print(json.description)
-            var formObjectList : [FormObject] = []
-            for (key,value) in json.dictionaryValue {
-                let formObject = FormObject(json: value , id: key)
-                formObjectList.append(formObject)
-                
-            }
-            self.formList = formObjectList
+        
+        FormObject.getFormObjectList { (formList) in
+            self.formList = formList
             
             self.tableView.reloadData()
-        })
-        
+        }
     }
 //    @IBAction func getNewForm(segue : UIStoryboardSegue){
 //        if segue.source.isKind(of: DeliverInfoVC.classForCoder()){

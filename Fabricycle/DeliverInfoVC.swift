@@ -62,7 +62,7 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
     }
     func uploadAllClothImage(){
         var uploadCount = 0
-        if formObejct.clothList.count == 0 || formObejct.uid != "0"{
+        if formObejct.clothList.count == 0 {
             MBProgressHUD.hide(for: self.view, animated: true)
             deliverForm()
             return
@@ -86,7 +86,7 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
     }
     
     func numberOfSections(in tableView: UITableView) -> Int{
-        return 2
+        return 1
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
@@ -95,6 +95,14 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
         case 1:
             return "Delivery time"
         default:
+            return nil
+        }
+    }
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "After sending this form, Fabricycle will contact you to confirm your address and the exact pick-up time. The courier will pick up your clothes at the address that you have provided to us. Please separate those clothes that you want to sell from those clothes that you just want to recycle and pack these clothes into a box. Thank you for your cooperation.\nFor those clothes users want to sell, we will clean, sort, photograph, and upload them to our selling platform within 10 days. We will sell them for 24 days, and if the clothes are not sold out on the twentieth day, our app will automatically send you a message and ask whether you are willing to lower the price. If you do not want to lower the price, on the twenty-fourth day, we will send you another message and ask you whether you are willing to pay the freight and take back those clothes. Again, if you do not want to take them back, the clothes shall belong to Fabricycle."
+        default :
             return nil
         }
     }

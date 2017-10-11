@@ -48,42 +48,58 @@ class FormObject {
         transferType = .unset
         deliverTimeScale = "unset"
     }
-    init(json : JSON , id: String){
-        self.uid = id
-        self.status = FormObject.statusEnum(rawValue: json["status"].stringValue) ?? .error
-        self.userName = json["userName"].stringValue
-        self.phoneNumber = json["userPhone"].stringValue
-        self.address = json["userAddress"].stringValue
-        self.transferType = FormObject.TransferType(rawValue: json["tensfarType"].stringValue) ?? .unset
-        self.recycleClothNumber = json["recycleClothNumber"].intValue
-        self.deliverTimeScale = json["deliverTimeScale"].stringValue
-        var clothList : [Cloth] = []
-        for (_ ,jsonCloth) in json["cloths"].dictionaryValue {
-            let cloth = Cloth(json: jsonCloth)
-            clothList.append(cloth)
-        }
-        self.clothList = clothList
-        self.ref = nil
-    }
-    
-    init(snapshot: FIRDataSnapshot , id : String) {
+    init(snapshot: FIRDataSnapshot , id: String ){
         let json = JSON(snapshot.value)
         self.uid = id
         self.status = FormObject.statusEnum(rawValue: json["status"].stringValue) ?? .error
         self.userName = json["userName"].stringValue
-        self.phoneNumber = json["userPhone"].stringValue
-        self.address = json["userAddress"].stringValue
+        self.phoneNumber = json["phoneNumber"].stringValue
+        self.address = json["address"].stringValue
         self.transferType = FormObject.TransferType(rawValue: json["tensfarType"].stringValue) ?? .unset
         self.recycleClothNumber = json["recycleClothNumber"].intValue
         self.deliverTimeScale = json["deliverTimeScale"].stringValue
         var clothList : [Cloth] = []
-        for (_ ,jsonCloth) in json["cloths"].dictionaryValue {
-            let cloth = Cloth(json: jsonCloth)
+//        for (_ ,jsonCloth) in json["cloths"].dictionaryValue {
+//            let cloth = Cloth(json: jsonCloth)
+//            clothList.append(cloth)
+//        }
+        let cloths = snapshot.childSnapshot(forPath: "cloths")
+//        for rest in snapshot.children.allObjects as! [FIRDataSnapshot] {
+//            for subrest in rest.children.allObjects as! [FIRDataSnapshot] {
+//                guard let restDict = subrest.value as? [String : Any] else {continue}
+//                let cloth = Cloth(json: JSON(restDict), ref: subrest.ref)
+//                clothList.append(cloth)
+//            }
+//
+//        }
+        for subrest in cloths.children.allObjects as! [FIRDataSnapshot] {
+            guard let restDict = subrest.value as? [String : Any] else {continue}
+            let cloth = Cloth(json: JSON(restDict), ref: subrest.ref)
             clothList.append(cloth)
         }
+
         self.clothList = clothList
         self.ref = snapshot.ref
     }
+    
+//    init(snapshot: FIRDataSnapshot , id : String) {
+//        let json = JSON(snapshot.value)
+//        self.uid = id
+//        self.status = FormObject.statusEnum(rawValue: json["status"].stringValue) ?? .error
+//        self.userName = json["userName"].stringValue
+//        self.phoneNumber = json["userPhone"].stringValue
+//        self.address = json["userAddress"].stringValue
+//        self.transferType = FormObject.TransferType(rawValue: json["tensfarType"].stringValue) ?? .unset
+//        self.recycleClothNumber = json["recycleClothNumber"].intValue
+//        self.deliverTimeScale = json["deliverTimeScale"].stringValue
+//        var clothList : [Cloth] = []
+//        for (_ ,jsonCloth) in json["cloths"].dictionaryValue {
+//            let cloth = Cloth(json: jsonCloth)
+//            clothList.append(cloth)
+//        }
+//        self.clothList = clothList
+//        self.ref = snapshot.ref
+//    }
     
     func returnFormForFireBase()->Any{
         return [ "status" : status.rawValue ,
@@ -95,12 +111,22 @@ class FormObject {
                  "deliverTimeScale" : deliverTimeScale
                 ]
     }
-//    func toAnyObject() -> Any {
-//        return [
-//            "stauts" : status,
-//            "clothList" : clothList.dictionaryValue
-//        ]
-//
-//    }
+    class func getFormObjectList(block : @escaping ([FormObject])->Void) {
+        let formItemsRef = FIRDatabase.database().reference(withPath: "ID/\(getUserId()!)/FormItems")
+        formItemsRef.observe(.value, with: { (snapshot) in
+            
+            var formObjectList : [FormObject] = []
+            
+            for rest in snapshot.children.allObjects as! [FIRDataSnapshot] {
+                
+                let formObject = FormObject(snapshot: rest, id: rest.key)
+                formObjectList.append(formObject)
+            }
+            block(formObjectList)
+
+            
+        })
+    }
+
 
 }

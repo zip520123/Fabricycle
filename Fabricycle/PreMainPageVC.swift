@@ -34,21 +34,12 @@ class PreMainPageVC: UIViewController {
         
     }
     func getData(){
-        let formItemsRef = FIRDatabase.database().reference(withPath: "ID/\(getUserId()!)/FormItems")
-        formItemsRef.observe(.value, with: { (snapshot) in
-            
-            let json = JSON(snapshot.value)
-            print(json.description)
-            var formObjectList : [FormObject] = []
-            for (key,value) in json.dictionaryValue {
-                let formObject = FormObject(json: value , id: key)
-                formObjectList.append(formObject)
-                
-            }
-            self.formList = formObjectList
+        
+        FormObject.getFormObjectList { (formList) in
+            self.formList = formList
             var recycleCount = 0
             var sellCount = 0
-            for form in formObjectList{
+            for form in formList{
                 recycleCount += form.recycleClothNumber
                 sellCount += form.clothList.count
             }
@@ -83,8 +74,9 @@ class PreMainPageVC: UIViewController {
             }
             self.labelLevelNumber.text = "\(recycleCountLabelTest)"
             self.discriptionLabel.text = discriptionText
-            
-        })
+        }
+        
+
     }
     
     func resetAllLabel(){

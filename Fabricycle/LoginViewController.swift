@@ -152,6 +152,7 @@ class LoginViewController: UIViewController ,FBSDKLoginButtonDelegate , GIDSignI
     }
     let fbLoginButton = FBSDKLoginButton()
     func setUpFBbutton(){
+        fbLoginButton.isHidden = true
         fbLoginButton.delegate = self
         
         view.layout(fbLoginButton).centerHorizontally()
