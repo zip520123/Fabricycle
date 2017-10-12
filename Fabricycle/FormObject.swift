@@ -16,6 +16,22 @@ class FormObject {
         case review
         case accept
         case error
+        func toString()->String {
+            switch self {
+            case .deliver:
+                return "Processing"
+            case .waitForSend :
+                return "On The Way"
+            case .sending :
+                return "Delivering"
+            case .review :
+                return "Reviewing"
+            case .accept:
+                return "Reviewing"
+            default:
+                return "error"
+            }
+        }
     }
     enum TransferType : String{
         case unset

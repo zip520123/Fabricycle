@@ -22,7 +22,7 @@ class ClothProfileVC: UIViewController , iCarouselDelegate , iCarouselDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hmSegment.sectionTitles = ["Selling" ,"Sold"];
+        hmSegment.sectionTitles = ["Selling" ,"Payment Info"];
         hmSegment.backgroundColor = mainColor
         hmSegment.titleTextAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 15), NSForegroundColorAttributeName:UIColor.white]
         hmSegment.selectionIndicatorColor = Color.white
@@ -149,15 +149,22 @@ class ClothProfileVC: UIViewController , iCarouselDelegate , iCarouselDataSource
            
         }
     }
-    
+    var sellingCloth = [Cloth]()
 }
 extension ClothProfileVC : UICollectionViewDelegate , UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         var count = 0
+        var sellingCloth = [Cloth]()
         for item in formObjectList {
-            count += item.clothList.count
+            
+            for cloth in item.clothList {
+                if cloth.selling == true {count += 1
+                    sellingCloth.append(cloth)
+                }
+            }
         }
+        self.sellingCloth = sellingCloth
         return count
     }
     
@@ -195,35 +202,12 @@ extension ClothProfileVC : UICollectionViewDelegate , UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
-        var clothList : [Cloth] = []
-        for item in formObjectList {
-            clothList += item.clothList
-        }
-        let cloth = clothList[indexPath.row]
+        
+        let cloth = sellingCloth[indexPath.row]
         
         performSegue(withIdentifier: "selectCloth", sender: cloth)
         
-        var count = 0
-        for item in formObjectList {
-            count += item.clothList.count
-            if count - 1 >= indexPath.row {
-                if item.status == .deliver || item.status == .waitForSend {
-//                    performSegue(withIdentifier: "selectCloth", sender: cloth)
-                }else{
-//                    UIAlertController.showMsg(title: "only deliver , wait for send status can modify", msg: "")
-//                    let alert = UIAlertController(title: "only deliver , wait for send status can modifty", message: nil, preferredStyle: .alert)
-//                    let okAction = UIAlertAction(title: "OK", style: .default, handler: { (_) in
-//                       self.performSegue(withIdentifier: "showFormObject", sender: item)
-//                    })
-//                    let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-//                    alert.addAction(okAction)
-//                    alert.addAction(cancelAction)
-//                    present(alert, animated: true, completion: nil)
-                    
-                    
-                }
-            }
-        }
+
         
         
     }

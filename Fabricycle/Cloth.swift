@@ -21,6 +21,7 @@ class Cloth : NSObject{
     var imageListOnString = [String]()
     var uploadStats = false
     var sold = false
+    var selling = false
     var price = 0
     var descr : String
     
@@ -47,6 +48,8 @@ class Cloth : NSObject{
         self.color = json["color"].stringValue
         self.gender = json["gender"].stringValue
         self.size = json["size"].stringValue
+        self.sold = json["sold"].boolValue
+        self.selling = json["selling"].boolValue
         var clothURLs : [String] = []
         for item in json["clothURL"].arrayValue {
             clothURLs.append(item.stringValue)
@@ -74,7 +77,15 @@ class Cloth : NSObject{
     }
     func returnUrlForFireBase()->Any{
         
-        return [ "price" : price , "descr" : descr , "clothURL" : imageListOnString , "color" : color , "gender" : gender , "size" : size]
+        return [ "price" : price ,
+                 "descr" : descr ,
+                 "clothURL" : imageListOnString ,
+                 "color" : color ,
+                 "gender" : gender ,
+                 "size" : size ,
+                 "sold" : sold,
+                 "selling" : selling
+        ]
     }
 //    init(snapshot: FIRDataSnapshot) {
 //        ref = snapshot.ref

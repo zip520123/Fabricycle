@@ -10,14 +10,16 @@ import UIKit
 
 class SetRecycleClothNumberVC: UIViewController {
 
+    @IBOutlet weak var bulletinLabel: UILabel!
     @IBOutlet weak var clothNumberTextField: UITextField!
     var selectInt = 0
     var selectNumberBlock : (Int)-> Void = {_ in}
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        bulletinLabel.text = bulletinString
         clothNumberTextField.delegate = self
         clothNumberTextField.addTarget(self, action: #selector(self.setSelectInt(textField:)), for: .editingChanged)
+        
     }
     func setSelectInt(textField : UITextField){
         if let text = textField.text ,  let inputNumber = Int(text) {

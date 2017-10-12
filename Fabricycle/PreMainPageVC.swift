@@ -50,27 +50,28 @@ class PreMainPageVC: UIViewController {
             
             if recycleCount < 10 {
                 recycleCountLabelTest = recycleCount.description + " / 10"
-                discriptionText = "Let's start to save the earth"
+//                discriptionText = "Let's start to save the earth"
                 self.beamImageView.image = UIImage(named: "beam")
                 self.circlearSlider.minimumValue = 0
                 self.circlearSlider.maximumValue = 10
                 self.circlearSlider.endPointValue = CGFloat(recycleCount)
                 
                 
-            }else if recycleCount >= 10{
+            }else if recycleCount >= 10 && recycleCount < 100{
                 recycleCountLabelTest = recycleCount.description + " / 100"
-                discriptionText = "You've saved more than 20 trees"
+//                discriptionText = "You've saved more than 20 trees"
                 self.beamImageView.image = UIImage(named: "slap")
                 self.circlearSlider.minimumValue = 0
                 self.circlearSlider.maximumValue = 100
                 self.circlearSlider.endPointValue = CGFloat(recycleCount)
                 
             }else if recycleCount >= 100 {
-                discriptionText = "You've saved more than 500 trees"
+//                discriptionText = "You've saved more than 500 trees"
+                recycleCountLabelTest = recycleCount.description + " / 1000"
                 self.beamImageView.image = UIImage(named: "tree")
                 self.circlearSlider.minimumValue = 0
-                self.circlearSlider.maximumValue = 100
-                self.circlearSlider.endPointValue = 100
+                self.circlearSlider.maximumValue = 1000
+                self.circlearSlider.endPointValue = CGFloat(recycleCount)
             }
             self.labelLevelNumber.text = "\(recycleCountLabelTest)"
             self.discriptionLabel.text = discriptionText

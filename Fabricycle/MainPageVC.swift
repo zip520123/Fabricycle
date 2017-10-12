@@ -66,7 +66,7 @@ extension MainPageVC : UITableViewDelegate , UITableViewDataSource {
         displayFomatter.dateFormat = formDateDisplayFormatter
 //        cell?.textLabel?.text = formDate != nil ? displayFomatter.string(from: formDate! ) : formItem.uid
         cell?.textLabel?.text = displayFomatter.string(from: formDate ?? Date() )
-            cell?.detailTextLabel?.text = formItem.status.rawValue
+            cell?.detailTextLabel?.text = formItem.status.toString()
         switch formItem.status {
         case .deliver , .waitForSend:
             cell?.detailTextLabel?.textColor = mainColor

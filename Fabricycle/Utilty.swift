@@ -8,6 +8,7 @@
 
 import Foundation
 import Material
+
 func getUserId()->String?{
     let user = FIRAuth.auth()?.currentUser
     return user?.uid
@@ -19,10 +20,12 @@ let userPhone : String = "userPhone"
 let userAddress : String = "userAddress"
 let formObjectDateFormatter : String = "YYYY-MM-dd HH:mm:ss"
 let formDateDisplayFormatter : String = "MMMM d, YYYY"
+var bulletinString : String = ""
 extension String {
     var local: String {
         return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
     }
+
 }
 extension UserDefaults {
     func getUserName()->String{

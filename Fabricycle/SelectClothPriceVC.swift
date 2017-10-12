@@ -28,8 +28,8 @@ class SelectClothPriceVC: UIViewController , UITableViewDelegate , UITableViewDa
         return "Price".local
     }
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-//        return "PricingStrategy".local
-        return "此處告訴使用者我們的收費機制是什麼，藉由說明頁面讓使用這清楚了解我們的收費理念。"
+        let footer = bulletinString + "\n\n" + "For the cloth you want to sell, we will clean, sort, photograph, and upload them to selling platform within 10 days after we receive your clothes. We will sell them for 24 days. If the cloth sold out in 20 days we will return the 90% money of price to you after we take 10% commission and if the cloth isn’t sold out in 20 days. On the 20th day, we will ask whether you are willing to lower the price. If you do not want to lower the price, on the 24th day, we will ask you whether you are willing to pay the freight and take back the cloth you want to sell. Again, if you do not want to take them back, the clothes shall belong to Fabricycle."
+        return footer
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

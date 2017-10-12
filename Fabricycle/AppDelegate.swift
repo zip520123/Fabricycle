@@ -31,6 +31,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,GIDSignInDelegate{
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
+        
+        let bulletinRef = FIRDatabase.database().reference(withPath: "bulletin")
+        
+        bulletinRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let string = snapshot.value as? String {
+                bulletinString = string
+            }else {
+                bulletinString = ""
+            }
+        })
+            
+        
+        
         return true
     }
     @available(iOS 9.0, *)

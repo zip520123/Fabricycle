@@ -93,7 +93,7 @@ class AddNewSellClothVC: UIViewController ,UIImagePickerControllerDelegate{
 extension AddNewSellClothVC: UITableViewDataSource , UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 4 {
-            return 160
+            return 80
         }
         return 44
     }
