@@ -49,16 +49,16 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
         
         let formItemsRef = FIRDatabase.database().reference(withPath: "ID/\(getUserId()!)/FormItems/\(formUidString)")
         formItemsRef.setValue(formObejct.returnFormForFireBase())
-//        formItemsRef.child("userPhone").setValue(formObejct.phoneNumber)
-//        formItemsRef.child("userAddress").setValue(formObejct.address)
-//        formItemsRef.child("tensfarType").setValue(formObejct.transferType.rawValue)
-//        formItemsRef.child("status").setValue(formObejct.status.rawValue)
-//        formItemsRef.child("recycleClothNumber").setValue(formObejct.recycleClothNumber)
         
         for cloth in formObejct.clothList {
             formItemsRef.child("cloths").childByAutoId().setValue(cloth.returnUrlForFireBase())
         }
-        performSegue(withIdentifier: "performNewForm", sender: nil)
+        if formObejct.uid == "0" {
+            performSegue(withIdentifier: "performNewForm", sender: nil)
+        }else{
+            performSegue(withIdentifier: "setForm", sender: nil)
+        }
+        
     }
     func uploadAllClothImage(){
         var uploadCount = 0

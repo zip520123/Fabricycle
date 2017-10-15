@@ -608,7 +608,7 @@
                                         <rect key="frame" x="0.0" y="72" width="374" height="163"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rPx-fw-dnG" id="bIE-gu-Pfr">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="163"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="162.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vEb-pf-qV2">
@@ -814,7 +814,7 @@
                                         <rect key="frame" x="0.0" y="55" width="414" height="184"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4ap-Ql-MPN" id="wRH-FA-BDj">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="183"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="183.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bsP-Wi-dqa">
@@ -941,6 +941,7 @@
                         <outlet property="doneButton" destination="v4j-4h-604" id="OWn-f9-rXD"/>
                         <outlet property="tableView" destination="KcO-yv-hDX" id="cCG-Ab-7t2"/>
                         <segue destination="CDu-qG-xz9" kind="unwind" identifier="performNewForm" unwindAction="getNewFormWithSegue:" id="7iG-Lb-DAr"/>
+                        <segue destination="CDu-qG-xz9" kind="unwind" identifier="setForm" unwindAction="setFormWithSegue:" id="hqZ-2v-Q3M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cgd-ob-Slg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -965,10 +966,10 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="D4F-2W-7sm" customClass="SelectPriceCell" customModule="Fabricycle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55" width="414" height="120"/>
+                                        <rect key="frame" x="0.0" y="55.333333333333336" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D4F-2W-7sm" id="vJK-Iu-c46">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="119"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="119.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kUY-vz-um6">
@@ -1023,20 +1024,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gIp-O9-2U8">
-                                <rect key="frame" x="20" y="114" width="374" height="120"/>
+                                <rect key="frame" x="20" y="70" width="374" height="120"/>
                                 <color key="textColor" red="0.037291802470000003" green="0.62084084750000001" blue="0.78896182780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8b-14-e4s">
-                                <rect key="frame" x="20" y="266" width="374" height="1"/>
+                                <rect key="frame" x="20" y="222" width="374" height="1"/>
                                 <color key="backgroundColor" red="0.67827838659999995" green="0.68230718369999999" blue="0.68227803710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="mLF-7u-15M"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5OJ-3L-XOd">
-                                <rect key="frame" x="20" y="299" width="374" height="149.33333333333331"/>
+                                <rect key="frame" x="20" y="254.99999999999997" width="374" height="149.33333333333329"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="During the activity (October 15 - November 15), we will transfer these recycle clothes to the charity." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tW9-Ge-a5p">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="33.666666666666686"/>
@@ -1141,7 +1142,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="147"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OBs-NT-hbp" id="umD-BQ-kQ0">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="147"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="146.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d1b-3s-sFt">
@@ -1977,7 +1978,7 @@
         <image name="emptyCloth" width="156" height="151"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1BH-Vh-XXq"/>
         <segue reference="fpT-jr-fXb"/>
+        <segue reference="Fuj-CZ-Zld"/>
     </inferredMetricsTieBreakers>
 </document>

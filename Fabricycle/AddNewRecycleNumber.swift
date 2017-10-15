@@ -130,12 +130,18 @@ extension AddNewRecycleNumber : UICollectionViewDelegate , UICollectionViewDataS
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClothCell", for: indexPath) as! ClothCollectionCell
-        
         let cloth = formObject.clothList[indexPath.row]
-        
         cell.nameLabel.text = cloth.descr
-        cell.clothImageView.image = cloth.imageList.first
         cell.priceLabel.text = cloth.price.description
+        if formObject.ref == nil {
+            cell.clothImageView.image = cloth.imageList.first
+        }else {
+            if let firstStr = cloth.imageListOnString.first{
+                cell.clothImageView.sd_setImage(with: URL(string: firstStr))
+            }
+            
+        }
+        
         return cell
     
     }

@@ -11,7 +11,7 @@ import SwiftyJSON
 import SDWebImage
 let storage = FIRStorage.storage()
 let storageRef = storage.reference()
-class Cloth : NSObject{
+class Cloth : NSObject {
     enum selectType : Int {
         case color = 1
         case gender
@@ -30,6 +30,7 @@ class Cloth : NSObject{
     var size : String
     
     var ref: FIRDatabaseReference?
+    var json: JSON?
     override init() {
         self.imageList = []
         self.imageListOnString = [String]()
@@ -40,8 +41,8 @@ class Cloth : NSObject{
  
         self.descr = "cloth name"
     }
-    init(json : JSON , ref : FIRDatabaseReference){
-        
+    init(json : JSON , ref : FIRDatabaseReference? ){
+        self.json = json
         self.imageList = []
         self.price = json["price"].intValue
         self.descr = json["descr"].stringValue
@@ -75,6 +76,7 @@ class Cloth : NSObject{
         }
         
     }
+
     func returnUrlForFireBase()->Any{
         
         return [ "price" : price ,
@@ -98,10 +100,25 @@ class Cloth : NSObject{
 //        completed = snapshotValue["completed"] as! Bool
 //        ref = snapshot.ref
 //    }
+    func removeExistImage(){
+        for item in imageListOnString {
+            print("image :\(item)")
+            if let url = URL(string : item ) {
+                
+                let imageRef = storageRef.child("images/\(getUserId()!)/\(url.lastPathComponent)")
+                imageRef.delete(completion: { (error) in
+                    print("delete image error:\(error?.localizedDescription)")
+                })
+            }
+            
+        }
+    }
     func uploadAllImage(block : @escaping ()->Void){
         var uploadCount = 0
         var tempString = [String]()
+        removeExistImage()
         if imageList.count == 0 {
+            self.imageListOnString = tempString
             allUploadSuccess(block)
             return
         }

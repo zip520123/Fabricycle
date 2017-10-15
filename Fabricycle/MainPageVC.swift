@@ -29,15 +29,13 @@ class MainPageVC: UIViewController {
             self.tableView.reloadData()
         }
     }
-//    @IBAction func getNewForm(segue : UIStoryboardSegue){
-//        if segue.source.isKind(of: DeliverInfoVC.classForCoder()){
-//            
-//        }
-//    }
+
     @IBAction func logoutClick(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
+    @IBAction func setForm(segue : UIStoryboardSegue) {
+        
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddNewRecycleNumber" {
             if let formVC = segue.destination as? AddNewRecycleNumber {
@@ -55,16 +53,16 @@ extension MainPageVC : UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "mainPageCell", for: indexPath)
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainPageCell")
         let formItem = formList[indexPath.row]
-//        for (key , value) in formItem {
+
         let dateFomatter = DateFormatter()
         dateFomatter.dateFormat = formObjectDateFormatter
         let formDate = dateFomatter.date(from: formItem.uid)
         let displayFomatter = DateFormatter()
         displayFomatter.dateFormat = formDateDisplayFormatter
-//        cell?.textLabel?.text = formDate != nil ? displayFomatter.string(from: formDate! ) : formItem.uid
+
         cell?.textLabel?.text = displayFomatter.string(from: formDate ?? Date() )
             cell?.detailTextLabel?.text = formItem.status.toString()
         switch formItem.status {

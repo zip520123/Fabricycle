@@ -9,6 +9,7 @@
 import UIKit
 import iCarousel
 import Material
+import MBProgressHUD
 import ActionSheetPicker_3_0
 class AddNewSellClothVC: UIViewController ,UIImagePickerControllerDelegate{
     
@@ -35,7 +36,7 @@ class AddNewSellClothVC: UIViewController ,UIImagePickerControllerDelegate{
         carousel.delegate = self
         carousel.dataSource = self
         carousel.isPagingEnabled = true
-        
+        carousel.clipsToBounds = true
         carousel.reloadData()
         let tipGesture = UITapGestureRecognizer(target: self, action: #selector(self.takeNewCamera))
         takeCameraButton.addGestureRecognizer(tipGesture)
@@ -53,10 +54,53 @@ class AddNewSellClothVC: UIViewController ,UIImagePickerControllerDelegate{
         picker.dismiss(animated: true)
 
         guard let uiImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {return}
+        if cloth.ref == nil {
+            self.cloth.imageList.append(uiImage)
+            if cloth.imageList.count > 3 {_ = cloth.imageList.removeFirst()}
+            carousel.reloadData()
+        }else {
+            let hud = MBProgressHUD.showAdded(to: view, animated: true)
+            var data = Data()
+            data = UIImageJPEGRepresentation(uiImage, 0.6)!
+            
+            let uuidString = UUID().uuidString
+            let imageName = "\(uuidString).jpg"
+            
+            // Create a reference to the file you want to upload
+            
+            let riversRef = storageRef.child("images/\(getUserId()!)/\(imageName)")
+            
+            let metaData = FIRStorageMetadata()
+            metaData.contentType = "image/jpg"
+            let uploadTask = riversRef.put(data, metadata: metaData) { (metadata, error) in
+                print(error.debugDescription)
+                hud.hide(animated: true)
+                guard let metadata = metadata else {
+                    
+                    return
+                }
+                // Metadata contains file metadata such as size, content-type, and download URL.
+                let downloadURL = metadata.downloadURL()
+                let urlString = downloadURL!.absoluteString
+                self.cloth.imageListOnString.append(urlString)
+                if self.cloth.imageListOnString.count > 3 {
+                    let firstImage = self.cloth.imageListOnString.removeFirst()
+                    if let url = URL(string : firstImage ) {
+                        
+                        let imageRef = storageRef.child("images/\(getUserId()!)/\(url.lastPathComponent)")
+                        imageRef.delete(completion: { (error) in
+                            print("delete image error:\(error?.localizedDescription)")
+                        })
+                    }
+                }
+                self.cloth.ref!.updateChildValues(self.cloth.returnUrlForFireBase() as! [AnyHashable : Any]){_ in}
+                self.carousel.reloadData()
+            }
+            uploadTask.resume()
+        }
         
-        self.cloth.imageList.append(uiImage)
-        if cloth.imageList.count > 3 {_ = cloth.imageList.popLast()}
-        carousel.reloadData()
+        
+        
     }
 
     func getPrice(_ price : Int){
@@ -67,17 +111,14 @@ class AddNewSellClothVC: UIViewController ,UIImagePickerControllerDelegate{
         cloth.descr = text
         tableView.reloadData()
     }
-//    @IBAction func getPriceFromSegue(_ segue : UIStoryboardSegue){
-//        let vc = segue.source as! SelectClothPriceVC
-//        getPrice(vc.price)
-//        
-//    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "selectClothPrice" {
             let vc = segue.destination as! SelectClothPriceVC
             vc.price = cloth.price
             vc.selectPriceBlock = { price in
                 self.getPrice(price)
+                self.cloth.ref!.updateChildValues(self.cloth.returnUrlForFireBase() as! [AnyHashable : Any]){_ in}
             }
         }
         if segue.identifier == "editVC" {
@@ -85,6 +126,7 @@ class AddNewSellClothVC: UIViewController ,UIImagePickerControllerDelegate{
             vc.descr = cloth.descr
             vc.editBlock = { text in
                 self.getClothDescription(text)
+                self.cloth.ref!.updateChildValues(self.cloth.returnUrlForFireBase() as! [AnyHashable : Any]){_ in}
             }
         }
     }
@@ -201,15 +243,33 @@ extension AddNewSellClothVC: UITableViewDataSource , UITableViewDelegate {
 }
 extension AddNewSellClothVC: iCarouselDelegate , iCarouselDataSource {
     public func numberOfItems(in carousel: iCarousel) -> Int {
-        pageControl.numberOfPages = cloth.imageList.count
-        return cloth.imageList.count
+        
+        
+        if cloth.ref == nil {
+            pageControl.numberOfPages = cloth.imageList.count
+            return cloth.imageList.count
+        }else {
+            pageControl.numberOfPages = cloth.imageListOnString.count
+            return cloth.imageListOnString.count
+        }
+        
+        
     }
 
     public func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
-        let imageView = UIImageView(image: cloth.imageList[index])
+        
+//        let imageView = UIImageView(image: cloth.imageList[index])
+        let imageView = UIImageView()
         imageView.frame = carousel.frame
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
+        if cloth.ref == nil {
+            imageView.image = cloth.imageList[index]
+        }else {
+            imageView.sd_setImage(with: URL(string : cloth.imageListOnString[index] ), placeholderImage: Icon.cameraFront?.tint(with: Color.white))
+        }
+        
+        
         return imageView
     
     }

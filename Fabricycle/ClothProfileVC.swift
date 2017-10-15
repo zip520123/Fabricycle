@@ -133,20 +133,19 @@ class ClothProfileVC: UIViewController , iCarouselDelegate , iCarouselDataSource
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "selectCloth"  || segue.identifier == "showFormObject"{
             let addNewClothVC = segue.destination as! AddNewSellClothVC
-            addNewClothVC.cloth = sender as! Cloth
+            let cloth = sender as! Cloth
+            addNewClothVC.cloth = cloth
         }
         
     }
     @IBAction func getSellCloth(segue : UIStoryboardSegue){
         if let newSellClothVC = segue.source as? AddNewSellClothVC {
-           let cloth = newSellClothVC.cloth
-
-            cloth!.ref!.updateChildValues(cloth!.returnUrlForFireBase() as! [AnyHashable : Any]){ error, ref  in
-                
-                self.getData()
-            }
-
-           
+//           let cloth = newSellClothVC.cloth
+//            cloth?.uploadAllImage {
+//                cloth!.ref!.updateChildValues(cloth!.returnUrlForFireBase() as! [AnyHashable : Any]){ error, ref in
+//                    
+//                }
+//            }
         }
     }
     var sellingCloth = [Cloth]()
