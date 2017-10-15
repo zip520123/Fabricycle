@@ -140,7 +140,7 @@ class ClothProfileVC: UIViewController , iCarouselDelegate , iCarouselDataSource
     }
     @IBAction func getSellCloth(segue : UIStoryboardSegue){
         if let newSellClothVC = segue.source as? AddNewSellClothVC {
-//           let cloth = newSellClothVC.cloth
+           let cloth = newSellClothVC.cloth
 //            cloth?.uploadAllImage {
 //                cloth!.ref!.updateChildValues(cloth!.returnUrlForFireBase() as! [AnyHashable : Any]){ error, ref in
 //                    

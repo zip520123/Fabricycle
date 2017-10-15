@@ -34,7 +34,9 @@ class MainPageVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func setForm(segue : UIStoryboardSegue) {
-        
+        if let formVC = segue.source as? AddNewRecycleNumber {
+            
+        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddNewRecycleNumber" {

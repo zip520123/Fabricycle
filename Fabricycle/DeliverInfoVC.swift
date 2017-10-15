@@ -51,7 +51,10 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
         formItemsRef.setValue(formObejct.returnFormForFireBase())
         
         for cloth in formObejct.clothList {
-            formItemsRef.child("cloths").childByAutoId().setValue(cloth.returnUrlForFireBase())
+            if cloth.ref == nil {
+                formItemsRef.child("cloths").childByAutoId().setValue(cloth.returnUrlForFireBase())
+            }
+            
         }
         if formObejct.uid == "0" {
             performSegue(withIdentifier: "performNewForm", sender: nil)
@@ -69,7 +72,18 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
         }
         
         for cloth in formObejct.clothList {
-            cloth.uploadAllImage {
+            if cloth.ref == nil {
+                cloth.uploadAllImage {
+                    uploadCount += 1
+                    if uploadCount == self.formObejct.clothList.count {
+                        DispatchQueue.main.async {
+                            MBProgressHUD.hide(for: self.view, animated: true)
+                            self.deliverForm()
+                            
+                        }
+                    }
+                }
+            }else {
                 uploadCount += 1
                 if uploadCount == self.formObejct.clothList.count {
                     DispatchQueue.main.async {
@@ -78,7 +92,9 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
                         
                     }
                 }
+                
             }
+            
 
         }
         

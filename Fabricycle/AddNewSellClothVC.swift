@@ -21,7 +21,7 @@ class AddNewSellClothVC: UIViewController ,UIImagePickerControllerDelegate{
     @IBOutlet weak var takeCameraButton: UIView!
     @IBOutlet weak var doneButton: UIButton!
     var cloth : Cloth!
-    
+
     let cellString = ["Price" , "Color" , "Gender" , "Size" , "Description"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,14 +111,19 @@ class AddNewSellClothVC: UIViewController ,UIImagePickerControllerDelegate{
         cloth.descr = text
         tableView.reloadData()
     }
-
+    func updateClothRef(){
+        if self.cloth.ref != nil {
+            self.cloth.ref!.updateChildValues(self.cloth.returnUrlForFireBase() as! [AnyHashable : Any]){_ in}
+        }
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "selectClothPrice" {
             let vc = segue.destination as! SelectClothPriceVC
             vc.price = cloth.price
             vc.selectPriceBlock = { price in
                 self.getPrice(price)
-                self.cloth.ref!.updateChildValues(self.cloth.returnUrlForFireBase() as! [AnyHashable : Any]){_ in}
+                self.updateClothRef()
+                
             }
         }
         if segue.identifier == "editVC" {
@@ -126,7 +131,7 @@ class AddNewSellClothVC: UIViewController ,UIImagePickerControllerDelegate{
             vc.descr = cloth.descr
             vc.editBlock = { text in
                 self.getClothDescription(text)
-                self.cloth.ref!.updateChildValues(self.cloth.returnUrlForFireBase() as! [AnyHashable : Any]){_ in}
+                self.updateClothRef()
             }
         }
     }
@@ -243,8 +248,7 @@ extension AddNewSellClothVC: UITableViewDataSource , UITableViewDelegate {
 }
 extension AddNewSellClothVC: iCarouselDelegate , iCarouselDataSource {
     public func numberOfItems(in carousel: iCarousel) -> Int {
-        
-        
+
         if cloth.ref == nil {
             pageControl.numberOfPages = cloth.imageList.count
             return cloth.imageList.count
@@ -266,7 +270,7 @@ extension AddNewSellClothVC: iCarouselDelegate , iCarouselDataSource {
         if cloth.ref == nil {
             imageView.image = cloth.imageList[index]
         }else {
-            imageView.sd_setImage(with: URL(string : cloth.imageListOnString[index] ), placeholderImage: Icon.cameraFront?.tint(with: Color.white))
+            imageView.sd_setImage(with: URL(string : cloth.imageListOnString[index] ), placeholderImage: Icon.arrowDownward?.tint(with: Color.white))
         }
         
         

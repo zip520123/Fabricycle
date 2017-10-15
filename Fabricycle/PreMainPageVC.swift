@@ -10,6 +10,7 @@ import UIKit
 import Material
 import HGCircularSlider
 import SwiftyJSON
+import MBProgressHUD
 class PreMainPageVC: UIViewController {
 
     @IBOutlet weak var sellNumber: UILabel!
@@ -34,8 +35,9 @@ class PreMainPageVC: UIViewController {
         
     }
     func getData(){
-        
+        let hud = MBProgressHUD.showAdded(to: view, animated: true)
         FormObject.getFormObjectList { (formList) in
+            hud.hide(animated: true)
             self.formList = formList
             var recycleCount = 0
             var sellCount = 0

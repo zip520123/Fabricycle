@@ -42,6 +42,9 @@ class AddNewRecycleNumber: UIViewController {
         if let newSellClothVC = segue.source as? AddNewSellClothVC {
             if formObject.clothList.index(of: newSellClothVC.cloth) == nil {
                 formObject.clothList.append(newSellClothVC.cloth)
+                if formObject.ref != nil {
+                    formObject.ref?.child("cloths").childByAutoId().setValue(newSellClothVC.cloth.returnUrlForFireBase())
+                }
             }
 
             self.tableView.reloadData()
