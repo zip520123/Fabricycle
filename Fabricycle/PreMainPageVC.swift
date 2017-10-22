@@ -36,47 +36,47 @@ class PreMainPageVC: UIViewController {
     }
     func getData(){
         let hud = MBProgressHUD.showAdded(to: view, animated: true)
-        FormObject.getFormObjectList { (formList) in
+        FormObject.getFormObjectList {[weak self] (formList) in
             hud.hide(animated: true)
-            self.formList = formList
+            self?.formList = formList
             var recycleCount = 0
             var sellCount = 0
             for form in formList{
                 recycleCount += form.recycleClothNumber
                 sellCount += form.clothList.count
             }
-            self.recycleCountLabel.text = "\(recycleCount)"
-            self.sellNumber.text = "\(sellCount)"
+            self?.recycleCountLabel.text = "\(recycleCount)"
+            self?.sellNumber.text = "\(sellCount)"
             var recycleCountLabelTest = ""
             var discriptionText = ""
             
             if recycleCount < 10 {
                 recycleCountLabelTest = recycleCount.description + " / 10"
 //                discriptionText = "Let's start to save the earth"
-                self.beamImageView.image = UIImage(named: "beam")
-                self.circlearSlider.minimumValue = 0
-                self.circlearSlider.maximumValue = 10
-                self.circlearSlider.endPointValue = CGFloat(recycleCount)
+                self?.beamImageView.image = UIImage(named: "beam")
+                self?.circlearSlider.minimumValue = 0
+                self?.circlearSlider.maximumValue = 10
+                self?.circlearSlider.endPointValue = CGFloat(recycleCount)
                 
                 
             }else if recycleCount >= 10 && recycleCount < 100{
                 recycleCountLabelTest = recycleCount.description + " / 100"
 //                discriptionText = "You've saved more than 20 trees"
-                self.beamImageView.image = UIImage(named: "slap")
-                self.circlearSlider.minimumValue = 0
-                self.circlearSlider.maximumValue = 100
-                self.circlearSlider.endPointValue = CGFloat(recycleCount)
+                self?.beamImageView.image = UIImage(named: "slap")
+                self?.circlearSlider.minimumValue = 0
+                self?.circlearSlider.maximumValue = 100
+                self?.circlearSlider.endPointValue = CGFloat(recycleCount)
                 
             }else if recycleCount >= 100 {
 //                discriptionText = "You've saved more than 500 trees"
                 recycleCountLabelTest = recycleCount.description + " / 1000"
-                self.beamImageView.image = UIImage(named: "tree")
-                self.circlearSlider.minimumValue = 0
-                self.circlearSlider.maximumValue = 1000
-                self.circlearSlider.endPointValue = CGFloat(recycleCount)
+                self?.beamImageView.image = UIImage(named: "tree")
+                self?.circlearSlider.minimumValue = 0
+                self?.circlearSlider.maximumValue = 1000
+                self?.circlearSlider.endPointValue = CGFloat(recycleCount)
             }
-            self.labelLevelNumber.text = "\(recycleCountLabelTest)"
-            self.discriptionLabel.text = discriptionText
+            self?.labelLevelNumber.text = "\(recycleCountLabelTest)"
+            self?.discriptionLabel.text = discriptionText
         }
         
 
@@ -87,9 +87,7 @@ class PreMainPageVC: UIViewController {
         sellNumber.text = "0"
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-    }
+
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     }

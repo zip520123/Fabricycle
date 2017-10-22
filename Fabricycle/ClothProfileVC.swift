@@ -31,11 +31,11 @@ class ClothProfileVC: UIViewController , iCarouselDelegate , iCarouselDataSource
         hmSegment.selectionIndicatorLocation = .down
         hmSegment.verticalDividerWidth = 0.5
         hmSegment.segmentEdgeInset = UIEdgeInsetsMake(10, 5, 10, 5)
-        hmSegment.indexChangeBlock = {index in self.icarousel.scrollToItem(at: index, animated: true) }
+        hmSegment.indexChangeBlock = {[weak self] index in self?.icarousel.scrollToItem(at: index, animated: true) }
         
         nameLabel.text = FIRAuth.auth()?.currentUser?.displayName ?? "user"
 
-//        imageView.sd_setImage(with: FIRAuth.auth()?.currentUser?.photoURL)
+
         imageView.sd_setImage(with: FIRAuth.auth()?.currentUser?.photoURL, placeholderImage: UIImage(named: "profileImage"))
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFit
@@ -60,9 +60,9 @@ class ClothProfileVC: UIViewController , iCarouselDelegate , iCarouselDataSource
     
     
     func getData(){
-        FormObject.getFormObjectList { (formList) in
-            self.formObjectList = formList
-            self.icarousel.reloadData()
+        FormObject.getFormObjectList { [weak self](formList) in
+            self?.formObjectList = formList
+            self?.icarousel.reloadData()
         }
 
             

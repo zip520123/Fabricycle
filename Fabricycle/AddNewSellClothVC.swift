@@ -21,7 +21,7 @@ class AddNewSellClothVC: UIViewController ,UIImagePickerControllerDelegate{
     @IBOutlet weak var takeCameraButton: UIView!
     @IBOutlet weak var doneButton: UIButton!
     var cloth : Cloth!
-
+    var canEdit = true
     let cellString = ["Price" , "Color" , "Gender" , "Size" , "Description"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +40,13 @@ class AddNewSellClothVC: UIViewController ,UIImagePickerControllerDelegate{
         carousel.reloadData()
         let tipGesture = UITapGestureRecognizer(target: self, action: #selector(self.takeNewCamera))
         takeCameraButton.addGestureRecognizer(tipGesture)
+        
+        if canEdit != true {
+            takeCameraButton.isUserInteractionEnabled = false
+            tableView.isUserInteractionEnabled = false
+            doneButton.isUserInteractionEnabled = false
+            doneButton.backgroundColor = Color.gray
+        }
     }
     
     func takeNewCamera(){
@@ -55,8 +62,13 @@ class AddNewSellClothVC: UIViewController ,UIImagePickerControllerDelegate{
 
         guard let uiImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {return}
         if cloth.ref == nil {
-            self.cloth.imageList.append(uiImage)
-            if cloth.imageList.count > 3 {_ = cloth.imageList.removeFirst()}
+
+            if cloth.imageList.count >= 3 {
+                _ = cloth.imageList.remove(at: self.carousel.currentItemIndex)
+                self.cloth.imageList.insert(uiImage, at: self.carousel.currentItemIndex)
+            }else{
+                self.cloth.imageList.append(uiImage)
+            }
             carousel.reloadData()
         }else {
             let hud = MBProgressHUD.showAdded(to: view, animated: true)
@@ -82,17 +94,22 @@ class AddNewSellClothVC: UIViewController ,UIImagePickerControllerDelegate{
                 // Metadata contains file metadata such as size, content-type, and download URL.
                 let downloadURL = metadata.downloadURL()
                 let urlString = downloadURL!.absoluteString
-                self.cloth.imageListOnString.append(urlString)
-                if self.cloth.imageListOnString.count > 3 {
-                    let firstImage = self.cloth.imageListOnString.removeFirst()
-                    if let url = URL(string : firstImage ) {
-                        
+//                self.cloth.imageListOnString.append(urlString)
+                
+                if self.cloth.imageListOnString.count >= 3 {
+                    let removeImage = self.cloth.imageListOnString.remove(at: self.carousel.currentItemIndex)
+                    if let url = URL(string : removeImage ) {
                         let imageRef = storageRef.child("images/\(getUserId()!)/\(url.lastPathComponent)")
                         imageRef.delete(completion: { (error) in
                             print("delete image error:\(error?.localizedDescription)")
                         })
                     }
+                    self.cloth.imageListOnString.insert(urlString, at: self.carousel.currentItemIndex)
+                    
+                }else{
+                    self.cloth.imageListOnString.append(urlString)
                 }
+
                 self.cloth.ref!.updateChildValues(self.cloth.returnUrlForFireBase() as! [AnyHashable : Any]){_ in}
                 self.carousel.reloadData()
             }
@@ -120,18 +137,18 @@ class AddNewSellClothVC: UIViewController ,UIImagePickerControllerDelegate{
         if segue.identifier == "selectClothPrice" {
             let vc = segue.destination as! SelectClothPriceVC
             vc.price = cloth.price
-            vc.selectPriceBlock = { price in
-                self.getPrice(price)
-                self.updateClothRef()
+            vc.selectPriceBlock = {[weak self] price in
+                self?.getPrice(price)
+                self?.updateClothRef()
                 
             }
         }
         if segue.identifier == "editVC" {
             let vc = segue.destination as! EditClothDescriptionVC
             vc.descr = cloth.descr
-            vc.editBlock = { text in
-                self.getClothDescription(text)
-                self.updateClothRef()
+            vc.editBlock = {[weak self] text in
+                self?.getClothDescription(text)
+                self?.updateClothRef()
             }
         }
     }
@@ -217,16 +234,16 @@ extension AddNewSellClothVC: UITableViewDataSource , UITableViewDelegate {
         }
         switch indexPath.row {
         case 1,2,3:
-            ActionSheetMultipleStringPicker.show(withTitle: title, rows: [selectRow], initialSelection: [selectRow.count], doneBlock: {
+            ActionSheetMultipleStringPicker.show(withTitle: title, rows: [selectRow], initialSelection: [selectRow.count], doneBlock: {[weak self]
                 picker, indexes, values in
                 switch indexPath.row {
                 case Cloth.selectType.color.rawValue:
-                    self.cloth.color = selectRow[(indexes as! [Int])[0]]
+                    self?.cloth.color = selectRow[(indexes as! [Int])[0]]
                     
                 case Cloth.selectType.gender.rawValue:
-                    self.cloth.gender = selectRow[(indexes as! [Int])[0]]
+                    self?.cloth.gender = selectRow[(indexes as! [Int])[0]]
                 case Cloth.selectType.size.rawValue:
-                    self.cloth.size = selectRow[(indexes as! [Int])[0]]
+                    self?.cloth.size = selectRow[(indexes as! [Int])[0]]
                 default:
                     break
                 }
@@ -234,7 +251,7 @@ extension AddNewSellClothVC: UITableViewDataSource , UITableViewDelegate {
                 print("values = \(values)")
                 print("indexes = \(indexes)")
                 print("picker = \(picker)")
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
                 
                 return
             }, cancel: { ActionMultipleStringCancelBlock in return }, origin: self.view)
@@ -270,7 +287,7 @@ extension AddNewSellClothVC: iCarouselDelegate , iCarouselDataSource {
         if cloth.ref == nil {
             imageView.image = cloth.imageList[index]
         }else {
-            imageView.sd_setImage(with: URL(string : cloth.imageListOnString[index] ), placeholderImage: Icon.arrowDownward?.tint(with: Color.white))
+            imageView.sd_setImage(with: URL(string : cloth.imageListOnString[index] ), placeholderImage: placeHolderImage)
         }
         
         

@@ -20,6 +20,7 @@ let userPhone : String = "userPhone"
 let userAddress : String = "userAddress"
 let formObjectDateFormatter : String = "YYYY-MM-dd HH:mm:ss"
 let formDateDisplayFormatter : String = "MMMM d, YYYY"
+let placeHolderImage : UIImage = Icon.arrowDownward!.tint(with: Color.white)!
 var bulletinString : String = ""
 extension String {
     var local: String {

@@ -23,10 +23,10 @@ class MainPageVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        FormObject.getFormObjectList { (formList) in
-            self.formList = formList
+        FormObject.getFormObjectList {[weak self] (formList) in
+            self?.formList = formList
             
-            self.tableView.reloadData()
+            self?.tableView.reloadData()
         }
     }
 
@@ -88,14 +88,16 @@ extension MainPageVC : UITableViewDelegate , UITableViewDataSource {
         return cell!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let formItem = formList[indexPath.row]
-        switch formItem.status {
-        case .deliver , .waitForSend:
-            let formItem = formList[indexPath.row]
-            performSegue(withIdentifier: "AddNewRecycleNumber", sender: formItem)
-        default:
-            break
-        }
+        performSegue(withIdentifier: "AddNewRecycleNumber", sender: formItem)
+//        switch formItem.status {
+//        case .deliver , .waitForSend:
+//            let formItem = formList[indexPath.row]
+//            performSegue(withIdentifier: "AddNewRecycleNumber", sender: formItem)
+//        default:
+//            break
+//        }
         
         
         
@@ -113,14 +115,26 @@ extension MainPageVC : UITableViewDelegate , UITableViewDataSource {
 //            ])
     }
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return false
+        return true
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            clothList.remove(at: indexPath.row)
-//            tableView.reloadData()
-//            
-//        }
+        
+        if editingStyle == .delete {
+            let formItem = formList[indexPath.row]
+            let alert = UIAlertController(title: "Delete form", message: "Are you sure to delete this form?", preferredStyle: .alert)
+            let yesAction = UIAlertAction(title: "Yes", style: .destructive, handler: {[weak self] (_) in
+                formItem.ref?.removeValue()
+                tableView.beginUpdates()
+                self?.formList.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                tableView.endUpdates()
+            })
+            let noAction = UIAlertAction(title: "No", style: .default, handler: nil)
+            alert.addAction(yesAction)
+            alert.addAction(noAction)
+            present(alert, animated: true, completion: nil)
+            
+        }
     }
 }

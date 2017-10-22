@@ -8,19 +8,24 @@
 
 import UIKit
 import SwiftyJSON
+import MBProgressHUD
 class AddNewRecycleNumber: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var collectionView: UICollectionView!
-//    var clothList = [Cloth]()
-//    var recycleClothNumber = 0
+
     var formObject = FormObject(clothList: [])
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 120
-        
+
+        switch formObject.status {
+        case  .sending , .review , .accept:
+            tableView.isUserInteractionEnabled = false
+        default:
+            break
+        }
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -43,12 +48,21 @@ class AddNewRecycleNumber: UIViewController {
             if formObject.clothList.index(of: newSellClothVC.cloth) == nil {
                 formObject.clothList.append(newSellClothVC.cloth)
                 if formObject.ref != nil {
-                    formObject.ref?.child("cloths").childByAutoId().setValue(newSellClothVC.cloth.returnUrlForFireBase())
+                    let hud = MBProgressHUD.showAdded(to: view, animated: true)
+                    newSellClothVC.cloth.uploadAllImage {
+                        hud.hide(animated: true)
+                        let clothRef = self.formObject.ref!.child("cloths").childByAutoId().ref
+                        clothRef.setValue(newSellClothVC.cloth.returnUrlForFireBase())
+                        newSellClothVC.cloth.ref = clothRef
+                        self.collectionView.reloadData()
+                    }
+                    
+                }else{
+                    collectionView.reloadData()
                 }
             }
-
             self.tableView.reloadData()
-            collectionView.reloadData()
+            
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -140,7 +154,10 @@ extension AddNewRecycleNumber : UICollectionViewDelegate , UICollectionViewDataS
             cell.clothImageView.image = cloth.imageList.first
         }else {
             if let firstStr = cloth.imageListOnString.first{
-                cell.clothImageView.sd_setImage(with: URL(string: firstStr))
+
+                cell.clothImageView.sd_setImage(with: URL(string: firstStr) , placeholderImage: placeHolderImage)
+            }else{
+                cell.clothImageView.image = nil
             }
             
         }

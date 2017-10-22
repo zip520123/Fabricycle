@@ -27,7 +27,7 @@ class FormObject {
             case .review :
                 return "Reviewing"
             case .accept:
-                return "Reviewing"
+                return "Finished"
             default:
                 return "error"
             }

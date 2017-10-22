@@ -13,9 +13,11 @@ class AboutVC: UIViewController {
     
     @IBOutlet weak var versionLabel: UILabel!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
         versionLabel.text = version()
+        
     }
     func version() -> String {
         
@@ -34,15 +36,5 @@ class AboutVC: UIViewController {
         return string
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

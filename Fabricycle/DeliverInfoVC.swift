@@ -19,7 +19,14 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
+        switch formObejct.status {
+        case  .sending , .review , .accept:
+            tableView.isUserInteractionEnabled = false
+            doneButton.isUserInteractionEnabled = false
+            doneButton.backgroundColor = Color.gray
+        default:
+            break
+        }
        
     }
     
@@ -28,43 +35,44 @@ class DeliverInfoVC: UIViewController ,UITableViewDelegate , UITableViewDataSour
     
     @IBAction func doneButtonClick(_ sender: Any) {//performNewForm
         let _ = MBProgressHUD.showAdded(to: self.view, animated: true)
-
-
         uploadAllClothImage()
-        
-//        performSegue(withIdentifier: "performNewForm", sender: nil)
+
     }
     func deliverForm(){
-        
-        var formUidString = ""
-        if formObejct.uid != "0" {
-            formUidString = formObejct.uid
-        }else {
+        if formObejct.ref == nil {
+            var formUidString = ""
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = formObjectDateFormatter
             let dateString = dateFormatter.string(from: Date())
             formUidString = dateString
-        }
-        
-        
-        let formItemsRef = FIRDatabase.database().reference(withPath: "ID/\(getUserId()!)/FormItems/\(formUidString)")
-        formItemsRef.setValue(formObejct.returnFormForFireBase())
-        
-        for cloth in formObejct.clothList {
-            if cloth.ref == nil {
-                formItemsRef.child("cloths").childByAutoId().setValue(cloth.returnUrlForFireBase())
+            let formItemsRef = FIRDatabase.database().reference(withPath: "ID/\(getUserId()!)/FormItems/\(formUidString)")
+            formItemsRef.setValue(formObejct.returnFormForFireBase())
+            for cloth in formObejct.clothList {
+                if cloth.ref == nil {
+                    formItemsRef.child("cloths").childByAutoId().setValue(cloth.returnUrlForFireBase())
+                }
             }
-            
+            if formObejct.uid == "0" {
+                performSegue(withIdentifier: "performNewForm", sender: nil)
+            }
+
+        } else {
+//            performSegue(withIdentifier: "setForm", sender: nil)
+            let hud = MBProgressHUD.showAdded(to: view, animated: true)
+            formObejct.ref?.updateChildValues(formObejct.returnFormForFireBase() as! [AnyHashable : Any], withCompletionBlock: { [weak self] (error, ref) in
+                hud.hide(animated: true)
+                self?.performSegue(withIdentifier: "setForm", sender: nil)
+            })
         }
-        if formObejct.uid == "0" {
-            performSegue(withIdentifier: "performNewForm", sender: nil)
-        }else{
-            performSegue(withIdentifier: "setForm", sender: nil)
-        }
+
         
     }
     func uploadAllClothImage(){
         var uploadCount = 0
+        if formObejct.ref != nil {
+            deliverForm()
+            return
+        }
         if formObejct.clothList.count == 0 {
             MBProgressHUD.hide(for: self.view, animated: true)
             deliverForm()

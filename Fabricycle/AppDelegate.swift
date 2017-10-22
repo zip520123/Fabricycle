@@ -35,11 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,GIDSignInDelegate{
         let bulletinRef = FIRDatabase.database().reference(withPath: "bulletin")
         
         bulletinRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            if let string = snapshot.value as? String {
-                bulletinString = string
-            }else {
-                bulletinString = ""
-            }
+                bulletinString = snapshot.value as? String ?? ""
         })
             
         
