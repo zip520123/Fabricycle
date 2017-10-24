@@ -1049,8 +1049,8 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBK-dQ-3EI">
                                         <rect key="frame" x="0.0" y="58.5" width="280" height="125.5"/>
                                         <string key="text">There are three ways for us to deal with your old clothes after we receive them:
-* Sell them in second hand markey
-* Donate to chariety
+* Sell them in second hand markets
+* Donate them to the charieties
 * Make them be the material of some products 
 </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
