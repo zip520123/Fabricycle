@@ -10,10 +10,20 @@ import UIKit
 import LGSideMenuController
 class MenuVC: UIViewController {
 
+    
+    @IBOutlet weak var adminSettingButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        FIRAuth.auth()!.addStateDidChangeListener() { [weak self] auth, user in
+            if user?.email == "zip520123@yahoo.com.tw" {
+                self?.adminSettingButton.isHidden = false
+            }else{
+                self?.adminSettingButton.isHidden = true
+            }
+            
+        }
     }
 
     @IBAction func logoutButtonClick(_ sender: Any) {
@@ -40,6 +50,12 @@ class MenuVC: UIViewController {
     }
     
     @IBAction func Setting(_ sender: Any) {
+    }
+    
+    @IBAction func adminSetting(_ sender: Any) {
+        let history = self.storyboard!.instantiateViewController(withIdentifier: "History") as! MainPageVC
+        history.loadAll = true
+        sideMenuShowVC(vc: history)
     }
 
     @IBAction func aboutUs(_ sender: Any) {
